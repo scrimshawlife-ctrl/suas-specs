@@ -4,6 +4,15 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased — D-011 scoring template (not a version bump)
+
+**Template / not implementation authority.** Released `0.1.6` remains the implementation contract. This does not close D-011, does not invent weights/thresholds/golden vectors, and does not add a next-version release manifest.
+
+- Added [SIGNAL_SCORING.md](SIGNAL_SCORING.md) as a fill-in home for B1–B5 (and optional G-I-28 action fields).
+- Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) §2, [CHECKINS.md](CHECKINS.md) §3, and [DECISIONS.md](DECISIONS.md) D-011 at that template. D-011 stays `DECISION_PENDING`.
+
+---
+
 ## Unreleased — draft Rev 3 fence-post contracts (not a version bump)
 
 **Draft / not implementation authority.** Released `0.1.6` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.

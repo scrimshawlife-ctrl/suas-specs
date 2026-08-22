@@ -19,7 +19,7 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-008 | Operating pilot partner organizations | `DECISION_PENDING` |
 | D-009 | Responder staffing/coverage hours | `DECISION_PENDING` |
 | D-010 | Service funding/billing sources | `FUTURE` / `DECISION_PENDING` |
-| D-011 | Production Support Signal scoring rules/thresholds | `DECISION_PENDING` |
+| D-011 | Production Support Signal scoring rules/thresholds | `DECISION_PENDING`; fill-in home [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (`TEMPLATE` / `NOT_RELEASED`) |
 | D-012 | Approved production safety/crisis copy | `DECIDED` (v0.1.5; copy + 911/988 destinations released in [SAFETY_COPY.md](SAFETY_COPY.md), [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md); copy approval only, not production-operating approval) |
 | D-013 | Counsel review of compliance register | `DECISION_PENDING` |
 | D-014 | Production geocoding/maps need | `DECISION_PENDING` |

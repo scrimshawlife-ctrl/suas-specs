@@ -1,7 +1,7 @@
 # CHECKINS.md — Versioned questionnaires (SUAS v0.1)
 
 **Status:** `draft` / `0.1.0` / SPEC-003 preflight; not implementation authority.  
-**Related:** [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [EVENT_MODEL.md](EVENT_MODEL.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [DATA_MODEL.md](DATA_MODEL.md), [PRODUCT.md](PRODUCT.md), [PRIVACY.md](PRIVACY.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
+**Related:** [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md), [EVENT_MODEL.md](EVENT_MODEL.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [DATA_MODEL.md](DATA_MODEL.md), [PRODUCT.md](PRODUCT.md), [PRIVACY.md](PRIVACY.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
 
 **Actors:** Veteran (respondent), SUAS System Administrator (publisher), Responder (reader only with basis), System (durable signal trigger).
 
@@ -31,7 +31,7 @@ A published version may include questions in these dimensions:
 
 `sleep`, `connection`, `stress`, `basic_needs`, `coping`, `safety`
 
-Exact questions, option weights, and required/optional flags are `NOT_COMPUTABLE` until a QuestionnaireVersion is published. Do not invent clinical instruments or claim validated psychometrics.
+Exact questions, option weights, and required/optional flags are `NOT_COMPUTABLE` until a QuestionnaireVersion is published. The fill-in home is [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B1 (`TEMPLATE` / `NOT_RELEASED`); empty tables there are not a published version. Do not invent clinical instruments or claim validated psychometrics.
 
 ---
 

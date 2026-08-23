@@ -1,8 +1,8 @@
-# VERSIONING.md — Specification and artifact versioning (SUAS v0.1)
+# VERSIONING.md — Specification and artifact versioning (SUAS v0.2)
 
-**Stack:** `0.1.6` / `released`
+**Stack:** `0.2.0` / `released`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
-**Release manifest:** [RELEASE_MANIFEST-0.1.6.md](RELEASE_MANIFEST-0.1.6.md)
+**Release manifest:** [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
 
 ## 1. Lifecycle
 
@@ -19,6 +19,7 @@ A file's inline `draft` / `dependency-blocked` header is **superseded by the cur
 - `0.1.4` — implementation-conformance codification patch adopting accepted Bucket I gaps (P-1..P-23); closes no D-0xx owner decision and changes no product roles, safety/privacy, API selector, or event schema. Documents two additive, backward-compatible logical-model fields already implemented and tested (`notifications` subject reference, `resources.contact_method_kind`) as owner-accepted codifications with this changelog notice.
 - `0.1.5` — D-012 safety/crisis copy decision patch: approves the on-screen crisis copy and destinations (911 / 988) in `SAFETY_COPY.md` and the `REQUESTED ≠ ACCEPTED ≠ DISPATCHED ≠ ARRIVED ≠ RESOLVED` state-truthfulness contract. Copy approval only; no canonical state-machine/API/event change, no automated dispatch, and no production-operating approval.
 - `0.1.6` — Wave A editorial hygiene patch: aligns D-015/D-016 domain wording with the 0.1.0 decided defaults, points SPEC-003 at the 0.1.4 effective-signal rule (including the two-override / chain case), and stamps leftover high-traffic `draft` headers as stale. Closes no D-0xx; invents no product/domain behavior.
+- `0.2.0` — backward-compatible D-011 contract addition: releases questionnaire `qv-001`, deterministic signal rules `sv-001`, incomplete-input behavior, minimized basis requirements, and golden vectors. Does not change `/api/v0`, event schema `0.1.0`, readiness, or production-operating authority.
 
 Version rules:
 
@@ -32,7 +33,7 @@ Git commit SHA is provenance, not the specification version.
 
 Do not conflate:
 
-1. **Specification stack version** — currently `0.1.6`.
+1. **Specification stack version** — currently `0.2.0`.
 2. **Application version** — owned by `scrimshawlife-ctrl/SUAS`; must declare which released spec it implements.
 3. **API version** — `/api/v0`; unchanged by v0.1.6.
 4. **Event schema version** — `0.1.0`; unchanged by v0.1.6.
@@ -43,7 +44,7 @@ These five parallel identities (plus runtime content versions) are distinct and 
 
 | Identity | Current value / mechanism |
 |---|---|
-| Specification stack | `0.1.6` |
+| Specification stack | `0.2.0` |
 | Application version | owned by `scrimshawlife-ctrl/SUAS`; declares the released spec it implements |
 | API selector | `/api/v0` |
 | Event schema | `0.1.0` |
@@ -55,7 +56,7 @@ Shared builds must expose application version/commit, released SUAS spec version
 
 ## 5. Release lineage
 
-`0.1.1` supersedes `0.1.0` for implementation handoff. `0.1.2` supersedes `0.1.1` for D-017 adapter selection. `0.1.3` supersedes `0.1.2` for D-018 adapter selection. `0.1.4` supersedes `0.1.3` for implementation-conformance codification and inherits every decision ledger unchanged. `0.1.5` supersedes `0.1.4` for the D-012 safety/crisis copy decision. `0.1.6` supersedes `0.1.5` for Wave A editorial hygiene and inherits every decision ledger unchanged. [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md) controls D-012; [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md) controls D-018; [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md) controls D-017; [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md) remains inherited for other D-001–D-025 decisions.
+`0.1.1` supersedes `0.1.0` for implementation handoff. `0.1.2` supersedes `0.1.1` for D-017 adapter selection. `0.1.3` supersedes `0.1.2` for D-018 adapter selection. `0.1.4` supersedes `0.1.3` for implementation-conformance codification and inherits every decision ledger unchanged. `0.1.5` supersedes `0.1.4` for the D-012 safety/crisis copy decision. `0.1.6` supersedes `0.1.5` for Wave A editorial hygiene and inherits every decision ledger unchanged. `0.2.0` supersedes `0.1.6` for the D-011 scoring contract. [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md) controls D-011. [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md) controls D-012; [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md) controls D-018; [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md) controls D-017; [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md) remains inherited for other D-001–D-025 decisions.
 
 ## 6. Implementation citations
 

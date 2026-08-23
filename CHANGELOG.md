@@ -4,6 +4,17 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.2.0 — 2026-08-23 PT — D-011 Support Signal scoring
+
+**Implementation-authoritative; not production-operating approval.**
+
+- Closed D-011 through [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md).
+- Released [SIGNAL_SCORING.md](SIGNAL_SCORING.md): original questionnaire `qv-001`, deterministic rules `sv-001`, conservative incomplete-input behavior, minimized basis, and golden vectors.
+- Preserved `/api/v0`, event schema `0.1.0`, canonical state machines, and all readiness gates as `NOT_READY`.
+- Left G-I-28 signal-driven Support Case action semantics unresolved.
+
+---
+
 ## Unreleased — draft Rev 3 fence-post contracts (not a version bump)
 
 **Draft / not implementation authority.** Released `0.1.6` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.

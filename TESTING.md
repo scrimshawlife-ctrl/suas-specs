@@ -279,7 +279,7 @@ All remain `NOT_READY` unless [STATUS.md](STATUS.md) records accepted evidence.
 ## 12. Fixtures / non-goals
 
 - synthetic veterans only;
-- D-011 golden signal vectors remain `UNRELEASED_FIXTURE` until decided;
+- D-011 golden vectors for `qv-001` + `sv-001` are released in [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B4; other version pairs remain `UNRELEASED_FIXTURE` until released;
 - D-012 uses `TEST_SAFETY_COPY` until approved;
 - fake provider adapters until decisions close;
 - no production veteran data in non-prod tests;

@@ -2,7 +2,7 @@
 
 **Status:** `draft` / `0.1.0` / SPEC-003 preflight; not implementation authority.  
 **Authority:** released via [RELEASE_MANIFEST-0.1.6.md](RELEASE_MANIFEST-0.1.6.md). The inline `draft` marker is stale and is not authority ([VERSIONING.md](VERSIONING.md) §1).  
-**Related:** [CHECKINS.md](CHECKINS.md), [SAFETY.md](SAFETY.md), [CASES.md](CASES.md), [CONSENT.md](CONSENT.md), [EVENT_MODEL.md](EVENT_MODEL.md), [TESTING.md](TESTING.md), [DECISIONS.md](DECISIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
+**Related:** [CHECKINS.md](CHECKINS.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md), [SAFETY.md](SAFETY.md), [CASES.md](CASES.md), [CONSENT.md](CONSENT.md), [EVENT_MODEL.md](EVENT_MODEL.md), [TESTING.md](TESTING.md), [DECISIONS.md](DECISIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
 
 **Actors:** System (compute), Veteran (source of Check-In), Responder (may override with reason), SUAS System Administrator (publishes `signal_version`).
 
@@ -33,7 +33,7 @@ The primary signal must be:
 
 **No generative model may produce the primary signal.**
 
-Exact scoring rules and thresholds remain **D-011 `DECISION_PENDING`**. Implementation may build a pure function contract and unreleased fixtures, but must not ship invented weights or thresholds.
+D-011 is `DECIDED` for `qv-001` + `sv-001`. Exact questionnaire content, deterministic rules, incomplete-input behavior, basis requirements, and golden vectors are released in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Implementations must not mutate those published identities or invent alternate weights/thresholds under them.
 
 ---
 

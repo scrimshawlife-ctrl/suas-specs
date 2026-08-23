@@ -31,7 +31,7 @@ A published version may include questions in these dimensions:
 
 `sleep`, `connection`, `stress`, `basic_needs`, `coping`, `safety`
 
-Exact questions, option weights, and required/optional flags are `NOT_COMPUTABLE` until a QuestionnaireVersion is published. The fill-in home is [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B1 (`TEMPLATE` / `NOT_RELEASED`); empty tables there are not a published version. Do not invent clinical instruments or claim validated psychometrics.
+The first published questionnaire is `qv-001`, defined exactly in [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B1. It has six required core questions and three optional follow-ups. Do not mutate published content, invent clinical instruments, or claim validated psychometrics.
 
 ---
 
@@ -49,7 +49,7 @@ Exact questions, option weights, and required/optional flags are `NOT_COMPUTABLE
 
 ### 4.1 Incomplete
 
-An `INCOMPLETE` Check-In may produce a Support Signal only if the published `signal_version` defines deterministic missing-input behavior. Until D-011 is closed, **do not compute a production Support Signal from incomplete input**. Unreleased test fixtures may exercise the interface but must be labeled as such.
+An `INCOMPLETE` Check-In may produce a Support Signal only under the deterministic missing-input behavior published for its `signal_version`. For `sv-001`, missing required safety input refuses computation; missing required non-safety input is imputed at weight 2 and recorded in basis. See [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B3.
 
 ### 4.2 Abandoned
 

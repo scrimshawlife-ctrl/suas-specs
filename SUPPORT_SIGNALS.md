@@ -33,7 +33,7 @@ The primary signal must be:
 
 **No generative model may produce the primary signal.**
 
-Exact scoring rules and thresholds remain **D-011 `DECISION_PENDING`**. The fill-in home is [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (`TEMPLATE` / `NOT_RELEASED`); empty tables there are not a close and are not shipped weights. Implementation may build a pure function contract and unreleased fixtures, but must not ship invented weights or thresholds.
+D-011 is `DECIDED` for `qv-001` + `sv-001`. Exact questionnaire content, deterministic rules, incomplete-input behavior, basis requirements, and golden vectors are released in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Implementations must not mutate those published identities or invent alternate weights/thresholds under them.
 
 ---
 

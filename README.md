@@ -95,7 +95,7 @@ See [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), [RELEASE_DECISIONS
 
 **Domain:** [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [CHECKINS.md](CHECKINS.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [TRUSTED_CIRCLE.md](TRUSTED_CIRCLE.md), [CASES.md](CASES.md), [DISPATCH.md](DISPATCH.md), [RESOURCES.md](RESOURCES.md), [REFERRALS.md](REFERRALS.md), [FULFILLMENT.md](FULFILLMENT.md), [FOLLOWUP.md](FOLLOWUP.md), [SETTLEMENT.md](SETTLEMENT.md), [RESPONDER_WORKFLOWS.md](RESPONDER_WORKFLOWS.md), [NOTIFICATIONS.md](NOTIFICATIONS.md).
 
-**Template / not implementation authority:** [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (D-011 fill-in; decision remains `DECISION_PENDING`).
+**Released Support Signal scoring:** [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (`qv-001` + `sv-001`; D-011 decided by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md)).
 
 **Draft Rev 3 contracts (not implementation authority):** [FENCE_POSTS.md](FENCE_POSTS.md), [SURFACES.md](SURFACES.md), [ISLANDS.md](ISLANDS.md), [RIDES.md](RIDES.md).
 

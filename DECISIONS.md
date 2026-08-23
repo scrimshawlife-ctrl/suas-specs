@@ -1,7 +1,7 @@
 # DECISIONS.md — SUAS decision register
 
-**Stack:** `0.1.6` / `released`
-**Release decision ledger:** inherited unchanged — [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md) for D-012; [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md) for D-018; [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md) for D-017; [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md) otherwise. v0.1.6 is editorial hygiene and closes no D-0xx.
+**Stack:** `0.2.0` / `released`
+**Release decision ledger:** [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md) for D-011; inherited [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md) for D-012, [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md) for D-018, [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md) for D-017, and [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md) otherwise.
 
 Global decisions remain open until explicitly decided. A release-specific `DEFERRED_FOR_RELEASE` boundary does not globally close the decision; it only makes the affected capability unavailable/manual/future for that release.
 
@@ -19,7 +19,7 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-008 | Operating pilot partner organizations | `DECISION_PENDING` |
 | D-009 | Responder staffing/coverage hours | `DECISION_PENDING` |
 | D-010 | Service funding/billing sources | `FUTURE` / `DECISION_PENDING` |
-| D-011 | Production Support Signal scoring rules/thresholds | `DECISION_PENDING`; fill-in home [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (`TEMPLATE` / `NOT_RELEASED`) |
+| D-011 | Production Support Signal scoring rules/thresholds | `DECIDED` 2026-08-23 PT for `qv-001` + `sv-001`; see [SIGNAL_SCORING.md](SIGNAL_SCORING.md) and [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md); implementation-authoritative, not production-operating approval |
 | D-012 | Approved production safety/crisis copy | `DECIDED` (v0.1.5; copy + 911/988 destinations released in [SAFETY_COPY.md](SAFETY_COPY.md), [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md); copy approval only, not production-operating approval) |
 | D-013 | Counsel review of compliance register | `DECISION_PENDING` |
 | D-014 | Production geocoding/maps need | `DECISION_PENDING` |
@@ -42,11 +42,11 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-031 | Which legal entity contracts for island and ride operations | `DECISION_PENDING`; draft Rev 3 contract only |
 | D-032 | Volunteer-driver insurance and screening requirements | `DECISION_PENDING`; draft Rev 3 contract only |
 
-D-026–D-032 are additive draft questions from Rev 3 fence-post work. They do not replace D-017–D-025 in the released ledger. D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), and D-019–D-025 remain open unless later released decisions close them.
+D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-026–D-032 are additive draft questions from Rev 3 fence-post work. They do not replace D-017–D-025 in the released ledger. D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), and D-019–D-025 remain open unless later released decisions close them.
 
 ## v0.1.0 release boundary
 
-The first released cut is implementation-authoritative but not production-operating. Therefore unresolved production decisions are safely deferred only because the associated production surfaces are unavailable/manual-only/information-only/future in release manifests. D-017 and D-018 were later closed for adapter-local selection by v0.1.2 and v0.1.3 respectively, and D-012 (safety/crisis copy) was closed by v0.1.5; those closures do not authorize production operation.
+The first released cut is implementation-authoritative but not production-operating. Therefore unresolved production decisions are safely deferred only because the associated production surfaces are unavailable/manual-only/information-only/future in release manifests. D-017 and D-018 were later closed for adapter-local selection by v0.1.2 and v0.1.3 respectively, D-012 (safety/crisis copy) by v0.1.5, and D-011 (Support Signal scoring) by v0.2.0; those closures do not authorize production operation.
 
 No implementation default may silently close an open decision.
 

@@ -4,12 +4,14 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
-## Unreleased — D-011 scoring template (not a version bump)
+## 0.2.0 — 2026-08-23 PT — D-011 Support Signal scoring
 
-**Template / not implementation authority.** Released `0.1.6` remains the implementation contract. This does not close D-011, does not invent weights/thresholds/golden vectors, and does not add a next-version release manifest.
+**Implementation-authoritative; not production-operating approval.**
 
-- Added [SIGNAL_SCORING.md](SIGNAL_SCORING.md) as a fill-in home for B1–B5 (and optional G-I-28 action fields).
-- Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) §2, [CHECKINS.md](CHECKINS.md) §3, and [DECISIONS.md](DECISIONS.md) D-011 at that template. D-011 stays `DECISION_PENDING`.
+- Closed D-011 through [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md).
+- Released [SIGNAL_SCORING.md](SIGNAL_SCORING.md): original questionnaire `qv-001`, deterministic rules `sv-001`, conservative incomplete-input behavior, minimized basis, and golden vectors.
+- Preserved `/api/v0`, event schema `0.1.0`, canonical state machines, and all readiness gates as `NOT_READY`.
+- Left G-I-28 signal-driven Support Case action semantics unresolved.
 
 ---
 

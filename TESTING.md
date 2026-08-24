@@ -1,7 +1,7 @@
-# TESTING.md — Test suites and production-readiness gates (SUAS v0.1)
+# TESTING.md — Test suites and production-readiness gates (SUAS v0.2.0)
 
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.1.3.md](RELEASE_MANIFEST-0.1.3.md)
-**Related:** [STATUS.md](STATUS.md), [API.md](API.md), [AUTH.md](AUTH.md), [MVP_REFERENCE.md](MVP_REFERENCE.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md), [CASES.md](CASES.md), [DISPATCH.md](DISPATCH.md), [SETTLEMENT.md](SETTLEMENT.md), [FOLLOWUP.md](FOLLOWUP.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [CONSENT.md](CONSENT.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SAFETY.md](SAFETY.md), [SECURITY.md](SECURITY.md)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
+**Related:** [STATUS.md](STATUS.md), [API.md](API.md), [AUTH.md](AUTH.md), [MVP_REFERENCE.md](MVP_REFERENCE.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md), [CASES.md](CASES.md), [DISPATCH.md](DISPATCH.md), [SETTLEMENT.md](SETTLEMENT.md), [FOLLOWUP.md](FOLLOWUP.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [CONSENT.md](CONSENT.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [SECURITY.md](SECURITY.md)
 
 ---
 
@@ -280,7 +280,7 @@ All remain `NOT_READY` unless [STATUS.md](STATUS.md) records accepted evidence.
 
 - synthetic veterans only;
 - D-011 golden vectors for `qv-001` + `sv-001` are released in [SIGNAL_SCORING.md](SIGNAL_SCORING.md) B4; other version pairs remain `UNRELEASED_FIXTURE` until released;
-- D-012 uses `TEST_SAFETY_COPY` until approved;
+- D-012 is `DECIDED`; implementations use the released copy in [SAFETY_COPY.md](SAFETY_COPY.md). `SUAS_SAFETY_COPY_MODE=approved` selects it ([ENVIRONMENT.md](ENVIRONMENT.md) §3). This file does not invent a TEST-only copy mode;
 - fake provider adapters until decisions close;
 - no production veteran data in non-prod tests;
 - no unnamed vendor SLA/clinical validation/pixel-perfect clone/specific cloud-broker requirement;

@@ -205,4 +205,13 @@ Git SHA, application version, and database migration version remain separate ide
 
 G-I-28 remains unresolved and must be closed before signal-driven Case writes are implementation-authoritative.
 
+### QUESTIONS
+
+This list records open G-I-28 questions. It does not answer them, close G-I-28, or authorize kernel implementation of signal-driven Case writes.
+
+1. **Command.** What command opens or updates a Support Case from a settled Support Signal?
+2. **Idempotency.** What is the idempotency identity of that command?
+3. **Non-RED effects.** What Case writes, if any, follow an effective `YELLOW` or `ORANGE` signal?
+4. **CLOSED-case.** What happens when a settled signal arrives for a Support Case already in `CLOSED`?
+
 Not D-011: effective-signal selection ([SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) §7.1), abandoned Check-In idle timeout ([CHECKINS.md](CHECKINS.md) §4.2), or island/crisis-number decisions.

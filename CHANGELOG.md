@@ -4,6 +4,18 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.2.0 leftover-header stamp — 2026-08-24 PT
+
+**Editorial stamp only. Not a version bump. Closes no D-0xx. Does not close G-I-28. Does not advance readiness gates.**
+
+- Removed the pre-merge re-pin hold in [STATUS.md](STATUS.md). Owner-merged `0.2.0` / `4a722e69` is the implementation pin.
+- Stamped [TESTING.md](TESTING.md) lifecycle to `0.2.0`. D-012 points at released [SAFETY_COPY.md](SAFETY_COPY.md); no new TEST mode.
+- Stamped [ENVIRONMENT.md](ENVIRONMENT.md) header to `0.2.0`. Left `SUAS_SUPPORT_SIGNAL_MODE` as `disabled|fixture`.
+- Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) authority at `0.2.0` / [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Removed the inline `draft` / `0.1.0` leftover.
+- Recorded unanswered G-I-28 QUESTIONS in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Not a close.
+
+---
+
 ## 0.2.0 — 2026-08-23 PT — D-011 Support Signal scoring
 
 **Implementation-authoritative; not production-operating approval.**

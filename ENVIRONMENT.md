@@ -1,8 +1,8 @@
-# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.1.3)
+# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.2.0)
 
-**Lifecycle:** `released` with v0.1.3 D-018 patch
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
 **Authority:** implementation configuration contract
-**Related:** [DEPLOYMENT.md](DEPLOYMENT.md), [SECURITY.md](SECURITY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [RESILIENCE.md](RESILIENCE.md), [RELEASE_MANIFEST-0.1.3.md](RELEASE_MANIFEST-0.1.3.md)
+**Related:** [DEPLOYMENT.md](DEPLOYMENT.md), [SECURITY.md](SECURITY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [RESILIENCE.md](RESILIENCE.md), [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md)
 
 ## 1. Purpose
 
@@ -68,7 +68,7 @@ Until provider decisions close:
 - `SUAS_EMAIL_MODE` = `disabled|fake|sink`
 - `SUAS_SMS_MODE` = `disabled|fake|sink`
 
-Production notification external modes are not valid in v0.1.3.
+Production notification external modes are not valid in v0.2.0.
 
 ### Fulfillment adapters
 

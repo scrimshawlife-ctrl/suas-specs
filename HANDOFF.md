@@ -132,7 +132,7 @@ Do not implement or imply:
 - generative primary Support Signal or other safety-critical generative decisions;
 - HIPAA or other compliance claims without released evidence;
 - crisis copy or destinations other than the D-012 approved set in `SAFETY_COPY.md` (911 / 988); interface language implying a stronger intervention than recorded facts prove;
-- production Support Signal compute; D-011 released `qv-001` + `sv-001` as implementation-authoritative scoring, and TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. G-I-28 remains open: do not open or update a Support Case from a settled signal until that command is released;
+- production Support Signal compute; D-011 released `qv-001` + `sv-001` as implementation-authoritative scoring, and TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. APPLY_EFFECTIVE_SIGNAL transcribes SAFETY.md §3.2 (RED opens/updates a case; non-RED is a no-op; CLOSED is not REOPEN);
 - sensitive aggregate reporting while its privacy policy is unavailable;
 - whole-case/provider payload disclosure when minimum projection is sufficient.
 

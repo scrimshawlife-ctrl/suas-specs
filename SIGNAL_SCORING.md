@@ -199,19 +199,17 @@ Git SHA, application version, and database migration version remain separate ide
 
 ---
 
-## G-I-28 action — not decided by D-011
+## G-I-28 action — transcribed from SAFETY.md §3.2
 
-[SAFETY.md](SAFETY.md) §3.2 already requires an effective `RED` to open or update a Support Case with `priority_signal_level=RED`. D-011 defines scoring only. It does not invent the command, idempotency identity, non-RED case effects, or closed-Case behavior.
+[SAFETY.md](SAFETY.md) §3.2 already requires an effective `RED` to open or update a Support Case with `priority_signal_level=RED`. D-011 defines scoring only. This section names the command that writes the already-released RED obligation. It is not a new D-0xx. It does not authorize production scoring, real provider effects, or any readiness-gate advance.
 
-G-I-28 remains unresolved and must be closed before signal-driven Case writes are implementation-authoritative.
+### APPLY_EFFECTIVE_SIGNAL
 
-### QUESTIONS
-
-This list records open G-I-28 questions. It does not answer them, close G-I-28, or authorize kernel implementation of signal-driven Case writes.
-
-1. **Command.** What command opens or updates a Support Case from a settled Support Signal?
-2. **Idempotency.** What is the idempotency identity of that command?
-3. **Non-RED effects.** What Case writes, if any, follow an effective `YELLOW` or `ORANGE` signal?
-4. **CLOSED-case.** What happens when a settled signal arrives for a Support Case already in `CLOSED`?
+| Question | Answer (transcribed, fail-closed) |
+|---|---|
+| **Command** | `APPLY_EFFECTIVE_SIGNAL`. System actor. Runs in the same transaction as the settled Support Signal insert. |
+| **Idempotency** | One apply per settled `support_signal_id`. Replay of the same settlement is a no-op. Concurrent creates still resolve to one non-closed Case ([CASES.md](CASES.md) §3.1). |
+| **Non-RED effects** | None. [SAFETY.md](SAFETY.md) §4 says `YELLOW`/`ORANGE` *may* open or update a case; that is not a must. Explicit Veteran/Responder case-open remains the path for those levels ([CASES.md](CASES.md) §3 item 2). A later non-RED signal does not downgrade or close a RED case ([SAFETY.md](SAFETY.md) §3.2). |
+| **CLOSED-case** | `CLOSED` is not an active coordination state. RED opens a **new** Case. It does not `REOPEN` the closed Case (`REOPEN` remains the human command in [CASES.md](CASES.md) §4.2). |
 
 Not D-011: effective-signal selection ([SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) §7.1), abandoned Check-In idle timeout ([CHECKINS.md](CHECKINS.md) §4.2), or island/crisis-number decisions.

@@ -76,7 +76,7 @@ Deterministic and efficient projection/current pointer over durable signal histo
 ### support_cases
 Case identity/veteran/tenant/status/priority/lifecycle timestamps plus nullable `current_settlement_id` convenience projection. MVP one-active-case exclusivity enforced transactionally/constraint-backed where required.
 
-Nullable `priority_signal_level` (0.1.4) tracks the effective Support Signal level (`GREEN|YELLOW|ORANGE|RED`) as a queue-filter fact only. It is a filterable projection, not a score; the action/command that writes it from a signal change remains an owner decision (G-I-28) and is not defined here.
+Nullable `priority_signal_level` (0.1.4) tracks the effective Support Signal level (`GREEN|YELLOW|ORANGE|RED`) as a queue-filter fact only. It is a filterable projection, not a score. `APPLY_EFFECTIVE_SIGNAL` writes `RED` from a settled effective Support Signal ([SIGNAL_SCORING.md](SIGNAL_SCORING.md) G-I-28; [SAFETY.md](SAFETY.md) §3.2). Non-RED signals do not write this field.
 
 ### case_assignments
 Case/responder/status history. At most one active exclusive owner where required. The current-assignment projection (0.1.4) is the single row with `status = ACTIVE`; there is at most one `ACTIVE` assignment per Case, and it is the deterministic current owner. See [DISPATCH.md](DISPATCH.md) §6.

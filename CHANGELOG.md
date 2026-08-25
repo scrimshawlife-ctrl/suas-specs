@@ -13,7 +13,8 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 - Stamped [ENVIRONMENT.md](ENVIRONMENT.md) header to `0.2.0`. Left `SUAS_SUPPORT_SIGNAL_MODE` as `disabled|fixture`.
 - Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) authority at `0.2.0` / [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Removed the inline `draft` / `0.1.0` leftover.
 - Recorded unanswered G-I-28 QUESTIONS in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Not a close.
-- Stamped start-here files to `0.2.0`: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md), [README.md](README.md). This removes the conflict where STATUS told implementers to pin `0.2.0` while those guides still named `0.1.6` / `0.1.3`. G-I-28 remains open.
+- Stamped start-here files to `0.2.0`: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md), [README.md](README.md). This removes the conflict where STATUS told implementers to pin `0.2.0` while those guides still named `0.1.6` / `0.1.3`.
+- Transcribed G-I-28 from [SAFETY.md](SAFETY.md) §3.2 as `APPLY_EFFECTIVE_SIGNAL` (RED opens/updates; non-RED is a no-op; CLOSED is not REOPEN). Not a D-0xx. Not a version bump. Not a readiness-gate advance.
 
 ---
 

@@ -13,6 +13,7 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 - Stamped [ENVIRONMENT.md](ENVIRONMENT.md) header to `0.2.0`. Left `SUAS_SUPPORT_SIGNAL_MODE` as `disabled|fixture`.
 - Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) authority at `0.2.0` / [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Removed the inline `draft` / `0.1.0` leftover.
 - Recorded unanswered G-I-28 QUESTIONS in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Not a close.
+- Stamped start-here files to `0.2.0`: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md), [README.md](README.md). This removes the conflict where STATUS told implementers to pin `0.2.0` while those guides still named `0.1.6` / `0.1.3`. G-I-28 remains open.
 
 ---
 
@@ -29,7 +30,7 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ## Unreleased — draft Rev 3 fence-post contracts (not a version bump)
 
-**Draft / not implementation authority.** Released `0.1.6` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.
+**Draft / not implementation authority.** Released `0.2.0` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.
 
 - Added [FENCE_POSTS.md](FENCE_POSTS.md) — Rev 3 fence-post outcomes `G1`–`G14` as draft, testable contracts.
 - Added [SURFACES.md](SURFACES.md) — anonymous public front door vs identified opt-in platform; crossing remains an affirmative act and declining costs nothing.

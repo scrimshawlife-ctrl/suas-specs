@@ -1,15 +1,15 @@
-# HANDOFF.md — Implementation handoff guide (SUAS v0.1.6)
+# HANDOFF.md — Implementation handoff guide (SUAS v0.2.0)
 
 **Audience:** new implementation owner / Fable / engineering agents
-**Lifecycle:** `released` with v0.1.6 Wave A editorial hygiene (over v0.1.5 D-012, v0.1.4 conformance codification, v0.1.3 D-018)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md) (D-011 over v0.1.6 Wave A, v0.1.5 D-012, v0.1.4 conformance, v0.1.3 D-018)
 **Canonical implementation repo:** `scrimshawlife-ctrl/SUAS`
 
 ## 1. Start here
 
 Read in this order before changing implementation behavior:
 
-1. `RELEASE_MANIFEST-0.1.6.md` (then `RELEASE_MANIFEST-0.1.5.md`, `RELEASE_MANIFEST-0.1.4.md`, and `RELEASE_MANIFEST-0.1.3.md` for inherited scope)
-2. `RELEASE_DECISIONS-0.1.5.md` for D-012, `RELEASE_DECISIONS-0.1.3.md` for D-018, `RELEASE_DECISIONS-0.1.2.md` for D-017, plus `RELEASE_DECISIONS-0.1.0.md` for inherited decisions. v0.1.6 adds no decision ledger.
+1. `RELEASE_MANIFEST-0.2.0.md` (then `RELEASE_MANIFEST-0.1.6.md`, `RELEASE_MANIFEST-0.1.5.md`, `RELEASE_MANIFEST-0.1.4.md`, and `RELEASE_MANIFEST-0.1.3.md` for inherited scope)
+2. `RELEASE_DECISIONS-0.2.0.md` for D-011, `RELEASE_DECISIONS-0.1.5.md` for D-012, `RELEASE_DECISIONS-0.1.3.md` for D-018, `RELEASE_DECISIONS-0.1.2.md` for D-017, plus `RELEASE_DECISIONS-0.1.0.md` for inherited decisions.
 3. `STATUS.md`
 4. `PRODUCT.md`
 5. `GLOSSARY.md`
@@ -28,7 +28,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 
 ## 2. Current lifecycle
 
-- Released implementation contract: `0.1.6`
+- Released implementation contract: `0.2.0`
 - Current implementation stage: `SPEC-017`
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
@@ -92,7 +92,7 @@ Do not create provider credential files or real-data fixtures.
 
 Three version identities must not be conflated:
 
-1. **Specification stack version** — currently `0.1.6`.
+1. **Specification stack version** — currently `0.2.0`.
 2. **Application version** — chosen/maintained in `SUAS`; must identify which released spec it conforms to.
 3. **Runtime artifact/schema versions** — API `/api/v0`, event schema, DB migration/schema version, QuestionnaireVersion, signal version, templates, etc.
 
@@ -132,7 +132,7 @@ Do not implement or imply:
 - generative primary Support Signal or other safety-critical generative decisions;
 - HIPAA or other compliance claims without released evidence;
 - crisis copy or destinations other than the D-012 approved set in `SAFETY_COPY.md` (911 / 988); interface language implying a stronger intervention than recorded facts prove;
-- production signal scoring while D-011 is unavailable;
+- production Support Signal compute; D-011 released `qv-001` + `sv-001` as implementation-authoritative scoring, and TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. G-I-28 remains open: do not open or update a Support Case from a settled signal until that command is released;
 - sensitive aggregate reporting while its privacy policy is unavailable;
 - whole-case/provider payload disclosure when minimum projection is sufficient.
 

@@ -1,6 +1,6 @@
 # COMPLIANCE.md — Compliance register (SUAS v0.1)
 
-**Related:** [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [DECISIONS.md](DECISIONS.md), [CONSENT.md](CONSENT.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [SAFETY.md](SAFETY.md), [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md), [SETTLEMENT.md](SETTLEMENT.md), [PILOT.md](PILOT.md), [ONBOARDING.md](ONBOARDING.md), [RIDES.md](RIDES.md), [ISLANDS.md](ISLANDS.md)
+**Related:** [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [DECISIONS.md](DECISIONS.md), [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md), [CONSENT.md](CONSENT.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [SAFETY.md](SAFETY.md), [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md), [SETTLEMENT.md](SETTLEMENT.md), [PILOT.md](PILOT.md), [ONBOARDING.md](ONBOARDING.md), [RIDES.md](RIDES.md), [ISLANDS.md](ISLANDS.md)
 
 **Status:** `draft` / `0.1.0`. This file is a **register**, not a certification.
 
@@ -28,6 +28,8 @@ HIPAA_APPLICABILITY = DECISION_PENDING
 ```
 
 See [SECURITY.md](SECURITY.md) and [DECISIONS.md](DECISIONS.md) **D-006**. Whether SUAS or a partner is a covered entity (CE) or business associate (BA) is **not decided**. Do not claim HIPAA applies. Do not claim HIPAA does not apply. Do not invent a BA agreement as if the classification were closed.
+
+Counsel facts for classification are in [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md). That file is a register packet, not a legal opinion. It does not close D-006 and does not change `HIPAA_APPLICABILITY`.
 
 ---
 
@@ -157,4 +159,4 @@ Pilot readiness remains `NOT_READY` until the gates in [STATUS.md](STATUS.md) pa
 
 ## 12. Links
 
-[SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [DECISIONS.md](DECISIONS.md), [CONSENT.md](CONSENT.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [SAFETY.md](SAFETY.md), [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md), [SETTLEMENT.md](SETTLEMENT.md), [PILOT.md](PILOT.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [DEPLOYMENT.md](DEPLOYMENT.md)
+[SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [DECISIONS.md](DECISIONS.md), [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md), [CONSENT.md](CONSENT.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [SAFETY.md](SAFETY.md), [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md), [SETTLEMENT.md](SETTLEMENT.md), [PILOT.md](PILOT.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [DEPLOYMENT.md](DEPLOYMENT.md)

@@ -4,6 +4,15 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive D-006 counsel packet — 2026-08-26 PT
+
+**Additive counsel register packet. Not a version bump. Does not close D-006. Does not advance SPEC-017 / SPEC-018 / readiness gates.**
+
+- Added [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) so counsel has one packet of product facts for CE / BA / neither classification. `HIPAA_APPLICABILITY` remains `DECISION_PENDING`. The file is not legal advice and is not a HIPAA authorization, BAA, Notice of Privacy Practices, or certificate.
+- Linked the packet from [COMPLIANCE.md](COMPLIANCE.md) §2, [SECURITY.md](SECURITY.md) §1, and the D-006 row in [DECISIONS.md](DECISIONS.md).
+
+---
+
 ## 0.3.0 — pending owner merge — D-033 native mobile client surface
 
 **Implementation-authoritative; not production-operating approval.**

@@ -1,6 +1,6 @@
 # SECURITY.md — Security controls and threats (SUAS v0.1)
 
-**Related:** [AUTH.md](AUTH.md), [PRIVACY.md](PRIVACY.md), [COMPLIANCE.md](COMPLIANCE.md), [ADMIN.md](ADMIN.md), [EVENT_MODEL.md](EVENT_MODEL.md), [DEPLOYMENT.md](DEPLOYMENT.md), [PRODUCT.md](PRODUCT.md), [ONBOARDING.md](ONBOARDING.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [RESILIENCE.md](RESILIENCE.md)
+**Related:** [AUTH.md](AUTH.md), [PRIVACY.md](PRIVACY.md), [COMPLIANCE.md](COMPLIANCE.md), [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md), [ADMIN.md](ADMIN.md), [EVENT_MODEL.md](EVENT_MODEL.md), [DEPLOYMENT.md](DEPLOYMENT.md), [PRODUCT.md](PRODUCT.md), [ONBOARDING.md](ONBOARDING.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [RESILIENCE.md](RESILIENCE.md)
 
 ---
 
@@ -14,7 +14,7 @@ HIPAA_APPLICABILITY = DECISION_PENDING
 
 D-006 remains open. Implementation must not display "HIPAA compliant" or similar.
 
-The regime register is [COMPLIANCE.md](COMPLIANCE.md). That file does not make SUAS HIPAA-compliant or anything-compliant.
+The regime register is [COMPLIANCE.md](COMPLIANCE.md). That file does not make SUAS HIPAA-compliant or anything-compliant. Counsel facts for D-006 are in [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md). That packet does not close D-006 and does not change `HIPAA_APPLICABILITY`.
 
 ---
 

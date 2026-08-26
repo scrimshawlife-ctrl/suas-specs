@@ -43,7 +43,7 @@ A case may be requested when:
 
 MVP operating default remains one non-closed coordination Case per Veteran (`INFERRED`; later multi-case policy requires a spec change).
 
-The Case carries a nullable `priority_signal_level` (0.1.4) tracking the effective Support Signal level as a queue-filter fact only ([DATA_MODEL.md](DATA_MODEL.md) §6); the command that writes it from a signal change remains an owner decision (G-I-28).
+The Case carries a nullable `priority_signal_level` (0.1.4) tracking the effective Support Signal level as a queue-filter fact only ([DATA_MODEL.md](DATA_MODEL.md) §6). `APPLY_EFFECTIVE_SIGNAL` is the command that writes it from a settled signal, transcribed from [SAFETY.md](SAFETY.md) §3.2: an effective `RED` opens or updates the non-closed Case; non-RED writes nothing; a `CLOSED` Case is not reopened (see [SIGNAL_SCORING.md](SIGNAL_SCORING.md) G-I-28).
 
 ### 3.1 Atomic creation invariant
 

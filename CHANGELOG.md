@@ -4,6 +4,21 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.2.0 leftover-header stamp — 2026-08-24 PT
+
+**Editorial stamp only. Not a version bump. Closes no D-0xx. Does not advance readiness gates.**
+
+- Removed the pre-merge re-pin hold in [STATUS.md](STATUS.md). Owner-merged `0.2.0` / `4a722e69` is the implementation pin.
+- Stamped [TESTING.md](TESTING.md) lifecycle to `0.2.0`. D-012 points at released [SAFETY_COPY.md](SAFETY_COPY.md); no new TEST mode.
+- Stamped [ENVIRONMENT.md](ENVIRONMENT.md) header to `0.2.0`. Left `SUAS_SUPPORT_SIGNAL_MODE` as `disabled|fixture`.
+- Pointed [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md) authority at `0.2.0` / [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Removed the inline `draft` / `0.1.0` leftover.
+- Recorded unanswered G-I-28 QUESTIONS in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). Not a close.
+- Stamped start-here files to `0.2.0`: [HANDOFF.md](HANDOFF.md), [AGENTS.md](AGENTS.md), [README.md](README.md). This removes the conflict where STATUS told implementers to pin `0.2.0` while those guides still named `0.1.6` / `0.1.3`.
+- Transcribed G-I-28 from [SAFETY.md](SAFETY.md) §3.2 as `APPLY_EFFECTIVE_SIGNAL` (RED opens/updates; non-RED is a no-op; CLOSED is not REOPEN). Not a D-0xx. Not a version bump. Not a readiness-gate advance.
+- Recorded that [ADMIN.md](ADMIN.md) §3 remains the admin path for enabling and disabling **accepted catalog adapters** by tenant/coverage. Manual adapters stay first-class. Food/peer API adapters stay unaccepted until D-019/D-020. Credentials never appear on that surface. Implementation of that path is not a spec bump.
+
+---
+
 ## 0.2.0 — 2026-08-23 PT — D-011 Support Signal scoring
 
 **Implementation-authoritative; not production-operating approval.**
@@ -11,13 +26,13 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 - Closed D-011 through [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md).
 - Released [SIGNAL_SCORING.md](SIGNAL_SCORING.md): original questionnaire `qv-001`, deterministic rules `sv-001`, conservative incomplete-input behavior, minimized basis, and golden vectors.
 - Preserved `/api/v0`, event schema `0.1.0`, canonical state machines, and all readiness gates as `NOT_READY`.
-- Left G-I-28 signal-driven Support Case action semantics unresolved.
+- Left G-I-28 signal-driven Support Case action semantics unresolved at release; later transcribed from [SAFETY.md](SAFETY.md) §3.2 in the leftover-header stamp (not a version bump).
 
 ---
 
 ## Unreleased — draft Rev 3 fence-post contracts (not a version bump)
 
-**Draft / not implementation authority.** Released `0.1.6` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.
+**Draft / not implementation authority.** Released `0.2.0` remains the implementation contract. These additions do not bump the stack and do not mark any artifact `accepted` or `released`.
 
 - Added [FENCE_POSTS.md](FENCE_POSTS.md) — Rev 3 fence-post outcomes `G1`–`G14` as draft, testable contracts.
 - Added [SURFACES.md](SURFACES.md) — anonymous public front door vs identified opt-in platform; crossing remains an affirmative act and declining costs nothing.

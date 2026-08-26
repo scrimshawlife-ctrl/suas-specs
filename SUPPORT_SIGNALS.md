@@ -1,7 +1,7 @@
-# SUPPORT_SIGNALS.md — Deterministic coordination signals (SUAS v0.1)
+# SUPPORT_SIGNALS.md — Deterministic coordination signals (SUAS v0.2.0)
 
-**Status:** `draft` / `0.1.0` / SPEC-003 preflight; not implementation authority.  
-**Authority:** released via [RELEASE_MANIFEST-0.1.6.md](RELEASE_MANIFEST-0.1.6.md). The inline `draft` marker is stale and is not authority ([VERSIONING.md](VERSIONING.md) §1).  
+**Status:** `released`  
+**Authority:** [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md). Deterministic scoring for `qv-001` + `sv-001` is in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). This file does not redefine those published identities.  
 **Related:** [CHECKINS.md](CHECKINS.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md), [SAFETY.md](SAFETY.md), [CASES.md](CASES.md), [CONSENT.md](CONSENT.md), [EVENT_MODEL.md](EVENT_MODEL.md), [TESTING.md](TESTING.md), [DECISIONS.md](DECISIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
 
 **Actors:** System (compute), Veteran (source of Check-In), Responder (may override with reason), SUAS System Administrator (publishes `signal_version`).

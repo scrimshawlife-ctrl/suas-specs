@@ -1,9 +1,9 @@
 # AGENTS.md — Required rules for agents and implementers
 
-**Released stack:** `0.1.3`
+**Released stack:** `0.2.0`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
 **Current stage:** `SPEC-017`
-**Start here:** [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.1.3.md](RELEASE_MANIFEST-0.1.3.md)
+**Start here:** [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
 
 This file binds human and automated agents working on SUAS specifications or implementation.
 
@@ -37,9 +37,9 @@ This file binds human and automated agents working on SUAS specifications or imp
 
 ## Current release boundary
 
-v0.1.3 authorizes implementation, including D-017 Uber transportation and D-018 Amadeus shelter search/inventory adapters, not production operation. `ManualShelterAdapter` remains mandatory; raw-card handling is prohibited; shelter reservation remains payment-architecture-blocked absent a documented card-free enterprise contract. Pilot and production readiness remain `NOT_READY`.
+v0.2.0 authorizes implementation of the released D-011 scoring contract (`qv-001` + `sv-001`) plus inherited D-017 Uber transportation and D-018 Amadeus shelter search/inventory adapters. It does not authorize production operation. TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. APPLY_EFFECTIVE_SIGNAL transcribes SAFETY.md §3.2 (RED opens/updates a case; non-RED is a no-op; CLOSED is not REOPEN). Real provider adapters remain out of this packet. `ManualShelterAdapter` remains mandatory; raw-card handling is prohibited; shelter reservation remains payment-architecture-blocked absent a documented card-free enterprise contract. Pilot and production readiness remain `NOT_READY`.
 
-Still unavailable for production include real infrastructure/provider effects, production Support Signal scoring, official safety copy, real veteran data/live pilot operation, production workload/SLO/RTO/RPO claims, and sensitive aggregate reporting unless superseded by a later released decision/evidence set.
+Still unavailable for production include real infrastructure/provider effects, production Support Signal compute, real veteran data/live pilot operation, production workload/SLO/RTO/RPO claims, and sensitive aggregate reporting unless superseded by a later released decision/evidence set. D-012 approved crisis copy is released and gated by `SUAS_SAFETY_COPY_MODE`; TEST/CI stay on `placeholder_test_only`.
 
 ## Epistemic discipline
 

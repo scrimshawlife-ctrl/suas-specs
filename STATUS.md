@@ -40,4 +40,4 @@ D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-0
 
 ## Next stage
 
-Proceed with SPEC-017 implementation conformance against release `0.2.0`, using [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs. Do not re-pin the implementation repository until this manifest is owner-merged.
+Proceed with SPEC-017 implementation conformance against owner-merged release `0.2.0` ([RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md), commit `4a722e69`). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs. This stamp adds no D-0xx work.

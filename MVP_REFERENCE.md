@@ -1,6 +1,6 @@
 # MVP_REFERENCE.md — Visual and interaction reference contract (SUAS v0.1)
 
-**Status:** `draft` / `0.1.0`; SPEC-008 dependency-blocked.  
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md). The former inline `draft` / `0.1.0` marker was stale; the manifest governs ([VERSIONING.md](VERSIONING.md) §1).  
 **Reference MVP:** `https://suasqrf.org/app/` (current public reference surface; public crawl also resolves the deployed MVP content through its current host).  
 **Reference observation date:** 2026-08-18 PT.  
 **Related:** [PRODUCT.md](PRODUCT.md), [ONBOARDING.md](ONBOARDING.md), [RESPONDER_WORKFLOWS.md](RESPONDER_WORKFLOWS.md), [RESOURCES.md](RESOURCES.md), [AUTH.md](AUTH.md), [SAFETY.md](SAFETY.md), [CONSENT.md](CONSENT.md), [PRIVACY.md](PRIVACY.md), [TESTING.md](TESTING.md), [STATUS.md](STATUS.md)
@@ -239,6 +239,8 @@ Each fixture records:
 - reference source/revision/observation date;
 - conformance class;
 - approved divergence references.
+
+A released client surface that is not a browser extends this contract with its own device class and reuses the surface list above; it does not create a second required-surface inventory ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §7).
 
 Review detects hierarchy drift, missing actions, excessive navigation depth/density, broken responsive behavior, misleading states, and unauthorized redesign. Pixel equality is not required.
 

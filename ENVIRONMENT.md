@@ -1,8 +1,8 @@
-# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.2.0)
+# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.3.0)
 
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
 **Authority:** implementation configuration contract
-**Related:** [DEPLOYMENT.md](DEPLOYMENT.md), [SECURITY.md](SECURITY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [RESILIENCE.md](RESILIENCE.md), [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md)
+**Related:** [DEPLOYMENT.md](DEPLOYMENT.md), [SECURITY.md](SECURITY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [RESILIENCE.md](RESILIENCE.md), [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md), [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md)
 
 ## 1. Purpose
 
@@ -69,6 +69,18 @@ Until provider decisions close:
 - `SUAS_SMS_MODE` = `disabled|fake|sink`
 
 Production notification external modes are not valid in v0.2.0.
+
+No push-channel mode exists. `PUSH` is `FUTURE` ([NOTIFICATIONS.md](NOTIFICATIONS.md) §2) and §4 forbids configuration from enabling it, so a push mode variable must not be introduced before a released decision closes that channel.
+
+### Client builds
+
+A released client surface that ships as an installed application is a build under this contract ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §8). Such a build must carry an equivalent validated configuration object providing:
+
+- environment class, stated explicitly and never inferred from the configured API base URL, a debug/release build configuration, or a distribution channel;
+- the expected released stack version and release manifest identifier, refusing to run on mismatch;
+- the API base URL and the tenant scope the build is pinned to, until tenant selection before authentication is decided.
+
+Startup fails closed under §5. A client build exposes build provenance under §8. A build distributed for shared testing is `STAGING` at most under §2 and carries no real veteran data and no real external effects. Client bundles are client-visible and therefore never carry secrets or provider credentials (§6, [SECURITY.md](SECURITY.md) §4).
 
 ### Fulfillment adapters
 

@@ -1,6 +1,6 @@
-# TESTING.md — Test suites and production-readiness gates (SUAS v0.2.0)
+# TESTING.md — Test suites and production-readiness gates (SUAS v0.3.0)
 
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
 **Related:** [STATUS.md](STATUS.md), [API.md](API.md), [AUTH.md](AUTH.md), [MVP_REFERENCE.md](MVP_REFERENCE.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md), [CASES.md](CASES.md), [DISPATCH.md](DISPATCH.md), [SETTLEMENT.md](SETTLEMENT.md), [FOLLOWUP.md](FOLLOWUP.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [CONSENT.md](CONSENT.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [SECURITY.md](SECURITY.md)
 
 ---
@@ -193,6 +193,8 @@ Required assertions:
 - accessibility target: WCAG 2.2 AA, keyboard/focus/reflow/touch/semantic naming/non-color-only signals.
 
 Visual review detects hierarchy/navigation/density/responsive/product drift; pixel equality not required.
+
+A native mobile client runs this suite under its own device class ([MVP_REFERENCE.md](MVP_REFERENCE.md) §11) and additionally demonstrates the conditions in [MOBILE_SURFACE.md](MOBILE_SURFACE.md) §11, including absent forbidden platform clients, crisis fallback without a successful network read, no emergency destination invoked without an explicit person-initiated action, fail-closed startup on environment/spec/manifest mismatch, and accessibility evidence mapping platform mechanisms to WCAG 2.2 AA criteria. These extend this suite and §8; they add no readiness-gate condition.
 
 ---
 

@@ -1,8 +1,8 @@
 # ROADMAP.md — Specification-driven path to production
 
-**Stack:** `0.1.3` / `released`
+**Stack:** `0.3.0` / `released`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`  
-**Release manifest:** [RELEASE_MANIFEST-0.1.3.md](RELEASE_MANIFEST-0.1.3.md)
+**Release manifest:** [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
 
 The owner completed the specification acceptance chain on 2026-08-18 PT.
 
@@ -29,13 +29,13 @@ The owner completed the specification acceptance chain on 2026-08-18 PT.
 
 ## Current stage — SPEC-017
 
-**Status:** `READY_TO_BEGIN`
+**Status:** `ACTIVE`
 
-Objective: implement `scrimshawlife-ctrl/SUAS` against release `0.1.3` and continuously compare the implementation with the released contracts.
+Objective: implement `scrimshawlife-ctrl/SUAS` against the current released manifest and continuously compare the implementation with the released contracts. The pinned release is `0.3.0`; see [STATUS.md](STATUS.md).
 
 Rules:
 
-1. Implementation PRs cite released artifact/section/version and the v0.1.3 release manifest.
+1. Implementation PRs cite released artifact/section/version and the current release manifest.
 2. Gaps return to `SUAS-specs`; code does not redefine canon.
 3. Production-unavailable surfaces in the release manifest remain unavailable in implementation except for explicit fake/sink/manual/test scaffolding.
 4. Conformance evidence covers domain states, auth, consent, provider neutrality, MVP visuals, idempotency, durability, scale/resilience semantics, and tests.
@@ -76,3 +76,5 @@ SPEC-001 ... SPEC-015  ACCEPTED
 ```
 
 Release authorizes implementation. It does not equal readiness or launch approval.
+
+SPEC-0xx numbers are stage records in this chain. A released contract addition inside the current stage — a new domain artifact, a decision closure, or a client surface such as D-033 — is versioned through the release manifest and does not consume a stage number.

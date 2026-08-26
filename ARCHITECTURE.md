@@ -2,7 +2,7 @@
 
 **Related:** [PRODUCT.md](PRODUCT.md), [MVP_REFERENCE.md](MVP_REFERENCE.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [DATA_MODEL.md](DATA_MODEL.md), [EVENT_MODEL.md](EVENT_MODEL.md), [API.md](API.md), [APIS.md](APIS.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md), [DEPLOYMENT.md](DEPLOYMENT.md), [SAFETY.md](SAFETY.md), [SETTLEMENT.md](SETTLEMENT.md)
 
-**Status:** `draft` / `0.1.0`. SPEC-006 remains dependency-blocked; this is preflight reconciliation, not owner acceptance. Unsettled cloud/queue/cache/provider choices remain `DECISION_PENDING`.
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md). The former inline `draft` / `0.1.0` marker was stale; the manifest governs ([VERSIONING.md](VERSIONING.md) §1). Unsettled cloud/queue/cache/provider choices remain `DECISION_PENDING`.
 
 ---
 
@@ -70,8 +70,11 @@ The referenced MVP remains the visual/interaction authority subject to [MVP_REFE
 | Veteran PWA | Veteran | Check-In, consent, support requests/status, trusted circle, fulfillment confirmation |
 | Responder console | Responder / Org Admin | Coordination/QRF console, not an EHR |
 | Admin console | SUAS Admin / scoped Org Admin | Governance and operations |
+| Native mobile client | Veteran (Responder/Admin conditionally) | Installed client of the identified opt-in platform; consumes `/api/v0` as an ordinary authenticated client and holds no provider credential ([MOBILE_SURFACE.md](MOBILE_SURFACE.md), D-033) |
 
 All production clients conform to [MVP_REFERENCE.md](MVP_REFERENCE.md).
+
+A client is a consumer of the released product API. Adding one does not add a domain concept, state, event, capability, or API selector, and does not change this architecture.
 
 ---
 

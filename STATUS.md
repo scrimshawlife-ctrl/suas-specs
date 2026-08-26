@@ -1,18 +1,26 @@
-# STATUS.md — SUAS specification status (v0.2.0)
+# STATUS.md — SUAS specification status (v0.3.0)
 
 **Specification lifecycle:** `released`
 **Phase:** `IMPLEMENTATION_AUTHORIZED`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
-**Release manifest:** [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md)
-**Decision ledger:** [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md) for D-011; inherited ledgers govern other decided and deferred entries.
+**Release manifest:** [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
+**Decision ledger:** [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md) for D-033 and D-034; inherited ledgers govern other decided and deferred entries.
 **Pilot readiness:** `NOT_READY`
 **Production readiness:** `NOT_READY`
 
 ## Governance frontier
 
-SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.2.0 supersedes v0.1.6 and closes D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, and all readiness boundaries. SPEC-017 implementation conformance is active. SPEC-018 remains the go/no-go stage for any real pilot or production operation.
+SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.3.0 supersedes v0.2.0 and closes D-033 by releasing the native mobile client surface while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, notification channel availability, and all readiness boundaries. v0.2.0 (inherited) closed D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors. SPEC-017 implementation conformance is active. SPEC-018 remains the go/no-go stage for any real pilot or production operation.
 
 ## Current release additions
+
+- [MOBILE_SURFACE.md](MOBILE_SURFACE.md) releases the native mobile client contract and closes D-033. The surface is `ENABLED` for implementation and not for production operation.
+- D-034 (on-device protection of locally retained veteran data) is opened, not closed.
+- Device push remains `FUTURE`; this release adds no push configuration and assigns no decision to that channel.
+- [ARCHITECTURE.md](ARCHITECTURE.md) §4 gains a fourth client row; [MVP_REFERENCE.md](MVP_REFERENCE.md) §11 and [TESTING.md](TESTING.md) §7 extend by device class; [ENVIRONMENT.md](ENVIRONMENT.md) §3 gains a client-build subsection.
+- Stale inline `draft` headers on [ARCHITECTURE.md](ARCHITECTURE.md) and [MVP_REFERENCE.md](MVP_REFERENCE.md), and the stale `0.1.3` stack header and SPEC-017 status in [ROADMAP.md](ROADMAP.md), are corrected; the manifest governs ([VERSIONING.md](VERSIONING.md) §1).
+
+Inherited from v0.2.0:
 
 - [SIGNAL_SCORING.md](SIGNAL_SCORING.md) releases `qv-001` + `sv-001` and closes D-011.
 - Deterministic incomplete-input behavior and golden vectors are implementation-authoritative.
@@ -24,7 +32,7 @@ Inherited from v0.1.5: [SAFETY_COPY.md](SAFETY_COPY.md) and the D-012 copy/desti
 
 ## Release meaning
 
-v0.2.0 authorizes implementation of the released D-011 scoring contract in `scrimshawlife-ctrl/SUAS`. It does not authorize production deployment, real veteran data, live pilot operation, payment-card handling, real external provider bookings/reservations, compliance claims, production SLO/RTO/RPO claims, or sensitive aggregate reporting.
+v0.3.0 authorizes implementation of the released native mobile client surface in `scrimshawlife-ctrl/SUAS`, alongside the inherited D-011 scoring contract. It does not authorize production deployment, real veteran data, live pilot operation, application-store distribution, device push, payment-card handling, real external provider bookings/reservations, compliance claims, production SLO/RTO/RPO claims, or sensitive aggregate reporting.
 
 ## Readiness gates
 
@@ -36,8 +44,10 @@ A gate changes only with reproducible evidence under [TESTING.md](TESTING.md).
 
 ## Decision boundary
 
-D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md). D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md). D-015 and D-016 remain the v0.1 defaults decided in [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md). D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-019–D-025 remain open unless later releases supersede them.
+D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md). D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md). D-015 and D-016 remain the v0.1 defaults decided in [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md). D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-033 is closed by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), which opens D-034. D-019–D-025 and D-026–D-032 remain open unless later releases supersede them.
 
 ## Next stage
 
-Proceed with SPEC-017 implementation conformance against owner-merged release `0.2.0` ([RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md), commit `4a722e69`). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs. This stamp adds no D-0xx work.
+Proceed with SPEC-017 implementation conformance against owner-merged release `0.3.0` ([RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack and re-pin `SUAS_SPEC_VERSION` / `SUAS_RELEASE_MANIFEST` accordingly; a stale pin fails closed. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs, and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) before any client-surface work.
+
+Native client implementation is authorized by this release and remains subject to SPEC-018 for any real operation or distribution. Nothing in this release advances a readiness gate or reduces the SPEC-018 residual set.

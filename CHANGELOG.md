@@ -4,6 +4,21 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.3.0 — pending owner merge — D-033 native mobile client surface
+
+**Implementation-authoritative; not production-operating approval.**
+
+- Closed D-033 through [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md) and released [MOBILE_SURFACE.md](MOBILE_SURFACE.md): the contract for a native mobile client of the identified opt-in platform, classified `ENABLED` for implementation and not for production operation.
+- Opened D-034: on-device protection of locally retained veteran data, including the stored session credential. [SECURITY.md](SECURITY.md) §2 covers database and backups only. Until D-034 closes, a client persists no veteran domain data locally.
+- Added a fourth client row to [ARCHITECTURE.md](ARCHITECTURE.md) §4 and recorded that adding a client adds no domain concept, state, event, capability, or API selector.
+- Extended the fixture contracts by device class rather than by inventory: [MVP_REFERENCE.md](MVP_REFERENCE.md) §11 and [TESTING.md](TESTING.md) §7. `UI_CONFORMANCE` conditions are unchanged.
+- Added a client-build subsection to [ENVIRONMENT.md](ENVIRONMENT.md) §3 (explicit environment class, spec/manifest pins, fail-closed startup, pinned tenant scope, no secrets in client bundles) and recorded that no push-mode variable may be introduced while `PUSH` is `FUTURE`.
+- Preserved `/api/v0`, event schema `0.1.0`, `qv-001` + `sv-001`, notification channel availability, canonical state machines, and all 12 readiness gates as `NOT_READY`. Added no configuration variable and opened no `UNAVAILABLE` or `FUTURE` surface.
+- Recorded that device push, application-store distribution, and any real-veteran use of a native client remain out of scope and SPEC-018-gated.
+- Editorial, in the same change set per [CONTRIBUTING.md](CONTRIBUTING.md) §4: stamped stale inline `draft` headers on [ARCHITECTURE.md](ARCHITECTURE.md) and [MVP_REFERENCE.md](MVP_REFERENCE.md); corrected the stale `0.1.3` stack header, `0.1.3` implementation target, and `READY_TO_BEGIN` SPEC-017 status in [ROADMAP.md](ROADMAP.md); recorded that a released contract addition inside the current stage does not consume a SPEC-0xx stage number.
+
+---
+
 ## 0.2.0 leftover-header stamp — 2026-08-24 PT
 
 **Editorial stamp only. Not a version bump. Closes no D-0xx. Does not advance readiness gates.**

@@ -1,15 +1,15 @@
-# HANDOFF.md — Implementation handoff guide (SUAS v0.2.0)
+# HANDOFF.md — Implementation handoff guide (SUAS v0.3.0)
 
 **Audience:** new implementation owner / Fable / engineering agents
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.2.0.md](RELEASE_MANIFEST-0.2.0.md) (D-011 over v0.1.6 Wave A, v0.1.5 D-012, v0.1.4 conformance, v0.1.3 D-018)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md) (D-033 over v0.2.0 D-011, v0.1.6 Wave A, v0.1.5 D-012, v0.1.4 conformance, v0.1.3 D-018)
 **Canonical implementation repo:** `scrimshawlife-ctrl/SUAS`
 
 ## 1. Start here
 
 Read in this order before changing implementation behavior:
 
-1. `RELEASE_MANIFEST-0.2.0.md` (then `RELEASE_MANIFEST-0.1.6.md`, `RELEASE_MANIFEST-0.1.5.md`, `RELEASE_MANIFEST-0.1.4.md`, and `RELEASE_MANIFEST-0.1.3.md` for inherited scope)
-2. `RELEASE_DECISIONS-0.2.0.md` for D-011, `RELEASE_DECISIONS-0.1.5.md` for D-012, `RELEASE_DECISIONS-0.1.3.md` for D-018, `RELEASE_DECISIONS-0.1.2.md` for D-017, plus `RELEASE_DECISIONS-0.1.0.md` for inherited decisions.
+1. `RELEASE_MANIFEST-0.3.0.md` (then `RELEASE_MANIFEST-0.2.0.md`, `RELEASE_MANIFEST-0.1.6.md`, `RELEASE_MANIFEST-0.1.5.md`, `RELEASE_MANIFEST-0.1.4.md`, and `RELEASE_MANIFEST-0.1.3.md` for inherited scope)
+2. `RELEASE_DECISIONS-0.3.0.md` for D-033/D-034, `RELEASE_DECISIONS-0.2.0.md` for D-011, `RELEASE_DECISIONS-0.1.5.md` for D-012, `RELEASE_DECISIONS-0.1.3.md` for D-018, `RELEASE_DECISIONS-0.1.2.md` for D-017, plus `RELEASE_DECISIONS-0.1.0.md` for inherited decisions.
 3. `STATUS.md`
 4. `PRODUCT.md`
 5. `GLOSSARY.md`
@@ -28,7 +28,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 
 ## 2. Current lifecycle
 
-- Released implementation contract: `0.2.0`
+- Released implementation contract: `0.3.0`
 - Current implementation stage: `SPEC-017`
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
@@ -122,6 +122,8 @@ Preserve:
 - mobile-first low cognitive load.
 
 Required divergences remain those in `MVP_REFERENCE.md`: truthful availability, no unsupported proximity guarantee, no hidden future workflows, no unapproved safety copy, and production auth requirements.
+
+These obligations attach to the surface, not to the rendering technology. A native mobile client carries them unchanged and adds the client-specific rules in `MOBILE_SURFACE.md`: no device push, no social login, no contact-list or continuous-location access, no provider credential on the device, an explicit environment class with fail-closed startup, and a crisis surface that still presents `988` and the Veterans Crisis Line when the server-owned read fails.
 
 ## 9. Safety and privacy hard stops
 

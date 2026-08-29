@@ -1,0 +1,11 @@
+skill: accessibility-audit
+scenario: automated pass cannot settle required human review
+given:
+  automated_result: PASS
+  human_review_required: true
+  human_review_completed: false
+expect:
+  verdict: NOT_COMPUTABLE
+  missing_contains: human_review
+must_not:
+  - verdict_PASS

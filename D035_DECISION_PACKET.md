@@ -1,6 +1,6 @@
 # D035_DECISION_PACKET.md — Owner settlement packet for Veteran verification
 
-**Status:** proposed  
+**Status:** global decision pending; v0.4.0 limited sandbox evidence authority released
 **Decision:** D-035  
 **Primary contract:** [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md)  
 **Protocol:** [D035_PROTOCOL.md](D035_PROTOCOL.md)  
@@ -95,7 +95,7 @@ B8 support-access invariant: ACCEPT
   verification failure/cancellation/outage/non-confirmation must not independently block an explicit support request
 ```
 
-This owner direction does **not** by itself close D-035 or authorize production operation. It establishes the preferred implementation path for further specification and sandbox evidence.
+This owner direction does **not** close D-035 or authorize production operation. [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) now releases the bounded sandbox implementation authority required to generate the evidence for final review.
 
 `VaVeteranConfirmationAdapter` remains a secondary/alternate adapter family. It MUST NOT be used as an automatic fallback from OAuth. Activating it still requires an explicit deployment decision and an approved demographic projection.
 

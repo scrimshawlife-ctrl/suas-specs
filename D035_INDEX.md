@@ -1,7 +1,7 @@
 # D035_INDEX.md — Veteran verification spec index
 
 **Decision:** D-035  
-**Lifecycle:** proposed / not release-authoritative
+**Lifecycle:** global decision pending; limited sandbox evidence authority released by [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
 
 ## Canonical read order
 
@@ -12,19 +12,20 @@
 5. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) — cross-spec interpretation against onboarding/API/auth/consent/data/security/testing/environment/mobile/events/reporting.
 6. [D035_TEST_VECTORS.md](D035_TEST_VECTORS.md) — deterministic acceptance and negative vectors.
 7. [D035_DECISION_PACKET.md](D035_DECISION_PACKET.md) — owner questions and settlement form.
+8. [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) — released limited authority for evidence generation.
 
 ## Authority rule
 
-Until D-035 is explicitly settled and released:
+D-035 remains globally pending. The v0.4.0 qualifier authorizes only the evidence-generation subset in [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md).
 
 ```text
-D-016 is authoritative.
-VA verification is not required.
-Self-attestation remains sufficient for the released pilot.
+D-016 remains the authoritative fallback.
+VA verification is optional.
+Self-attestation remains sufficient.
 VA production operation is blocked.
 ```
 
-If older proposed D-035 text conflicts with the current [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md), [D035_PROTOCOL.md](D035_PROTOCOL.md), or provider-specific adapter contract, the later, more specific canonical rule applies for the D-035 proposal. Released specs remain authoritative until D-035 release.
+Proposed D-035 text is not broader authority than the released qualifier. A final settlement is required before D-035 can become `DECIDED`.
 
 ## Provider-selection rule
 
@@ -46,7 +47,7 @@ Service History/Eligibility status scope
 
 The initial adapter is an owner decision in [D035_DECISION_PACKET.md](D035_DECISION_PACKET.md).
 
-## Required implementation outputs after release
+## Required implementation outputs under the limited authority
 
 A coding agent must not begin by guessing provider details. It must produce, in order:
 

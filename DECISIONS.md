@@ -1,7 +1,7 @@
 # DECISIONS.md — SUAS decision register
 
-**Stack:** `0.3.0` / `released`
-**Release decision ledger:** [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md) for D-033 and D-034; inherited [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md) for D-011, [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md) for D-012, [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md) for D-018, [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md) for D-017, and [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md) otherwise.
+**Stack:** `0.4.0` / `released`
+**Release decision ledger:** [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md) grants limited D-035 sandbox-evidence authority; [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md) controls D-033/D-034; inherited ledgers govern earlier decisions.
 
 Global decisions remain open until explicitly decided. A release-specific `DEFERRED_FOR_RELEASE` boundary does not globally close the decision; it only makes the affected capability unavailable/manual/future for that release.
 
@@ -43,11 +43,11 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-032 | Volunteer-driver insurance and screening requirements | `DECISION_PENDING`; draft Rev 3 contract only |
 | D-033 | Native mobile client surface | `DECIDED` (v0.3.0; contract released in [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)); client surface only, `ENABLED` for implementation and not for production operation |
 | D-034 | On-device protection of locally retained veteran data, including the stored session credential | `DECISION_PENDING`; opened by v0.3.0. [SECURITY.md](SECURITY.md) §2 covers database/backups only |
-| D-035 | Optional VA-backed Veteran-status verification during onboarding | `DECISION_PENDING`; proposed contract in [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md), cross-spec reconciliation in [D035_ASSIMILATION.md](D035_ASSIMILATION.md). D-016 remains authoritative until explicit release settlement. |
+| D-035 | Optional VA-backed Veteran-status verification during onboarding | `DECISION_PENDING`; [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) grants `IMPLEMENTATION_EVIDENCE_AUTHORIZED` solely for the status-only VA sandbox path. D-016 remains the authoritative fallback until final evidence review and settlement. |
 
 D-006 remains `DECISION_PENDING`. [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) is a counsel register packet of product facts. It is not a legal opinion and does not close D-006 or set `HIPAA_APPLICABILITY`.
 
-D-035 is additive and currently `DECISION_PENDING`. The owner has requested VA-backed onboarding verification exploration, but no implementation default may supersede D-016 until a release settlement records the exact adapter/API family, minimum scopes, environment boundary, privacy/retention constraints, evidence references, and fallback rule. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) defines the proposed reconciliation with ONBOARDING, APIS, AUTH, CONSENT, DATA_MODEL, SECURITY, COMPLIANCE/PRIVACY, TESTING, ENVIRONMENT/DEPLOYMENT, MOBILE_SURFACE, EVENT_MODEL, reporting, and gate settlement; it is not release authority by itself.
+D-035 is additive and remains `DECISION_PENDING`. v0.4.0 grants the limited qualifier `IMPLEMENTATION_EVIDENCE_AUTHORIZED` in [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) solely to produce evidence; it does not supersede D-016, close D-035, or authorize production. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) remains proposed reconciliation, not final capability authority.
 
 D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-033 is closed by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), which also opens D-034; D-033 releases a client surface only and authorizes no production operation. D-026–D-032 are additive draft questions from Rev 3 fence-post work. They do not replace D-017–D-025 in the released ledger. D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), and D-019–D-025 remain open unless later released decisions close them.
 

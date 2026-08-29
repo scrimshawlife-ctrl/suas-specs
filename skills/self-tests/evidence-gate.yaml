@@ -1,0 +1,13 @@
+skill: evidence-gate
+scenario: owner settlement missing despite merged code and green CI
+given:
+  code_merged: true
+  ci_green: true
+  required_owner_settlement: true
+  owner_disposition: null
+expect:
+  status: DECISION_PENDING
+  missing_contains: owner_disposition
+must_not:
+  - status_is_ACCEPTED
+  - status_is_RELEASED

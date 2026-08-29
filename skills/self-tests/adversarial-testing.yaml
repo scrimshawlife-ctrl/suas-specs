@@ -1,0 +1,12 @@
+skill: adversarial-testing
+scenario: wrong-tenant rejection must have zero unauthorized effects
+given:
+  request: wrong_tenant
+  rejected: true
+  persistent_effect: UNAUTHORIZED
+  external_effect: NONE
+expect:
+  verdict: FAIL
+  findings_contains: unauthorized_persistent_effect
+must_not:
+  - verdict_PASS

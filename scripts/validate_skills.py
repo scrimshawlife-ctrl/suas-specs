@@ -21,8 +21,8 @@ REQUIRED_META = {
 }
 SHARED = [
     ROOT / "skills" / "FRAMEWORK.md",
-    ROOT / "skills" / "schemas" / "skill-result.schema.json",
-    ROOT / "skills" / "templates" / "skill-result.yaml",
+    ROOT / "skills" / "schemas" / "result-envelope.schema.json",
+    ROOT / "skills" / "templates" / "result-envelope.yaml",
     ROOT / "skills" / "README.md",
 ]
 

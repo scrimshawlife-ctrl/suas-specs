@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suas.local/skills/spec-result-envelope.schema.json",
+  "title": "SUAS Specification Skill Result Envelope",
+  "type": "object",
+  "required": ["skill", "execution_id", "executed_at_utc", "authority", "inputs_resolved", "result", "observed", "inferred", "evidence", "missing", "warnings"],
+  "properties": {
+    "skill": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "version": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "execution_id": {"type": "string", "minLength": 1},
+    "executed_at_utc": {"type": "string", "format": "date-time"},
+    "authority": {
+      "type": "object",
+      "required": ["repository", "release_or_manifest"],
+      "properties": {
+        "repository": {"type": "string", "minLength": 1},
+        "release_or_manifest": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "inputs_resolved": {"type": "boolean"},
+    "result": {"enum": ["PASS", "FAIL", "PARTIAL", "NOT_COMPUTABLE", "DECISION_PENDING"]},
+    "observed": {"type": "array", "items": {"type": "string"}},
+    "inferred": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "missing": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

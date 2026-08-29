@@ -1,0 +1,12 @@
+skill: recovery-test
+scenario: migration rehearsal cannot satisfy restore evidence
+given:
+  migration_rehearsal: true
+  actual_restore_executed: false
+  restore_required: true
+expect:
+  result: NOT_COMPUTABLE
+  missing_contains: actual_restore_evidence
+must_not:
+  - claim_restore_complete
+  - infer_RTO_RPO

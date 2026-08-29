@@ -1,12 +1,12 @@
-# Shut Up and Serve (SUAS) — Specification v0.3.0
+# Shut Up and Serve (SUAS) — Specification v0.4.0
 
 **Product:** Shut Up and Serve
 **System:** SUAS
-**Version:** `0.3.0`
+**Version:** `0.4.0`
 **Lifecycle:** `released`
 **Phase:** `IMPLEMENTATION_AUTHORIZED`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
-**Release manifest:** [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
+**Release manifest:** [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
 
 `SUAS-specs` is canonical. `scrimshawlife-ctrl/SUAS` implements released contracts and may not redefine them from code, prototype behavior, provider behavior, deployment state, or traction.
 
@@ -14,7 +14,7 @@ The weekend-build document **HACKATHON BUILD SPECIFICATION Rev 3 (2026-08-14)** 
 
 ## Start here for implementation / Fable handoff
 
-1. [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
+1. [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
 2. [HANDOFF.md](HANDOFF.md)
 3. [ENVIRONMENT.md](ENVIRONMENT.md)
 4. [STATUS.md](STATUS.md)
@@ -48,7 +48,7 @@ SUAS is not an EHR, diagnosis system, suicide-prediction product, automated emer
 - Production readiness: `NOT_READY`
 - All 12 readiness gates: `NOT_READY`
 
-v0.3.0 closes D-033 by releasing the native mobile client surface in [MOBILE_SURFACE.md](MOBILE_SURFACE.md) and opens D-034 (on-device data protection). It adds a client surface only: no domain concept, state, event, capability, or configuration variable. Device push remains `FUTURE`. It does not authorize production operation or application-store distribution. v0.2.0 (inherited) closes D-011 by releasing `qv-001` + `sv-001` in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. G-I-28 remains open. It does not authorize production operation. v0.1.6 (inherited) is a Wave A editorial hygiene patch over v0.1.5: it aligns D-015/D-016 domain wording with the already-decided v0.1 defaults, points SPEC-003 at the 0.1.4 effective-signal rule (including the two-override / chain case), and stamps leftover high-traffic `draft` headers as stale. It closes no D-0xx and invents no product behavior. v0.1.5 (inherited) is a D-012 safety/crisis copy decision patch: it approves the on-screen crisis copy and destinations (911 / 988) in [SAFETY_COPY.md](SAFETY_COPY.md) and the `REQUESTED ≠ ACCEPTED ≠ DISPATCHED ≠ ARRIVED ≠ RESOLVED` state-truthfulness contract; it approves copy only (no automated dispatch, no production-operating approval). v0.1.4 (inherited) is an implementation-conformance codification patch adopting accepted Bucket I gaps (P-1..P-23). v0.1.3 (inherited) is a D-018 shelter adapter decision patch: Amadeus may be implemented adapter-locally for commercial shelter search/inventory behind `TemporaryShelterPort`, `ManualShelterAdapter` remains mandatory, and production use remains blocked.
+v0.4.0 releases only the D-035 gate qualifier `IMPLEMENTATION_EVIDENCE_AUTHORIZED` for the status-only VA OAuth path in LOCAL fixture and VA SANDBOX, solely to produce final-review evidence. D-035 itself remains `DECISION_PENDING`; D-016 self-attestation remains available; production, broader VA data access, and `offline_access` remain blocked. See [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md). v0.3.0 closes D-033 by releasing the native mobile client surface in [MOBILE_SURFACE.md](MOBILE_SURFACE.md) and opens D-034 (on-device data protection). It adds a client surface only: no domain concept, state, event, capability, or configuration variable. Device push remains `FUTURE`. It does not authorize production operation or application-store distribution. v0.2.0 (inherited) closes D-011 by releasing `qv-001` + `sv-001` in [SIGNAL_SCORING.md](SIGNAL_SCORING.md). TEST/CI stay on `SUAS_SUPPORT_SIGNAL_MODE=fixture`. G-I-28 remains open. It does not authorize production operation. v0.1.6 (inherited) is a Wave A editorial hygiene patch over v0.1.5: it aligns D-015/D-016 domain wording with the already-decided v0.1 defaults, points SPEC-003 at the 0.1.4 effective-signal rule (including the two-override / chain case), and stamps leftover high-traffic `draft` headers as stale. It closes no D-0xx and invents no product behavior. v0.1.5 (inherited) is a D-012 safety/crisis copy decision patch: it approves the on-screen crisis copy and destinations (911 / 988) in [SAFETY_COPY.md](SAFETY_COPY.md) and the `REQUESTED ≠ ACCEPTED ≠ DISPATCHED ≠ ARRIVED ≠ RESOLVED` state-truthfulness contract; it approves copy only (no automated dispatch, no production-operating approval). v0.1.4 (inherited) is an implementation-conformance codification patch adopting accepted Bucket I gaps (P-1..P-23). v0.1.3 (inherited) is a D-018 shelter adapter decision patch: Amadeus may be implemented adapter-locally for commercial shelter search/inventory behind `TemporaryShelterPort`, `ManualShelterAdapter` remains mandatory, and production use remains blocked.
 
 ## Environment and configuration
 
@@ -87,7 +87,7 @@ Until later decisions/evidence close, do not make operational:
 
 - device push, application-store distribution, and any real-veteran use of a native client ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §5, §8).
 
-See [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md), [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), and [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md).
+See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md), [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), and [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md).
 
 ## Core index
 
@@ -98,6 +98,8 @@ See [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), [RELEASE_DECISIONS
 **Domain:** [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [CHECKINS.md](CHECKINS.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [TRUSTED_CIRCLE.md](TRUSTED_CIRCLE.md), [CASES.md](CASES.md), [DISPATCH.md](DISPATCH.md), [RESOURCES.md](RESOURCES.md), [REFERRALS.md](REFERRALS.md), [FULFILLMENT.md](FULFILLMENT.md), [FOLLOWUP.md](FOLLOWUP.md), [SETTLEMENT.md](SETTLEMENT.md), [RESPONDER_WORKFLOWS.md](RESPONDER_WORKFLOWS.md), [NOTIFICATIONS.md](NOTIFICATIONS.md).
 
 **Released Support Signal scoring:** [SIGNAL_SCORING.md](SIGNAL_SCORING.md) (`qv-001` + `sv-001`; D-011 decided by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md)).
+
+**D-035 limited sandbox-evidence authority:** [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) (gate qualifier only; D-035 remains `DECISION_PENDING`; no production authority).
 
 **Released client surfaces:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md) (native mobile client; D-033 decided by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)).
 

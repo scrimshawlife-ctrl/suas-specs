@@ -4,6 +4,16 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.4.0 — pending owner merge — D-035 sandbox evidence authority
+
+**Limited implementation evidence authority; D-035 remains DECISION_PENDING; not production-operating approval.**
+
+- Added [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md), releasing only the VA Service History and Eligibility status-only OAuth path in LOCAL fixture and VA SANDBOX to generate final D-035 evidence.
+- Preserved D-016 self-attestation as the required fallback and prohibited automatic API-key fallback, offline access, broader VA scopes, reporting use, production credentials, production mode, real Veteran data, and background re-verification.
+- Added [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md) and [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md). D-035 cannot become DECIDED until the listed privacy, security, accessibility, redirect, scope, redaction, and environment-isolation evidence is reviewed and explicitly accepted.
+
+---
+
 ## Additive D-006 counsel packet — 2026-08-26 PT
 
 **Additive counsel register packet. Not a version bump. Does not close D-006. Does not advance SPEC-017 / SPEC-018 / readiness gates.**

@@ -1,15 +1,15 @@
-# HANDOFF.md — Implementation handoff guide (SUAS v0.3.0)
+# HANDOFF.md — Implementation handoff guide (SUAS v0.4.0)
 
 **Audience:** new implementation owner / Fable / engineering agents
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md) (D-033 over v0.2.0 D-011, v0.1.6 Wave A, v0.1.5 D-012, v0.1.4 conformance, v0.1.3 D-018)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md) (limited D-035 sandbox evidence authority over v0.3.0 D-033 and inherited releases)
 **Canonical implementation repo:** `scrimshawlife-ctrl/SUAS`
 
 ## 1. Start here
 
 Read in this order before changing implementation behavior:
 
-1. `RELEASE_MANIFEST-0.3.0.md` (then `RELEASE_MANIFEST-0.2.0.md`, `RELEASE_MANIFEST-0.1.6.md`, `RELEASE_MANIFEST-0.1.5.md`, `RELEASE_MANIFEST-0.1.4.md`, and `RELEASE_MANIFEST-0.1.3.md` for inherited scope)
-2. `RELEASE_DECISIONS-0.3.0.md` for D-033/D-034, `RELEASE_DECISIONS-0.2.0.md` for D-011, `RELEASE_DECISIONS-0.1.5.md` for D-012, `RELEASE_DECISIONS-0.1.3.md` for D-018, `RELEASE_DECISIONS-0.1.2.md` for D-017, plus `RELEASE_DECISIONS-0.1.0.md` for inherited decisions.
+1. `RELEASE_MANIFEST-0.4.0.md` (then `RELEASE_MANIFEST-0.3.0.md`, `RELEASE_MANIFEST-0.2.0.md`, and inherited manifests for prior scope)
+2. `RELEASE_DECISIONS-0.4.0.md` and `D035_SANDBOX_EVIDENCE_AUTHORITY.md` for the D-035 qualifier, then earlier decision ledgers for inherited scope.
 3. `STATUS.md`
 4. `PRODUCT.md`
 5. `GLOSSARY.md`
@@ -28,7 +28,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 
 ## 2. Current lifecycle
 
-- Released implementation contract: `0.3.0`
+- Released implementation contract: `0.4.0`
 - Current implementation stage: `SPEC-017`
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
@@ -144,7 +144,11 @@ Implement capability ports and Manual/Fake adapters first. Uber is selected for 
 
 Never put provider SDK types/statuses in domain packages.
 
-## 11. Questions / ambiguity protocol
+## 11. D-035 limited evidence authority
+
+D-035 remains `DECISION_PENDING`. Implement only the limited LOCAL fixture and VA SANDBOX evidence path in [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md); preserve D-016 self-attestation and every stated prohibition. No evidence run is production authority.
+
+## 12. Questions / ambiguity protocol
 
 When Fable encounters an ambiguity:
 
@@ -153,7 +157,7 @@ When Fable encounters an ambiguity:
 3. if semantic, do not guess—open/update a spec issue or proposed patch in `SUAS-specs`;
 4. do not use prototype behavior or third-party API behavior as implicit canon.
 
-## 12. Handoff success criterion
+## 13. Handoff success criterion
 
 Fable can begin implementation without asking what product is being built, what is canonical, what environments exist, what can contact real systems, how versions are identified, which workflows are enabled, or what evidence constitutes conformance.
 

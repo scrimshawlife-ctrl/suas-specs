@@ -1,3 +1,15 @@
+---
+name: adversarial-testing
+version: 1.0.0
+kind: specification
+status: active
+authority: canonical-spec
+inputs: [security_contract, surface_inventory, roles, failure_expectations]
+outputs: [negative_test_contract]
+fail_closed: true
+self_test: skills/self-tests/adversarial-testing.yaml
+---
+
 # adversarial-testing
 
 ## Purpose
@@ -22,6 +34,9 @@ Use for auth, authorization, tenant isolation, replay/idempotency, provider fail
 7. Require ambiguous mutations to reconcile before risky retry.
 8. Record reproducible setup, evidence, and verdict for each case.
 
+## Invocation example
+`Define fail-closed coverage for the operator reporting surface, including cross-tenant and disabled-mode cases plus prohibited persistent/external effects.`
+
 ## Output schema
 ```yaml
 test_set_id: string
@@ -44,6 +59,9 @@ verdict: PASS|FAIL|NOT_COMPUTABLE
 - Do not treat absence of a known exploit as proof of isolation.
 - Do not omit persistent/external side-effect checks.
 - Do not use production data or unauthorized credentials.
+
+## Self-test
+Run `skills/self-tests/adversarial-testing.yaml`. The fixture must fail if a rejected wrong-tenant request creates any persistent or external business effect.
 
 ## Completion criteria
 Complete only when every applicable fail-closed boundary has explicit negative coverage or is marked NOT_COMPUTABLE with the missing prerequisite identified.

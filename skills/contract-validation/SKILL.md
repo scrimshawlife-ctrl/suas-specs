@@ -1,3 +1,15 @@
+---
+name: contract-validation
+version: 1.0.0
+kind: specification
+status: active
+authority: canonical-spec
+inputs: [release_manifest, contract_identities, invariants, golden_vectors, implementation_behavior]
+outputs: [contract_verdict]
+fail_closed: true
+self_test: skills/self-tests/contract-validation.yaml
+---
+
 # contract-validation
 
 ## Purpose
@@ -22,6 +34,9 @@ Use when validating scoring/questionnaire behavior, version pins, provenance/bas
 7. Verify disabled/unavailable modes are actually non-callable where required.
 8. Treat semantic ambiguity as a spec gap; do not invent a corrective rule.
 
+## Invocation example
+`Validate sv-001 against qv-001 and the released manifest; return every invariant as PASS, FAIL, or NOT_COMPUTABLE and identify the minimum fix.`
+
 ## Output schema
 ```yaml
 contract_id: string
@@ -42,6 +57,9 @@ minimum_fix_or_decision: [string]
 - Do not validate against draft/unreleased semantics as if they were authoritative.
 - Do not ignore version mismatches.
 - Do not patch semantic ambiguity in runtime.
+
+## Self-test
+Run `skills/self-tests/contract-validation.yaml`. The fixture must fail a provenance/basis mismatch and must not invent behavior for an unresolved semantic gap.
 
 ## Completion criteria
 Complete only when every relevant invariant is classified and the verdict is reproducible from cited contract identities and evidence.

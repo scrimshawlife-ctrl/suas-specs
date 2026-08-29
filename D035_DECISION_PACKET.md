@@ -72,101 +72,62 @@ Score each proposed adapter against:
 | Auditability | Can SUAS prove exactly what was requested and why? |
 | Scope containment | Can implementation prevent accidental expansion into service/benefit/health data? |
 
-## 5. Recommended settlement shape
+## 5. Owner direction recorded 2026-08-29
 
-A conservative initial settlement would be:
+The owner accepted the recommended initial direction for D-035 design work:
+
+```text
+B1 capability: ACCEPT
+B2 preferred adapter family: VA_SERVICE_HISTORY_ELIGIBILITY_STATUS_ONLY
+B3 fallback policy: SELF_ATTESTATION_REMAINS_AVAILABLE
+B4 initial environment authority: LOCAL_FIXTURE + VA_SANDBOX_ONLY
+B5 OAuth scope set:
+  openid
+  profile
+  veteran_status.read
+B6 re-verification policy:
+  ONE_TIME_ONBOARDING_ONLY
+  NO_BACKGROUND_REVERIFICATION
+  NO_OFFLINE_ACCESS
+B7 semantic invariant: ACCEPT
+  NOT_CONFIRMED != NOT_A_VETERAN
+B8 support-access invariant: ACCEPT
+  verification failure/cancellation/outage/non-confirmation must not independently block an explicit support request
+```
+
+This owner direction does **not** by itself close D-035 or authorize production operation. It establishes the preferred implementation path for further specification and sandbox evidence.
+
+`VaVeteranConfirmationAdapter` remains a secondary/alternate adapter family. It MUST NOT be used as an automatic fallback from OAuth. Activating it still requires an explicit deployment decision and an approved demographic projection.
+
+## 6. Recommended settlement shape
 
 ```text
 Capability: OPTIONAL_VA_VETERAN_STATUS_VERIFICATION
+Preferred adapter: VA_SERVICE_HISTORY_ELIGIBILITY_STATUS_ONLY
 Fallback: SELF_ATTESTATION remains available
-Production required: NO
-Initial environment: SANDBOX only
+Initial environment: LOCAL_FIXTURE + VA_SANDBOX_ONLY
+Production authority: BLOCKED
 Broader VA data: FORBIDDEN
 Reporting use: FORBIDDEN absent D-025 authority
 Service denial from verification result alone: FORBIDDEN
+Background re-verification: FORBIDDEN
+Offline access: FORBIDDEN
 ```
 
-The adapter family itself should be chosen only after the privacy owner compares the demographic projection required by Veteran Confirmation against the OAuth data flow required by Service History/Eligibility.
+## 7. Remaining owner/evidence questions before D-035 can close
 
-## 6. Owner questions
+The following remain unresolved and prevent release settlement:
 
-### B1 — Capability
+1. Exact VA application/client registration identifiers and environment separation.
+2. Exact redirect URI(s) for SANDBOX and later PRODUCTION.
+3. Privacy Owner attestation for the OAuth data flow and normalized persistence set.
+4. D-007-compatible retention posture for verification evidence and transient OAuth transaction material.
+5. Security evidence for state, PKCE, callback replay, issuer/audience/signature validation, token redaction, and cross-user binding.
+6. Accessibility review of redirect/cancel/error/fallback behavior.
+7. Sandbox evidence hashes proving exact scope containment and no broader VA data collection.
+8. Explicit release settlement recording that production remains separately blocked.
 
-Should optional VA-backed status verification be authorized at all?
-
-`ACCEPT | REJECT | DEFER`
-
-### B2 — Initial adapter family
-
-Choose one:
-
-```text
-VA_VETERAN_CONFIRMATION
-VA_SERVICE_HISTORY_ELIGIBILITY_STATUS_ONLY
-BOTH_WITH_DEPLOYMENT_POLICY
-DEFER_ADAPTER_SELECTION
-```
-
-### B3 — Fallback
-
-Recommended:
-
-```text
-SELF_ATTESTATION_REMAINS_AVAILABLE
-```
-
-Any choice to remove fallback is outside this D-035 proposal and requires a new decision.
-
-### B4 — Environment
-
-Recommended initial authority:
-
-```text
-LOCAL_FIXTURE + VA_SANDBOX_ONLY
-```
-
-Production requires a separate readiness settlement.
-
-### B5 — Data collection
-
-For `VA_VETERAN_CONFIRMATION`, approve an exact demographic projection only after privacy review.
-
-For OAuth, approve exact scope set:
-
-```text
-openid
-profile
-veteran_status.read
-```
-
-### B6 — Re-verification
-
-Recommended initial rule:
-
-```text
-ONE_TIME_ONBOARDING_ONLY
-NO_BACKGROUND_REVERIFICATION
-NO_OFFLINE_ACCESS
-```
-
-### B7 — User-visible semantics
-
-Approve the invariant:
-
-```text
-NOT_CONFIRMED != NOT_A_VETERAN
-```
-
-### B8 — Support-access rule
-
-Approve:
-
-```text
-VA verification failure, cancellation, outage, or non-confirmation
-MUST NOT independently block an explicit support request.
-```
-
-## 7. Release settlement form
+## 8. Release settlement form
 
 ```text
 Gate: D-035 Veteran Verification
@@ -174,35 +135,40 @@ Owner name and role:
 Decision: ACCEPT | REJECT | DEFER
 Date/time (UTC):
 
-B1 capability:
-B2 adapter family:
-B3 fallback policy:
-B4 environment authority:
-B5 exact demographic projection OR OAuth scope set:
-B6 re-verification policy:
-B7 NOT_CONFIRMED semantic invariant: ACCEPT | REJECT
-B8 support-access invariant: ACCEPT | REJECT
+B1 capability: ACCEPT
+B2 adapter family: VA_SERVICE_HISTORY_ELIGIBILITY_STATUS_ONLY
+B3 fallback policy: SELF_ATTESTATION_REMAINS_AVAILABLE
+B4 environment authority: LOCAL_FIXTURE + VA_SANDBOX_ONLY
+B5 OAuth scope set: openid profile veteran_status.read
+B6 re-verification policy: ONE_TIME_ONBOARDING_ONLY / NO_BACKGROUND_REVERIFICATION / NO_OFFLINE_ACCESS
+B7 NOT_CONFIRMED semantic invariant: ACCEPT
+B8 support-access invariant: ACCEPT
 
+Sandbox redirect URI:
+Production redirect URI: NOT_AUTHORIZED
+VA application/client identifier reference:
 Retention/privacy constraints:
 Security constraints:
 Accessibility/copy constraints:
 Reporting constraints:
-Relationship to D-016:
+Relationship to D-016: additive; self-attestation remains sufficient fallback
 Required evidence references/hashes:
-Production authority: BLOCKED | SEPARATELY_SETTLED
+Production authority: BLOCKED
 ```
 
-## 8. Required evidence before ACCEPT
+## 9. Required evidence before ACCEPT/RELEASE
 
 At minimum:
 
 - exact VA documentation references and retrieval date;
-- chosen adapter data-flow diagram;
-- data inventory/projection hash;
+- chosen OAuth data-flow diagram;
+- exact scope-manifest hash;
 - threat model;
 - synthetic normalization vectors;
-- callback/replay/PKCE evidence if OAuth selected;
+- callback/replay/PKCE evidence;
+- JWT signature/issuer/audience/expiry validation evidence;
 - log/redaction proof;
-- accessibility review plan;
+- cross-user/cross-tenant negative evidence;
+- accessibility review evidence;
 - privacy owner attestation;
 - explicit statement that production operation remains blocked unless separately settled.

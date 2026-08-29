@@ -1,0 +1,12 @@
+skill: contract-validation
+scenario: provenance basis mismatch is non-conformant
+given:
+  expected_questionnaire: qv-001
+  emitted_questionnaire: qv-002
+  semantic_gap_present: true
+expect:
+  verdict: NON_CONFORMANT
+  mismatches_contains: questionnaire_version
+must_not:
+  - invent_semantic_rule
+  - verdict_CONFORMANT

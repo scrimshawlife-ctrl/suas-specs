@@ -1,0 +1,30 @@
+name: Skills Validate
+
+on:
+  pull_request:
+    paths:
+      - 'SKILLS.md'
+      - 'skills/**'
+      - 'scripts/validate_skills.py'
+      - '.github/workflows/skills-validate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'SKILLS.md'
+      - 'skills/**'
+      - 'scripts/validate_skills.py'
+      - '.github/workflows/skills-validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate SUAS specification skills
+        run: python scripts/validate_skills.py

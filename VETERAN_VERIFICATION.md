@@ -2,13 +2,15 @@
 
 **Status:** proposed / not release-authoritative
 **Decision:** D-035
-**Related:** [DECISIONS.md](DECISIONS.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [COMPLIANCE.md](COMPLIANCE.md), [DATA_MODEL.md](DATA_MODEL.md), [TESTING.md](TESTING.md)
+**Related:** [DECISIONS.md](DECISIONS.md), [D035_ASSIMILATION.md](D035_ASSIMILATION.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [COMPLIANCE.md](COMPLIANCE.md), [DATA_MODEL.md](DATA_MODEL.md), [SECURITY.md](SECURITY.md), [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 
 Define an optional, consent-bound capability for verifying Veteran status during onboarding without making federal verification a prerequisite for receiving urgent SUAS support.
 
 This specification is additive. Until D-035 is released, D-016 remains authoritative: self-attestation plus working passwordless contact is sufficient for the current pilot.
+
+[D035_ASSIMILATION.md](D035_ASSIMILATION.md) is the normative cross-spec reconciliation package for this proposed decision. It defines how ONBOARDING, APIS, AUTH, CONSENT, DATA_MODEL, SECURITY, COMPLIANCE/PRIVACY, TESTING, ENVIRONMENT/DEPLOYMENT, MOBILE_SURFACE, EVENT_MODEL, reporting, and release settlement must interpret D-035 when it is released. It does not itself close D-035 or rewrite released history.
 
 ## 2. Provider boundary
 

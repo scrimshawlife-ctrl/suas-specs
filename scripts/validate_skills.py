@@ -54,7 +54,7 @@ for path in SHARED:
     if not path.is_file():
         fail(f"missing shared skill artifact: {path.relative_to(ROOT)}")
 
-router = (ROOT / "skills" / "README.md")
+router = ROOT / "skills" / "README.md"
 router_text = router.read_text(encoding="utf-8") if router.is_file() else ""
 
 for skill in SKILLS:
@@ -81,8 +81,8 @@ for skill in SKILLS:
             fixture_text = fixture.read_text(encoding="utf-8")
             if not re.search(rf"(?m)^skill:\s*{re.escape(skill)}\s*$", fixture_text):
                 fail(f"{fixture.relative_to(ROOT)}: fixture skill does not match {skill}")
-            if not re.search(r"(?m)^expected(_verdict|_status|_result)?:", fixture_text):
-                fail(f"{fixture.relative_to(ROOT)}: fixture must declare an expected result/status/verdict")
+            if not re.search(r"(?m)^(expect|expected(?:_verdict|_status|_result)?):", fixture_text):
+                fail(f"{fixture.relative_to(ROOT)}: fixture must declare expect or expected result/status/verdict")
     for section in ("## Purpose", "## Trigger", "## Procedure", "## Output schema", "## Completion criteria", "## Invocation example", "## Self-test"):
         if section not in text:
             fail(f"{path.relative_to(ROOT)}: missing required section {section}")

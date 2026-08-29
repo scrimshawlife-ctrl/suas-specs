@@ -1,3 +1,15 @@
+---
+name: synthetic-data
+version: 1.0.0
+kind: specification
+status: active
+authority: canonical-spec
+inputs: [evidence_contract, environment, case_requirements, mapping_rules]
+outputs: [dataset_specification]
+fail_closed: true
+self_test: skills/self-tests/synthetic-data.yaml
+---
+
 # synthetic-data
 
 ## Purpose
@@ -21,6 +33,9 @@ Use when creating fixtures, golden datasets, provider sandbox inputs, aggregate-
 6. Ensure policy-sensitive attributes such as consent, retention, deletion, export, and reporting eligibility are represented where required.
 7. Verify the fixture can be regenerated identically from checked-in definitions or a deterministic generator.
 8. Explicitly state that synthetic evidence does not authorize production use.
+
+## Invocation example
+`Define the smallest deterministic synthetic dataset needed for the D-007 aggregate-only dry run and include dataset/mapping hashes and expected outputs.`
 
 ## Output schema
 ```yaml
@@ -49,6 +64,9 @@ production_authority: false
 - No real veteran or production data in prohibited environments.
 - No nondeterministic fixture generation without an explicitly pinned seed and reproducible procedure.
 - No production-readiness inference from synthetic-only evidence.
+
+## Self-test
+Run `skills/self-tests/synthetic-data.yaml`. The fixture must reject unseeded nondeterminism and any attempt to set `production_authority: true`.
 
 ## Completion criteria
 Complete only when the dataset is reproducible, hashed, covers all contract-required cases, and its expected outputs/projections are explicit.

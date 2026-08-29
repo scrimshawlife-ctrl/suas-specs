@@ -1,7 +1,7 @@
 # D035_INDEX.md — Veteran verification spec index
 
 **Decision:** D-035  
-**Lifecycle:** global decision pending; limited sandbox evidence authority released by [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
+**Lifecycle:** `DECIDED`; implementation released by [RELEASE_MANIFEST-0.5.0.md](RELEASE_MANIFEST-0.5.0.md)
 
 ## Canonical read order
 
@@ -16,7 +16,7 @@
 
 ## Authority rule
 
-D-035 remains globally pending. The v0.4.0 qualifier authorizes only the evidence-generation subset in [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md).
+D-035 is globally decided by v0.5.0. The released capability remains optional, status-only, sandbox-bounded, and additive to D-016.
 
 ```text
 D-016 remains the authoritative fallback.
@@ -25,7 +25,9 @@ Self-attestation remains sufficient.
 VA production operation is blocked.
 ```
 
-Proposed D-035 text is not broader authority than the released qualifier. A final settlement is required before D-035 can become `DECIDED`.
+The v0.5.0 settlement is the implementation-authoritative D-035 boundary. Production VA operation remains blocked.
+
+**Provenance:** Notion Sprint 001 Hub + Loop 805 Slice 14 + Hash: owner-reviewed-staging-acceptance-33278273697
 
 ## Provider-selection rule
 

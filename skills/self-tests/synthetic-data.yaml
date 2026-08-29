@@ -1,0 +1,12 @@
+skill: synthetic-data
+scenario: reject nondeterministic or production-authorizing fixture
+given:
+  generator_seed: null
+  deterministic_generator: true
+  production_authority_requested: true
+expect:
+  result: NOT_COMPUTABLE
+  production_authority: false
+must_not:
+  - accept_unseeded_generation
+  - production_authority_true

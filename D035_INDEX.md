@@ -8,9 +8,10 @@
 1. [DECISIONS.md](DECISIONS.md) — decision status and relationship to released stack.
 2. [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md) — canonical product/domain contract.
 3. [D035_PROTOCOL.md](D035_PROTOCOL.md) — provider selection, protocol/state machines, OAuth/API-key boundaries, failures, idempotency, observability.
-4. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) — cross-spec interpretation against onboarding/API/auth/consent/data/security/testing/environment/mobile/events/reporting.
-5. [D035_TEST_VECTORS.md](D035_TEST_VECTORS.md) — deterministic acceptance and negative vectors.
-6. [D035_DECISION_PACKET.md](D035_DECISION_PACKET.md) — owner questions and settlement form.
+4. [D035_VA_CONFIRMATION_ADAPTER.md](D035_VA_CONFIRMATION_ADAPTER.md) — concrete Veteran Confirmation API v1 adapter contract: `POST /status`, `apikey` header, environment/secret handling, demographic projection gate, normalization, retries, redaction, evidence.
+5. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) — cross-spec interpretation against onboarding/API/auth/consent/data/security/testing/environment/mobile/events/reporting.
+6. [D035_TEST_VECTORS.md](D035_TEST_VECTORS.md) — deterministic acceptance and negative vectors.
+7. [D035_DECISION_PACKET.md](D035_DECISION_PACKET.md) — owner questions and settlement form.
 
 ## Authority rule
 
@@ -23,7 +24,7 @@ Self-attestation remains sufficient for the released pilot.
 VA production operation is blocked.
 ```
 
-If older proposed D-035 text conflicts with the current [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md) or [D035_PROTOCOL.md](D035_PROTOCOL.md), the later, more specific canonical rule applies for the D-035 proposal. Released specs remain authoritative until D-035 release.
+If older proposed D-035 text conflicts with the current [VETERAN_VERIFICATION.md](VETERAN_VERIFICATION.md), [D035_PROTOCOL.md](D035_PROTOCOL.md), or provider-specific adapter contract, the later, more specific canonical rule applies for the D-035 proposal. Released specs remain authoritative until D-035 release.
 
 ## Provider-selection rule
 
@@ -62,5 +63,7 @@ A coding agent must not begin by guessing provider details. It must produce, in 
 10. sandbox evidence packet
 11. owner/readiness settlement
 ```
+
+For `VaVeteranConfirmationAdapter`, [D035_VA_CONFIRMATION_ADAPTER.md](D035_VA_CONFIRMATION_ADAPTER.md) is the provider-specific implementation contract and MUST be read before coding.
 
 Production remains disabled until explicit production re-settlement.

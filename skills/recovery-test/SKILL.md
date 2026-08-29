@@ -1,3 +1,15 @@
+---
+name: recovery-test
+version: 1.0.0
+kind: specification
+status: active
+authority: canonical-spec
+inputs: [recovery_contract, environment, backup_identity, restore_procedure, durability_expectations]
+outputs: [recovery_evidence_contract]
+fail_closed: true
+self_test: skills/self-tests/recovery-test.yaml
+---
+
 # recovery-test
 
 ## Purpose
@@ -23,6 +35,9 @@ Use when a readiness gate requires recovery evidence, when validating backup/res
 7. Record failures, data loss, duplicate effects, or unresolved ambiguity.
 8. Do not convert one exercise into an RTO/RPO/SLO claim unless canonical authority explicitly permits it.
 
+## Invocation example
+`Define the recovery evidence packet required for SPEC-018 and flag anything a migration rehearsal cannot satisfy.`
+
 ## Output schema
 ```yaml
 exercise_id: string
@@ -47,6 +62,9 @@ claims_not_authorized: [string]
 - Do not call a migration rehearsal a restore exercise.
 - Do not test against production without explicit authority.
 - Do not infer RTO/RPO/SLO guarantees from incomplete evidence.
+
+## Self-test
+Run `skills/self-tests/recovery-test.yaml`. The fixture must classify migration-only evidence as insufficient for an actual restore requirement.
 
 ## Completion criteria
 Complete only when restoration, integrity, loss boundary, and durable-work behavior are explicitly recorded or marked NOT_COMPUTABLE with missing evidence identified.

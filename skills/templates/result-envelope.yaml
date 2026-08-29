@@ -1,0 +1,15 @@
+skill:
+  name: <skill-name>
+  version: 1.0.0
+execution_id: <unique-execution-id>
+executed_at_utc: <ISO-8601-UTC>
+authority:
+  repository: scrimshawlife-ctrl/suas-specs
+  release_or_manifest: <manifest-or-null>
+inputs_resolved: false
+result: NOT_COMPUTABLE
+observed: []
+inferred: []
+evidence: []
+missing: []
+warnings: []

@@ -1,6 +1,6 @@
 # ADMIN.md — Administration surfaces (SUAS v0.1)
 
-**Related:** [AUTH.md](AUTH.md), [SECURITY.md](SECURITY.md), [PILOT.md](PILOT.md), [RESOURCES.md](RESOURCES.md), [CHECKINS.md](CHECKINS.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [ONBOARDING.md](ONBOARDING.md), [COMPLIANCE.md](COMPLIANCE.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [OPERATIONS.md](OPERATIONS.md)
+**Related:** [AUTH.md](AUTH.md), [SECURITY.md](SECURITY.md), [PILOT.md](PILOT.md), [RESOURCES.md](RESOURCES.md), [CHECKINS.md](CHECKINS.md), [SUPPORT_SIGNALS.md](SUPPORT_SIGNALS.md), [ONBOARDING.md](ONBOARDING.md), [COMPLIANCE.md](COMPLIANCE.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [OPERATIONS.md](OPERATIONS.md), [ADMIN_SURFACE_DESIGN.md](ADMIN_SURFACE_DESIGN.md)
 
 **Lifecycle:** `released` via [RELEASE_MANIFEST-0.1.3.md](RELEASE_MANIFEST-0.1.3.md)
 
@@ -11,6 +11,8 @@
 Define Organization Administrator and SUAS System Administrator authority. **Org Admin ≠ SUAS Admin.**
 
 Administration configures accepted capabilities and operations; it must not invent new domain semantics, vendor-specific state machines, or bypass consent/security.
+
+The complete proposed web information architecture, page contracts, interaction states, and API-gap ledger are in [ADMIN_SURFACE_DESIGN.md](ADMIN_SURFACE_DESIGN.md). That file remains a draft until owner-released; this file remains authority for roles and boundaries.
 
 ---
 

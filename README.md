@@ -119,6 +119,8 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 **Operations/verification:** [MVP_REFERENCE.md](MVP_REFERENCE.md), [ADMIN.md](ADMIN.md), [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [COMPLIANCE.md](COMPLIANCE.md), [ONBOARDING.md](ONBOARDING.md), [PILOT.md](PILOT.md), [ANALYTICS.md](ANALYTICS.md), [TESTING.md](TESTING.md), [DEPLOYMENT.md](DEPLOYMENT.md), [OPERATIONS.md](OPERATIONS.md), [INCIDENT_RESPONSE.md](INCIDENT_RESPONSE.md).
 
+**Draft administration design (not implementation authority):** [ADMIN_SURFACE_DESIGN.md](ADMIN_SURFACE_DESIGN.md) defines the proposed complete web console, role-specific information architecture, interaction contract, and API-gap ledger. [ADMIN.md](ADMIN.md) remains authority until owner release.
+
 ## Next work
 
 Proceed with SPEC-017 in `scrimshawlife-ctrl/SUAS`, using [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts.

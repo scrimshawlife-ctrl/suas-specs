@@ -4,6 +4,16 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive admin-surface design packet — 2026-08-30 PT
+
+**Design and gap inventory only. Not a version bump. Does not authorize undocumented APIs, pilot/production operation, break-glass access, or sensitive reporting.**
+
+- Added [ADMIN_SURFACE_DESIGN.md](ADMIN_SURFACE_DESIGN.md) after comparing the released admin authority with the partial `/app/admin` implementation.
+- Defined separate SUAS Admin and Organization Admin workspaces, page contracts, privileged-command review flow, privacy/accessibility requirements, deterministic fixtures, and a twelve-item API gap ledger.
+- Preserved [ADMIN.md](ADMIN.md) as authority, `/api/v0` as the sole product API, MFA/audit/tenant boundaries, provider-secret prohibitions, immutable published artifacts, and every readiness block.
+
+---
+
 ## Additive D-036 authentication network-rate-limit decision packet — 2026-08-30 PT
 
 **Decision-preparation only. Not a version bump. Does not release a threshold or authorize implementation, pilot, or production operation.**

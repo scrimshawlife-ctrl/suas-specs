@@ -8,25 +8,37 @@
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
 **Release manifest:** [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 
-`SUAS-specs` is canonical. `scrimshawlife-ctrl/SUAS` implements released contracts and may not redefine them from code, prototype behavior, provider behavior, deployment state, or traction.
+`SUAS-specs` is canonical. Three implementation repositories implement released contracts and may not redefine them from code, prototype behavior, provider behavior, deployment state, or traction. Named inventory: [REPOS.md](REPOS.md).
+
+### Product surfaces
+
+| Surface | Repository | Role |
+|---|---|---|
+| Specs | https://github.com/scrimshawlife-ctrl/SUAS-specs | Canonical released contract |
+| Web + API | https://github.com/scrimshawlife-ctrl/suas | TypeScript Cloudflare Worker; `/api/v0`, `/app` |
+| iOS | https://github.com/scrimshawlife-ctrl/suas-ios | Native Swift client; consumes `/api/v0` |
+| Android | https://github.com/scrimshawlife-ctrl/suas-android | Native Kotlin client; consumes `/api/v0` |
+
+A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients.
 
 The weekend-build document **HACKATHON BUILD SPECIFICATION Rev 3 (2026-08-14)** is build direction, not a released SUAS product spec. Where it touches this repository, [FENCE_POSTS.md](FENCE_POSTS.md), [SURFACES.md](SURFACES.md), [ISLANDS.md](ISLANDS.md), and [RIDES.md](RIDES.md) define draft contracts that may be reviewed during the event. They are **not** implementation authority. If Rev 3 and this released stack conflict, record the conflict as `DECISION_PENDING` in [DECISIONS.md](DECISIONS.md). Santa Clara County v0.1 remains the same consent-governed identified coordination platform already defined on `main`.
 
 ## Start here for implementation / Fable handoff
 
-1. [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
-2. [HANDOFF.md](HANDOFF.md)
-3. [ENVIRONMENT.md](ENVIRONMENT.md)
-4. [STATUS.md](STATUS.md)
-5. [PRODUCT.md](PRODUCT.md)
-6. [GLOSSARY.md](GLOSSARY.md)
-7. [AGENTS.md](AGENTS.md)
-8. [ARCHITECTURE.md](ARCHITECTURE.md)
-9. [DOMAIN_MODEL.md](DOMAIN_MODEL.md) + [DATA_MODEL.md](DATA_MODEL.md)
-10. [API.md](API.md) + [APIS.md](APIS.md)
-11. [TESTING.md](TESTING.md)
-12. [MVP_REFERENCE.md](MVP_REFERENCE.md)
-13. domain/operations files required by the active SPEC-017 slice
+1. [REPOS.md](REPOS.md)
+2. [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
+3. [HANDOFF.md](HANDOFF.md)
+4. [ENVIRONMENT.md](ENVIRONMENT.md)
+5. [STATUS.md](STATUS.md)
+6. [PRODUCT.md](PRODUCT.md)
+7. [GLOSSARY.md](GLOSSARY.md)
+8. [AGENTS.md](AGENTS.md)
+9. [ARCHITECTURE.md](ARCHITECTURE.md)
+10. [DOMAIN_MODEL.md](DOMAIN_MODEL.md) + [DATA_MODEL.md](DATA_MODEL.md)
+11. [API.md](API.md) + [APIS.md](APIS.md)
+12. [TESTING.md](TESTING.md)
+13. [MVP_REFERENCE.md](MVP_REFERENCE.md)
+14. domain/operations files required by the active SPEC-017 slice
 
 ## Mission
 
@@ -91,7 +103,7 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 ## Core index
 
-**Authority/product:** [PRODUCT.md](PRODUCT.md), [GLOSSARY.md](GLOSSARY.md), [STATUS.md](STATUS.md), [VERSIONING.md](VERSIONING.md), [ROADMAP.md](ROADMAP.md), [DECISIONS.md](DECISIONS.md), [AGENTS.md](AGENTS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md).
+**Authority/product:** [REPOS.md](REPOS.md), [PRODUCT.md](PRODUCT.md), [GLOSSARY.md](GLOSSARY.md), [STATUS.md](STATUS.md), [VERSIONING.md](VERSIONING.md), [ROADMAP.md](ROADMAP.md), [DECISIONS.md](DECISIONS.md), [AGENTS.md](AGENTS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md).
 
 **Architecture/API:** [ARCHITECTURE.md](ARCHITECTURE.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [DATA_MODEL.md](DATA_MODEL.md), [EVENT_MODEL.md](EVENT_MODEL.md), [API.md](API.md), [APIS.md](APIS.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md).
 
@@ -101,7 +113,7 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 **D-035 limited sandbox-evidence authority:** [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) (gate qualifier only; D-035 remains `DECISION_PENDING`; no production authority).
 
-**Released client surfaces:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md) (native mobile client; D-033 decided by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)). Draft implementation-binding specify/plan for the existing iOS and Android forks: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) (not a stack bump; not production authority).
+**Released client surfaces:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md) (native mobile client; D-033 decided by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)). Named implementation repos: [REPOS.md](REPOS.md). Draft implementation-binding specify/plan for the existing iOS and Android forks: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) (not a stack bump; not production authority).
 
 **Draft Rev 3 contracts (not implementation authority):** [FENCE_POSTS.md](FENCE_POSTS.md), [SURFACES.md](SURFACES.md), [ISLANDS.md](ISLANDS.md), [RIDES.md](RIDES.md).
 
@@ -109,4 +121,4 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 ## Next work
 
-Proceed with SPEC-017 in `scrimshawlife-ctrl/SUAS`, using [HANDOFF.md](HANDOFF.md) as the entrypoint. Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts.
+Proceed with SPEC-017 in `scrimshawlife-ctrl/SUAS`, using [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts.

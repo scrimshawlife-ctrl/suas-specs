@@ -8,6 +8,19 @@
 **Pilot readiness:** `NOT_READY`
 **Production readiness:** `NOT_READY`
 
+## Product surfaces
+
+Named inventory: [REPOS.md](REPOS.md). Specs are canonical. Native clients consume `/api/v0` from `suas`.
+
+| Surface | Repository | Role |
+|---|---|---|
+| Specs | https://github.com/scrimshawlife-ctrl/SUAS-specs | Canonical released contract |
+| Web + API | https://github.com/scrimshawlife-ctrl/suas | TypeScript Cloudflare Worker; `/api/v0`, `/app` |
+| iOS | https://github.com/scrimshawlife-ctrl/suas-ios | Native Swift client; consumes `/api/v0` |
+| Android | https://github.com/scrimshawlife-ctrl/suas-android | Native Kotlin client; consumes `/api/v0` |
+
+A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients.
+
 ## Governance frontier
 
 SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.3.0 supersedes v0.2.0 and closes D-033 by releasing the native mobile client surface while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, notification channel availability, and all readiness boundaries. v0.2.0 (inherited) closed D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors. SPEC-017 implementation conformance is active. SPEC-018 remains the go/no-go stage for any real pilot or production operation.

@@ -29,6 +29,7 @@ Coordinate the shortest safe and consented path between a veteran's current need
 | Kind | Consent-governed veteran support coordination platform |
 | Spec authority | `SUAS-specs` |
 | Implementation | `https://github.com/scrimshawlife-ctrl/SUAS` (must conform to released specs) |
+| Client inventory | [REPOS.md](REPOS.md) — `suas` (web + API), `suas-ios`, `suas-android` |
 
 ---
 

@@ -53,3 +53,5 @@ D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-0
 Proceed with SPEC-017 implementation conformance against owner-merged release `0.4.0` ([RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack and re-pin `SUAS_SPEC_VERSION` / `SUAS_RELEASE_MANIFEST` accordingly; a stale pin fails closed. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs, and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) before any client-surface work.
 
 Native client implementation is authorized by this release and remains subject to SPEC-018 for any real operation or distribution. Nothing in this release advances a readiness gate or reduces the SPEC-018 residual set.
+
+Draft implementation-binding specify/plan for integrating the existing iOS and Android forks with `/api/v0`: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md). Those drafts do not consume a SPEC-0xx stage number, do not bump the stack, and do not reopen D-033 or close D-034.

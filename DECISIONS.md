@@ -41,7 +41,7 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-030 | Dual enrollment and minors handling for Rev 3 surfaces | `DECISION_PENDING`; draft Rev 3 contract only |
 | D-031 | Which legal entity contracts for island and ride operations | `DECISION_PENDING`; draft Rev 3 contract only |
 | D-032 | Volunteer-driver insurance and screening requirements | `DECISION_PENDING`; draft Rev 3 contract only |
-| D-033 | Native mobile client surface | `DECIDED` (v0.3.0; contract released in [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)); client surface only, `ENABLED` for implementation and not for production operation |
+| D-033 | Native mobile client surface | `DECIDED` (v0.3.0; contract released in [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)); client surface only, `ENABLED` for implementation and not for production operation. Implementation-binding specify/plan for the existing iOS and Android forks: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) (draft; not a stack bump; does not reopen this decision). |
 | D-034 | On-device protection of locally retained veteran data, including the stored session credential | `DECISION_PENDING`; opened by v0.3.0. [SECURITY.md](SECURITY.md) §2 covers database/backups only |
 | D-035 | Optional VA-backed Veteran-status verification during onboarding | `DECIDED` (v0.5.0); optional status-only VA sandbox capability. D-016 remains the permitted fallback; production remains blocked. |
 

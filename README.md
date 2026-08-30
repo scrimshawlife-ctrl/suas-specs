@@ -101,7 +101,7 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 **D-035 limited sandbox-evidence authority:** [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) (gate qualifier only; D-035 remains `DECISION_PENDING`; no production authority).
 
-**Released client surfaces:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md) (native mobile client; D-033 decided by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)).
+**Released client surfaces:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md) (native mobile client; D-033 decided by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md)). Draft implementation-binding specify/plan for the existing iOS and Android forks: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) (not a stack bump; not production authority).
 
 **Draft Rev 3 contracts (not implementation authority):** [FENCE_POSTS.md](FENCE_POSTS.md), [SURFACES.md](SURFACES.md), [ISLANDS.md](ISLANDS.md), [RIDES.md](RIDES.md).
 

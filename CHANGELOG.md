@@ -4,6 +4,18 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## 0.6.0 — 2026-08-30 PT — Resend and browser authentication
+
+**Implementation-authoritative; not pilot or production approval.**
+
+- Closed D-004: Resend is the sole EMAIL provider; no alternate provider is a fallback or standby.
+- Released `SUAS_EMAIL_MODE=resend` with required secret/from-address validation and environment restrictions.
+- Released a fixed-tenant HTML EMAIL OTP flow for already-enrolled accounts using a Secure, HttpOnly, SameSite=Strict `/app` cookie.
+- Preserved API/native Bearer auth, non-enumerating challenge responses, shared rate limits, atomic one-use verification, and all launch gates.
+- Added no self-registration, real Veteran operation, marketing email, or production authority.
+
+---
+
 ## 0.4.0 — pending owner merge — D-035 sandbox evidence authority
 
 **Limited implementation evidence authority; D-035 remains DECISION_PENDING; not production-operating approval.**

@@ -1,14 +1,14 @@
-# HANDOFF.md — Implementation handoff guide (SUAS v0.4.0)
+# HANDOFF.md — Implementation handoff guide (SUAS v0.6.0)
 
 **Audience:** new implementation owner / Fable / engineering agents
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md) (limited D-035 sandbox evidence authority over v0.3.0 D-033 and inherited releases)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 **Canonical implementation repo:** `scrimshawlife-ctrl/SUAS`
 
 ## 1. Start here
 
 Read in this order before changing implementation behavior:
 
-1. `RELEASE_MANIFEST-0.4.0.md` (then `RELEASE_MANIFEST-0.3.0.md`, `RELEASE_MANIFEST-0.2.0.md`, and inherited manifests for prior scope)
+1. `RELEASE_MANIFEST-0.6.0.md` (then inherited manifests for prior scope)
 2. `RELEASE_DECISIONS-0.4.0.md` and `D035_SANDBOX_EVIDENCE_AUTHORITY.md` for the D-035 qualifier, then earlier decision ledgers for inherited scope.
 3. `STATUS.md`
 4. `PRODUCT.md`

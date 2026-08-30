@@ -1,6 +1,6 @@
-# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.3.0)
+# ENVIRONMENT.md — Environment and configuration contract (SUAS v0.6.0)
 
-**Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
+**Lifecycle:** `released` via [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 **Authority:** implementation configuration contract
 **Related:** [DEPLOYMENT.md](DEPLOYMENT.md), [SECURITY.md](SECURITY.md), [ARCHITECTURE.md](ARCHITECTURE.md), [RESILIENCE.md](RESILIENCE.md), [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md), [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [SIGNAL_SCORING.md](SIGNAL_SCORING.md)
 
@@ -59,16 +59,23 @@ Logical secret/config slots:
 - `SUAS_SESSION_SECRET` or equivalent server-side session-signing/encryption secret where the chosen implementation requires one
 - provider-specific auth configuration only after the corresponding release decision closes
 
+For the HTML browser surface:
+
+- `SUAS_BROWSER_AUTH_MODE` = `disabled|email_otp`
+- `SUAS_BROWSER_TENANT_ID` — required UUID when browser auth is `email_otp`; it pins the deployment to one tenant before authentication
+
+The browser tenant is server-owned configuration and is never accepted from a public form. Browser auth creates no User or enrollment; it authenticates an already-enrolled destination only.
+
 Secrets must come from environment/platform secret storage, never committed files or client-visible bundles.
 
 ### Notifications
 
-Until provider decisions close:
-
-- `SUAS_EMAIL_MODE` = `disabled|fake|sink`
+- `SUAS_EMAIL_MODE` = `disabled|fake|sink|resend`
 - `SUAS_SMS_MODE` = `disabled|fake|sink`
 
-Production notification external modes are not valid in v0.2.0.
+`resend` is the only named EMAIL provider mode (D-004, v0.6.0). It requires `RESEND_API_KEY` and `SUAS_EMAIL_FROM`. LOCAL and TEST reject `resend`. STAGING permits it only for already-enrolled, owner-approved test accounts and authentication-delivery evidence. PRODUCTION rejects it until SPEC-018 and applicable launch gates pass. Provider selection does not supply consent or a system basis for an operational notification.
+
+No alternate EMAIL provider mode, fallback, or standby is valid.
 
 No push-channel mode exists. `PUSH` is `FUTURE` ([NOTIFICATIONS.md](NOTIFICATIONS.md) §2) and §4 forbids configuration from enabling it, so a push mode variable must not be introduced before a released decision closes that channel.
 

@@ -1,7 +1,7 @@
 # DECISIONS.md — SUAS decision register
 
-**Stack:** `0.5.0` / `released`
-**Release decision ledger:** [RELEASE_DECISIONS-0.5.0.md](RELEASE_DECISIONS-0.5.0.md) settles D-035; [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md) records the prior evidence-authority gate; inherited ledgers govern earlier decisions.
+**Stack:** `0.6.0` / `released`
+**Release decision ledger:** [RELEASE_DECISIONS-0.6.0.md](RELEASE_DECISIONS-0.6.0.md) settles D-004; inherited ledgers govern earlier decisions.
 
 Global decisions remain open until explicitly decided. A release-specific `DEFERRED_FOR_RELEASE` boundary does not globally close the decision; it only makes the affected capability unavailable/manual/future for that release.
 
@@ -12,7 +12,7 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-001 | Production hosting/cloud | `DECISION_PENDING` |
 | D-002 | Production auth provider/in-house implementation | `DECISION_PENDING` |
 | D-003 | SMS provider | `DECISION_PENDING` |
-| D-004 | Email provider | `DECISION_PENDING` |
+| D-004 | Email provider | `DECIDED` 2026-08-30: Resend only; see [RELEASE_DECISIONS-0.6.0.md](RELEASE_DECISIONS-0.6.0.md) |
 | D-005 | Production database hosting | `DECISION_PENDING` |
 | D-006 | Legal/HIPAA classification | `DECISION_PENDING`; `HIPAA_APPLICABILITY = DECISION_PENDING`. Counsel packet: [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) (does not close this decision). |
 | D-007 | Retention/deletion durations | `DECISION_PENDING` |

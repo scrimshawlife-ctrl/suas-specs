@@ -40,7 +40,7 @@ A magic-link/OTP challenge is:
 - single-use;
 - time-bounded; exact TTL remains an explicit documented constant (`DECISION_PENDING`, with any recommendation labeled `INFERRED`);
 - stored hashed/opaque, never plaintext secret material;
-- rate-limited by address/account and network signal where appropriate;
+- rate-limited by address/account and network signal where appropriate; exact network threshold, trusted-address, missing-address, and privacy semantics are D-036 `DECISION_PENDING` ([D036_AUTH_NETWORK_RATE_LIMIT.md](D036_AUTH_NETWORK_RATE_LIMIT.md));
 - consumed atomically.
 
 Concurrency rule: two simultaneous verifies of one challenge produce at most one successful consumption/session-establishment effect. A stale/replayed verify fails safely.

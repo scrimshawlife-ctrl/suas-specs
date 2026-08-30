@@ -3,7 +3,7 @@
 **Released stack:** `0.6.0`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
 **Current stage:** `SPEC-017`
-**Start here:** [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
+**Start here:** [REPOS.md](REPOS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 
 This file binds human and automated agents working on SUAS specifications or implementation.
 
@@ -26,14 +26,18 @@ This file binds human and automated agents working on SUAS specifications or imp
 
 ## Cross-repo governance
 
-| Rule | `SUAS-specs` | `SUAS` |
-|---|---|---|
-| Authority | canonical released contract | implementation/conformance |
-| Product gaps | specified/released here | returned to specs |
-| Vendors | capability boundaries + decision records | adapters only when release permits |
-| Environments | `ENVIRONMENT.md` contract | validated configuration implementation |
-| Versioning | stack/release/runtime authority | app/schema/build versions mapped to released stack |
-| Undocumented behavior | not canonical | not canonical |
+Named repositories and the standing client-scope rule: [REPOS.md](REPOS.md).
+
+| Rule | `SUAS-specs` | `suas` | `suas-ios` | `suas-android` |
+|---|---|---|---|---|
+| Authority | canonical released contract | web + `/api/v0` implementation/conformance | iOS client implementation/conformance | Android client implementation/conformance |
+| Product gaps | specified/released here | returned to specs | returned to specs | returned to specs |
+| Vendors | capability boundaries + decision records | adapters only when release permits | no provider credential on the device | no provider credential on the device |
+| Environments | `ENVIRONMENT.md` contract | validated configuration implementation | explicit environment class; fail-closed client build | explicit environment class; fail-closed client build |
+| Versioning | stack/release/runtime authority | app/schema/build versions mapped to released stack | application version mapped to released stack | application version mapped to released stack |
+| Undocumented behavior | not canonical | not canonical | not canonical | not canonical |
+
+**Standing client-scope rule.** A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients: `suas` (web + API), `suas-ios`, and `suas-android`.
 
 ## Current release boundary
 
@@ -53,4 +57,4 @@ Use `OBSERVED`, `INFERRED`, `SPECULATIVE`, `NOT_COMPUTABLE`, `DECISION_PENDING`,
 
 ## Repository boundary
 
-`SUAS-specs` contains specification/governance/handoff material, not application code or credentials. `SUAS` contains implementation. Fable and other implementers should follow [HANDOFF.md](HANDOFF.md) before the first change.
+`SUAS-specs` contains specification/governance/handoff material, not application code or credentials. Implementation lives in three repositories listed in [REPOS.md](REPOS.md). Fable and other implementers should follow [HANDOFF.md](HANDOFF.md) before the first change.

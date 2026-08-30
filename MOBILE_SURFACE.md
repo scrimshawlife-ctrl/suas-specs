@@ -3,7 +3,7 @@
 **Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
 **Authority:** client-surface contract for a native mobile application
 **Decision:** D-033 ([RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md))
-**Related:** [ARCHITECTURE.md](ARCHITECTURE.md) §4, [MVP_REFERENCE.md](MVP_REFERENCE.md), [API.md](API.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [ENVIRONMENT.md](ENVIRONMENT.md), [TESTING.md](TESTING.md), [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md)
+**Related:** [ARCHITECTURE.md](ARCHITECTURE.md) §4, [MVP_REFERENCE.md](MVP_REFERENCE.md), [API.md](API.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [ENVIRONMENT.md](ENVIRONMENT.md), [TESTING.md](TESTING.md), [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md), [REPOS.md](REPOS.md) (implementation inventory; not a D-033 change)
 
 ## 1. Purpose
 
@@ -29,6 +29,8 @@ Out of scope, and not changed by this release:
 - Application-store distribution, which is an operating question gated by SPEC-018, not a specification question.
 
 The first implementation target is iOS. Nothing in this contract is platform-specific; a second platform requires no new release.
+
+Named implementation repositories (`suas-ios`, `suas-android`, and the `suas` Worker they consume) are inventory in [REPOS.md](REPOS.md). This file remains the client-surface contract. D-033 is closed.
 
 ## 3. Client classification
 

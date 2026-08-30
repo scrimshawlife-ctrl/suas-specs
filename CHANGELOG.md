@@ -16,6 +16,16 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive product-surface inventory — 2026-08-30 PT
+
+**Editorial inventory. Not a version bump. Closes no D-0xx. Does not define complete. Does not reopen D-033.**
+
+- Added [REPOS.md](REPOS.md) so a coding agent who clones this repo can name the three implementation repositories (`suas`, `suas-ios`, `suas-android`) and the rule that they stay in scope.
+- Expanded the [AGENTS.md](AGENTS.md) Cross-repo governance table from two columns to four and recorded the standing client-scope rule: a change to the product API, Veteran journey, auth, or environment class must be considered against all three clients.
+- Added a Product surfaces table to [README.md](README.md) and [STATUS.md](STATUS.md). [MOBILE_SURFACE.md](MOBILE_SURFACE.md) gained a pointer only. [PRODUCT.md](PRODUCT.md) and [GLOSSARY.md](GLOSSARY.md) point at the inventory.
+
+---
+
 ## Additive D-033 native-client integration packet — 2026-08-29 PT
 
 **Implementation-binding specify + plan. Not a version bump. Does not reopen D-033. Does not close D-034 / D-006. Does not advance SPEC-017 / SPEC-018 / readiness gates.**

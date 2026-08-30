@@ -14,6 +14,7 @@ The system identifier for Shut Up and Serve. SUAS is a consent-governed veteran 
 
 - Specification authority: `SUAS-specs` (`scrimshawlife-ctrl/SUAS-specs`)
 - Implementation repository: `SUAS` (`https://github.com/scrimshawlife-ctrl/SUAS`)
+- Implementation inventory: [REPOS.md](REPOS.md) — `suas`, `suas-ios`, `suas-android` stay in scope
 
 ---
 

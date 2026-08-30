@@ -54,6 +54,8 @@ The Veteran:
 3. Submits the challenge result.
 4. Continues only after the server issues a session.
 
+On shared testing (`STAGING`) that is the only sign-in. The Veteran types the challenge they received. A developer-only shortcut that reads a local captured code is not sign-in on `https://suasqrf.com` ([D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) §2.2).
+
 The Veteran does not create an account from the app ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §10: self-service enrollment is `FUTURE`). The Veteran does not pick a tenant. The Veteran does not use a password, Apple/Google/social identity, or a long-lived unrevocable credential.
 
 If the chosen channel cannot deliver, the app does not offer it and does not pretend the challenge succeeded.
@@ -73,7 +75,13 @@ After sign-in the Veteran reaches an action-first home ([MVP_REFERENCE.md](MVP_R
 
 Navigation stays simple: few primary destinations, recognizable labels. Platform-native controls are allowed. Added depth or density is not.
 
-### 3.3 Ask for support
+### 3.3 Check-In
+
+After sign-in the Veteran may start a Check-In, answer its questions, and complete it. That loop is the smallest authenticated Veteran path already registered on `/api/v0` ([D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) §2.1). Completing a Check-In is not itself a promise that a responder was notified.
+
+The app does not invent questionnaire text or scoring. It renders the server-owned Check-In and records the Veteran’s answers.
+
+### 3.4 Ask for support
 
 When the Veteran asks for peer support (QRF), the action means: create or submit an explicit `PEER_SUPPORT` need and attempt responder coordination according to actual coverage, availability, consent, and operations ([MVP_REFERENCE.md](MVP_REFERENCE.md) §7.2).
 
@@ -83,7 +91,7 @@ The Veteran can cancel a request when the recorded state allows cancel. The app 
 
 If the platform cannot accept the request, the Veteran sees an unavailable or degraded state. The app does not simulate success.
 
-### 3.4 See status
+### 3.5 See status
 
 The Veteran sees only recorded facts ([SAFETY.md](SAFETY.md) §5.1; [SAFETY_COPY.md](SAFETY_COPY.md) §5; [MVP_REFERENCE.md](MVP_REFERENCE.md) §7.2):
 
@@ -102,7 +110,7 @@ Assignment alone is not `RESPONDER_NOTIFIED`. `REQUESTED`, `ACCEPTED`, `DISPATCH
 
 The Veteran sees their own Check-Ins, their own Service Request status, Settlement fields written for them, and Follow-Up prompts addressed to them (D-015). The Veteran does not see full Case Notes, other veterans, responder queue internals, or other Organizations.
 
-### 3.5 Consent
+### 3.6 Consent
 
 The Veteran grants or revokes consent at the moment of use. The app reads consent state from the server then, never from a remembered grant ([CONSENT.md](CONSENT.md) §3 rule 1, §4).
 
@@ -110,7 +118,7 @@ Installing the app, opening it the first time, or accepting terms is not a Conse
 
 Consent capture offers only the closed permission/scope pairings in [CONSENT.md](CONSENT.md) §2.1.
 
-### 3.6 Crisis help
+### 3.7 Crisis help
 
 Crisis copy and destinations are the D-012 set in [SAFETY_COPY.md](SAFETY_COPY.md): **911** for immediate danger or medical emergency; **988** Suicide & Crisis Lifeline (call or text); Veterans reach the Veterans Crisis Line through 988.
 
@@ -120,9 +128,11 @@ The Veteran starts a call or text only by an explicit action. The app never auto
 
 SUAS coordinates practical support. It is not an emergency service. The crisis surface says so, using the approved wording.
 
-### 3.7 Session ends
+### 3.8 Session ends
 
-The Veteran can sign out. After sign-out, or after the server rejects the credential, the app returns to sign-in and does not keep Veteran domain data on the device (D-034 `DECISION_PENDING`; persist the session credential only).
+The Veteran can sign out. After sign-out, or after the server rejects the credential, the app returns to sign-in and does not keep Veteran domain data on the device.
+
+D-034 remains `DECISION_PENDING`. Until it closes, the conservative rule is: retain only what is required to hold an authenticated session; do not persist Veteran domain data locally ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §10). `OBSERVED` iOS today writes the session bearer into ordinary device preferences (`UserDefaults` in `AppState.swift`). That is a recorded gap. This file does not close D-034 and does not pick an on-device store.
 
 ## 4. What the Veteran must never see or be asked to do
 
@@ -155,10 +165,10 @@ Untrusted Veteran- or responder-authored text is encoded at render.
 
 A build is acceptable for this specify file when a synthetic Veteran on iOS and on Android can demonstrate all of the following:
 
-1. Sign-in uses only a deliverable passwordless channel and a server-issued session.
-2. Home is action-first: support request, crisis/immediate help, then truthful category cards.
+1. Sign-in uses only a deliverable passwordless channel and a server-issued session. On `STAGING` the Veteran submits the challenge they received; a `/dev/*` captured-code shortcut is not sign-in.
+2. Home is action-first: support request, crisis/immediate help, then truthful category cards. The Veteran can start, answer, and complete a Check-In.
 3. Asking for support creates or updates a recorded Service Request; a lost response retried by the Veteran does not create a second request the Veteran can see as two needs.
-4. Status labels match §3.4. `Call` / `Message` appear only with an authorized path.
+4. Status labels match §3.5. `Call` / `Message` appear only with an authorized path.
 5. Crisis copy matches [SAFETY_COPY.md](SAFETY_COPY.md). `988` and the Veterans Crisis Line remain visible when the server crisis read fails.
 6. No forbidden experience from §4 is present.
 7. After sign-out, Veteran domain data is gone from the device; only a session credential may have been stored, and it is no longer valid to use.
@@ -180,9 +190,10 @@ These criteria extend [MOBILE_SURFACE.md](MOBILE_SURFACE.md) §11 and [TESTING.m
 
 | Gap | Status | Conservative behavior |
 |---|---|---|
-| On-device protection of stored session and any later local Veteran data | D-034 `DECISION_PENDING` | Persist session only; no Veteran domain data on device |
-| Challenge and session TTL constants | `DECISION_PENDING` ([AUTH.md](AUTH.md) §3, §5) | Do not hardcode or display a lifetime |
+| On-device protection of stored session and any later local Veteran data | D-034 `DECISION_PENDING` | Persist session only; no Veteran domain data on device. `OBSERVED`: iOS `AppState.swift` writes the bearer to `UserDefaults`. Recorded gap; do not close D-034. |
+| Challenge and session TTL constants | `DECISION_PENDING` ([AUTH.md](AUTH.md) §3, §5) | Do not hardcode or display a lifetime, including any `expires_at` the runtime returns |
 | Tenant selection before authentication | `DECISION_PENDING` | Pin tenant on the build; no Veteran-facing picker |
-| Veteran-reachable case-open on the implemented `/api/v0` JSON surface | `OBSERVED` gap; see [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) §9 | Do not use HTML `/app/*` as the long-term command; do not invent a new path |
+| Veteran-reachable case-open on the implemented `/api/v0` JSON surface | `OBSERVED` gap; see [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) §9 | `POST /app/qrf/deploy` is HTML UI, not `/api/v0`. Do not treat it as the mobile case-open. Do not invent a new path. |
+| STAGING login via `/api/v0/dev/*` | `OBSERVED` gap; those paths are not in OpenAPI and `404` on `https://suasqrf.com` | Staging sign-in is released challenge/verify only |
 | Self-service enrollment from the client | `FUTURE` | Do not present account creation |
 | Device push | `FUTURE` | In-app notification read path only |

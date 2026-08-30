@@ -32,16 +32,21 @@ Do not treat this section as a product decision. It is the starting inventory.
 
 ### 2.1 Product API — `scrimshawlife-ctrl/SUAS`
 
-`OBSERVED`:
+`OBSERVED` at `scrimshawlife-ctrl/suas` main `49a01308`:
 
-- Machine-readable contract: `docs/openapi/v0.json` (OpenAPI 3.0.3; info version `0.2.0`). Description: paths document what the runtime registers today; draft [APIS.md](APIS.md) Plane A paths that are not yet implemented are intentionally absent.
-- Drift check exists: `npm run openapi:check` (`scripts/check-openapi-drift.ts`). No OpenAPI code generator, `openapi-generator` config, or generated-client script is present in `package.json`.
-- Routes under `src/http/routes` include `auth`, `veterans`, `cases`, `check-ins`, `consents`, `service-requests`, `resources`, plus related coordination/admin/VA-sandbox files.
-- Registered JSON paths used by a Veteran client include, among others: `GET /api/v0/health`; `POST /api/v0/auth/challenges`; `POST /api/v0/auth/challenges/commands/verify`; `POST /api/v0/auth/sessions/commands/logout`; `GET /api/v0/veterans/me`; `GET /api/v0/immediate-resources`; `GET /api/v0/resources`; `POST /api/v0/cases/{caseId}/service-requests`; `GET /api/v0/service-requests/{id}`; `POST /api/v0/service-requests/{id}/commands/{command}`; Check-In, consent, notification, and trusted-contact paths listed in that OpenAPI file.
+- Machine-readable contract: `docs/openapi/v0.json` (OpenAPI 3.0.3; `info.version` `0.2.0`). Paths document what the runtime registers today; draft [APIS.md](APIS.md) Plane A paths that are not yet implemented are intentionally absent.
+- The Worker does **not** serve `/openapi.json` (`404`). Clients pin the repo file. There is no generated SDK in SUAS. Drift check only: `npm run openapi:check` (`scripts/check-openapi-drift.ts`).
+- Auth is opaque session bearer only. Header: `Authorization: Bearer <credential>`. No cookies. Client HMAC is server-side storage only; the client sends the raw opaque token.
+- Runtime status codes drift from OpenAPI. OpenAPI documents `200` for these three. Runtime: `POST /api/v0/auth/challenges` → `202`; verify → `201` `{session_credential, expires_at, mfa_elevated}`; logout → `204`.
+- No CORS (`Access-Control-Allow-Origin` absent; `OPTIONS` → `404`). Native HTTP clients are fine. A `WKWebView` or browser cross-origin fetch would be blocked.
+- Smallest Veteran loop from OpenAPI + route files: `GET /api/v0/health`; `POST /api/v0/auth/challenges`; `POST /api/v0/auth/challenges/commands/verify`; `POST /api/v0/auth/sessions/commands/logout`; `GET /api/v0/veterans/me`; `POST`/`GET` `/api/v0/check-ins`; `POST /api/v0/check-ins/{id}/responses`; `POST /api/v0/check-ins/{id}/commands/complete`.
+- Check-In response body `{question_id, answer_option_id}` is in the route file and missing from the OpenAPI `requestBody`.
+- Other registered Veteran-relevant JSON paths include `GET /api/v0/immediate-resources`, `GET /api/v0/resources`, `POST /api/v0/cases/{caseId}/service-requests`, `GET /api/v0/service-requests/{id}`, `POST /api/v0/service-requests/{id}/commands/{command}`, plus consent, notification, and trusted-contact paths listed in that OpenAPI file.
 - `GET /api/v0/cases` is registered as a **responder** queue. `src/http/routes/cases.ts` registers no `POST /api/v0/cases`.
 - [API.md](API.md) §8 still lists `POST /cases` as a representative command.
+- `/api/v0/dev/*` is not in OpenAPI.
 
-`OBSERVED` synthetic shared-testing host: `https://suasqrf.com`. `GET /` redirects to `/app`. `GET /api/v0/health` is the liveness probe.
+`OBSERVED` synthetic shared-testing host: `https://suasqrf.com`. `GET /` redirects to `/app`. `GET /api/v0/health` is the liveness probe. `/api/v0/dev/*` returns `404` on that host.
 
 ### 2.2 iOS — `scrimshawlife-ctrl/suas-ios`
 
@@ -50,10 +55,12 @@ Private fork of `louisroehrs/suas-ios`. Swift.
 `OBSERVED` in `suas/suas/APIClient.swift`:
 
 - Already wraps `/api/v0` for challenges, verify (Bearer session), logout, `GET /veterans/me`, service-request create/read/command, and `GET /resources`.
-- Sends `Idempotency-Key` on unsafe service-request commands.
+- Sends `Authorization: Bearer <credential>` and `Idempotency-Key` on unsafe service-request commands.
 - Hardcodes `http://localhost:3000` and tenant `00000000-0000-4000-8000-000000000001`.
-- Opens a Support Case by `POST /app/qrf/deploy` (HTML; comment records a 303 to `/app/home`), then re-reads `GET /veterans/me`.
-- Includes LOCAL-only helpers: `GET /api/v0/dev/last-challenge`, `POST /api/v0/dev/service-requests/{id}/simulate`.
+- Opens a Support Case by `POST /app/qrf/deploy`. That path is HTML UI, not `/api/v0`. Do not treat it as the mobile case-open.
+- Also calls `GET /api/v0/dev/last-challenge` (query `destination`) and `POST /api/v0/dev/service-requests/{id}/simulate`. Those paths are not in OpenAPI and `404` on `https://suasqrf.com`. `AppState.swift` `devLogin` issues a challenge, then reads the captured code from `/dev/last-challenge`, then verifies. Staging login must be the released challenge/verify flow, not `/dev/*`.
+
+`OBSERVED` in `suas/suas/AppState.swift`: the bearer is written to `UserDefaults` (`suas.bearer`) and restored at launch as signed-in. That conflicts with the D-034 conservative rule (session only; do not persist Veteran domain data). Record the gap. Do not close D-034.
 
 `OBSERVED`: `LocationManager.swift` exists. [MOBILE_SURFACE.md](MOBILE_SURFACE.md) §5 forbids continuous GPS and background location.
 
@@ -71,11 +78,11 @@ Public fork of `RuntimeSquad/Suas`. Kotlin Jetpack Compose.
 | User-facing behavior | [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md) |
 | Visual / interaction | [MVP_REFERENCE.md](MVP_REFERENCE.md) |
 | Crisis copy | [SAFETY_COPY.md](SAFETY_COPY.md) |
-| Shared HTTP contract | Released `/api/v0` as documented by `scrimshawlife-ctrl/SUAS` `docs/openapi/v0.json`, interpreted through [API.md](API.md) / [APIS.md](APIS.md) |
+| Shared HTTP contract | Repo file `docs/openapi/v0.json` in `scrimshawlife-ctrl/SUAS` (clients pin that file; the Worker does not serve `/openapi.json`), interpreted through [API.md](API.md) / [APIS.md](APIS.md) |
 | Environment | [ENVIRONMENT.md](ENVIRONMENT.md); shared testing is `STAGING` |
-| Auth / session | [AUTH.md](AUTH.md); Bearer session; `Idempotency-Key` on unsafe commands ([API.md](API.md) §7) |
+| Auth / session | [AUTH.md](AUTH.md); opaque Bearer only (`Authorization: Bearer <credential>`); no cookies; client sends the raw token; `Idempotency-Key` on unsafe commands ([API.md](API.md) §7) |
 
-The OpenAPI file is the machine-readable inventory of **implemented** Plane A paths. [API.md](API.md) remains the product command doctrine. Where they disagree, do not invent a third path. Register the already-specified command on `/api/v0`, or return the gap here.
+The OpenAPI file is the machine-readable inventory of **implemented** Plane A paths. [API.md](API.md) remains the product command doctrine. Where they disagree, do not invent a third path. Register the already-specified command on `/api/v0`, or return the gap here. Clients accept the `OBSERVED` auth status-code drift (`202` / `201` / `204`) rather than requiring OpenAPI’s documented `200`. Check-In answer writes use the route-file body `{question_id, answer_option_id}` until OpenAPI gains that `requestBody`; do not invent a different shape.
 
 ## 4. How — architecture
 
@@ -83,9 +90,11 @@ The OpenAPI file is the machine-readable inventory of **implemented** Plane A pa
 iOS app (Swift, existing repo)
 Android app (Kotlin, existing repo)
         |
-        |  HTTPS + Bearer session + Idempotency-Key
+        |  HTTPS + Authorization: Bearer <opaque credential> + Idempotency-Key
+        |  (native HTTP; not a WKWebView / browser CORS fetch)
         v
 SUAS product API  /api/v0   (scrimshawlife-ctrl/SUAS)
+        |  contract: repo docs/openapi/v0.json (not /openapi.json)
         |
         v
 identified opt-in platform  (existing modular monolith)
@@ -95,10 +104,12 @@ Rules:
 
 1. **Native remains native.** iOS stays Swift in `scrimshawlife-ctrl/suas-ios`. Android stays Kotlin in `scrimshawlife-ctrl/suas-android`. No Flutter, React Native, or KMP harness. No new shared-app repository.
 2. **One product API.** Clients call `/api/v0` only. No `/api/mobile`, no client-type version header, no negotiated media-type version ([MOBILE_SURFACE.md](MOBILE_SURFACE.md) §4).
-3. **No generated-client mandate.** `OBSERVED`: SUAS has an OpenAPI drift checker, not a generator. Each app may keep a hand-written client that conforms to the OpenAPI file. A generator is permitted later as mechanism; it is not required by this packet.
-4. **HTML `/app/*` is not a domain command.** The web UI may keep HTML POSTs for browsers. A native client composes released JSON commands. `POST /app/qrf/deploy` (and any other `/app/*` form) is not the long-term mobile contract.
-5. **Plane A only.** The device never holds a provider credential and never calls a Plane B capability ([SECURITY.md](SECURITY.md) §4 rule 7).
-6. **Worker/product API changes** are allowed only to expose an already-specified `/api/v0` command that native clients need and that OpenAPI does not yet register. They are not allowed to add mobile-only semantics.
+3. **No generated-client mandate.** `OBSERVED`: SUAS has no generated SDK and no OpenAPI generator; drift check only. Each app keeps a hand-written client pinned to the repo OpenAPI file. A generator is permitted later as mechanism; it is not required by this packet.
+4. **HTML `/app/*` is not a domain command.** The web UI may keep HTML POSTs for browsers. A native client composes released JSON commands. `POST /app/qrf/deploy` is HTML UI, not `/api/v0`. Do not treat it as the mobile case-open.
+5. **Native HTTP, not in-app browser fetch.** `OBSERVED`: no CORS. Use the platform HTTP client. Do not load `/api/v0` through `WKWebView` or a browser cross-origin fetch.
+6. **Opaque bearer only.** Send `Authorization: Bearer <credential>`. Do not send cookies. Do not HMAC the token on the device; HMAC is server-side storage only.
+7. **Plane A only.** The device never holds a provider credential and never calls a Plane B capability ([SECURITY.md](SECURITY.md) §4 rule 7).
+8. **Worker/product API changes** are allowed only to expose an already-specified `/api/v0` command that native clients need and that OpenAPI does not yet register. They are not allowed to add mobile-only semantics. Auth status-code drift and the missing Check-In `requestBody` are recorded; this packet does not invent replacements.
 
 ## 5. Environment and configuration
 
@@ -127,26 +138,29 @@ Keep the existing Swift client. Change it so it is a configurable `/api/v0` clie
 
 1. Replace hardcoded `Backend.baseURL` / tenant with the §5 configuration object. Fail closed on missing or unknown values.
 2. Use HTTPS for any non-loopback host. `http://localhost:3000` is LOCAL-workstation only.
-3. Stop using `POST /app/qrf/deploy` (and any `/app/*` HTML command) as case-open or any other domain command.
+3. Stop using `POST /app/qrf/deploy` (and any `/app/*` HTML command) as case-open or any other domain command. That path is HTML UI, not `/api/v0`.
 4. Open or reuse a Support Case through a released JSON command (see §9). Then create Service Requests with `POST /api/v0/cases/{caseId}/service-requests` and `Idempotency-Key`, as the file already does.
 5. Retry unsafe commands with the **same** idempotency key. Treat an authoritative replay as success. Do not mint a new key because the network dropped.
 6. Consume growing lists with `cursor` + `limit`. Do not download complete history.
-7. Honor the released error contract, including `429` backoff ([API.md](API.md) §6; [APIS.md](APIS.md) §6).
-8. Persist the session credential only. Do not persist Veteran domain data (D-034).
-9. Gate `LocationManager` so location is one-time and purpose-scoped only where a released workflow collects it. No continuous or background location.
-10. Remove or compile-out `dev/last-challenge` and `dev/.../simulate` from non-LOCAL builds.
-11. Render [SAFETY_COPY.md](SAFETY_COPY.md) verbatim; ship `988` / Veterans Crisis Line local constants for crisis fallback.
-12. Expose the build-info surface.
+7. Honor the released error contract, including `429` backoff ([API.md](API.md) §6; [APIS.md](APIS.md) §6). Accept runtime auth statuses `202` / `201` / `204` even though OpenAPI documents `200`.
+8. Send the raw opaque `session_credential` as `Authorization: Bearer <credential>`. Do not HMAC it. Do not display or depend on `expires_at`.
+9. Record the D-034 gap: `AppState.swift` persists the bearer in `UserDefaults`. Do not close D-034. Do not persist Veteran domain data. Do not treat `UserDefaults` as the at-rest contract.
+10. Gate `LocationManager` so location is one-time and purpose-scoped only where a released workflow collects it. No continuous or background location.
+11. Staging login is released challenge/verify only. `GET /api/v0/dev/last-challenge` and `POST /api/v0/dev/service-requests/{id}/simulate` are not in OpenAPI and `404` on `https://suasqrf.com`. Compile them out of `STAGING` builds; do not call them as sign-in.
+12. Pin `docs/openapi/v0.json` from the SUAS repo. Do not fetch `/openapi.json` from the Worker.
+13. Use `URLSession` (or equivalent native HTTP). Do not call `/api/v0` through `WKWebView`.
+14. Render [SAFETY_COPY.md](SAFETY_COPY.md) verbatim; ship `988` / Veterans Crisis Line local constants for crisis fallback.
+15. Expose the build-info surface.
 
 ## 7. Android plan
 
 Keep the existing Kotlin Compose app. Give it the **same** Veteran client surface as iOS.
 
-1. Add a hand-written `/api/v0` client (or an equivalent typed wrapper) covering the same Veteran paths iOS already calls, plus `GET /api/v0/immediate-resources` for the server-owned crisis slot.
-2. Apply the same §5 configuration, TLS, fail-closed, tenant-pin, and build-info rules.
+1. Add a hand-written `/api/v0` client pinned to the SUAS repo OpenAPI file. Smallest Veteran loop first: health, challenges, verify, logout, `GET /api/v0/veterans/me`, Check-In start/read/respond/complete. Check-In answers use `{question_id, answer_option_id}`. Then add `GET /api/v0/immediate-resources` and the other Veteran JSON paths iOS already calls.
+2. Apply the same §5 configuration, TLS, fail-closed, tenant-pin, opaque Bearer, native-HTTP, and build-info rules. No cookies. No CORS assumption. No generated SDK.
 3. Replace scaffold copy that invents providers, dispatch, payment, or unofficial crisis instructions with [MVP_REFERENCE.md](MVP_REFERENCE.md) hierarchy and [SAFETY_COPY.md](SAFETY_COPY.md) wording.
 4. Wire `I NEED SUPPORT` / QRF / released categories to JSON commands and truthful states. Non-operational cards stay visibly non-operational.
-5. Same session, idempotency, pagination, error, consent-at-use-time, and D-034 persistence rules as iOS.
+5. Same session, idempotency, pagination, error, and consent-at-use-time rules as iOS. Do not persist Veteran domain data. Do not close D-034.
 6. Do not add push, social login, contact-list access, or continuous location while filling in the scaffold.
 
 ## 8. Shared client rules (both apps)
@@ -154,7 +168,9 @@ Keep the existing Kotlin Compose app. Give it the **same** Veteran client surfac
 | Topic | Rule |
 |---|---|
 | Version selector | `/api/v0` only |
-| Auth | Passwordless challenge → Bearer session → logout command |
+| Auth | Passwordless challenge → opaque Bearer (`Authorization: Bearer <credential>`) → logout. Accept `202`/`201`/`204`. No cookies. No device HMAC. No `/dev/*` on STAGING. |
+| Contract pin | Repo `docs/openapi/v0.json`; Worker `/openapi.json` is `404` |
+| Transport | Native HTTP client. Not `WKWebView` / browser cross-origin fetch (no CORS). |
 | Unsafe writes | `Idempotency-Key`; stable across retry |
 | Lists | `cursor` + `limit` |
 | Consent | Server at use time; never a cached grant |
@@ -164,7 +180,7 @@ Keep the existing Kotlin Compose app. Give it the **same** Veteran client surfac
 
 ## 9. Product API obligation — case-open gap
 
-`OBSERVED`: a Veteran native client today has no registered JSON case-open command. [API.md](API.md) §8 names `POST /cases`. OpenAPI and `src/http/routes/cases.ts` register GET queue / GET-by-id / responder commands only. iOS currently posts HTML `/app/qrf/deploy`.
+`OBSERVED`: a Veteran native client today has no registered JSON case-open command. [API.md](API.md) §8 names `POST /cases`. OpenAPI and `src/http/routes/cases.ts` register GET queue / GET-by-id / responder commands only. iOS currently posts HTML `/app/qrf/deploy`. That path is HTML UI, not `/api/v0`. Do not treat it as the mobile case-open.
 
 `INFERRED`: the HTML path is a browser command wired in SPEC-017 Slice 10, not the mobile contract.
 
@@ -183,8 +199,12 @@ This packet does not authorize any other Worker change.
 - Generated-client requirement.
 - Second API prefix or mobile-only version selector.
 - Enabling push, social login, store distribution, or production by configuration.
-- Shipping LOCAL `/dev/` helpers in STAGING.
-- Closing D-034 by picking Keychain/Keystore “because that is what platforms do.”
+- Staging login through `/api/v0/dev/last-challenge` or `/api/v0/dev/service-requests/{id}/simulate` (not in OpenAPI; `404` on `https://suasqrf.com`).
+- Treating `POST /app/qrf/deploy` as the mobile case-open.
+- Fetching `/openapi.json` from the Worker, or requiring a generated SDK.
+- Calling `/api/v0` through `WKWebView` or a browser CORS fetch.
+- HMAC-ing the session token on the device, or sending cookies instead of the raw Bearer.
+- Closing D-034 by moving `UserDefaults` to Keychain/Keystore “because that is what platforms do.” Record the iOS `UserDefaults` gap; leave D-034 open.
 - HIPAA or live-ops claims. D-006 stays `DECISION_PENDING`.
 - Treating `https://suasqrf.com` as production. It is `OBSERVED` synthetic STAGING.
 
@@ -195,19 +215,19 @@ Order only. Not a definition of done. Not a completeness claim.
 1. Specify accepted (this packet).
 2. SUAS: register Veteran-reachable `POST /cases` (or return the gap) and refresh `docs/openapi/v0.json`.
 3. Shared client configuration + fail-closed + build-info on both apps.
-4. iOS: drop `/app/*`; point STAGING at a configurable HTTPS base URL; keep `/api/v0` calls; compile-out `/dev/`.
-5. Android: add the same `/api/v0` client and replace untruthful scaffold copy.
-6. Both: crisis fallback, consent-at-use-time, idempotent retries, cursor lists, D-034 session-only persistence.
+4. iOS: drop `/app/*`; point STAGING at a configurable HTTPS base URL; keep `/api/v0` calls; compile-out `/dev/*`; staging login is challenge/verify only.
+5. Android: add the same `/api/v0` client (smallest Veteran loop first) and replace untruthful scaffold copy.
+6. Both: crisis fallback, consent-at-use-time, idempotent retries, cursor lists. Record the iOS `UserDefaults` bearer gap; do not close D-034.
 7. Synthetic STAGING evidence against [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md) §6 and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) §11.
 
 ## 12. Testability
 
 Demonstrate with deterministic synthetic fixtures, not real Veterans:
 
-1. Both apps call only `/api/v0` paths present in OpenAPI (plus the §9 command once registered).
-2. No `/app/*` command from a native client.
-3. Unsafe commands replay with the same `Idempotency-Key`.
-4. `STAGING` build fails closed on pin mismatch and refuses LOCAL-only `/dev/` paths.
+1. Both apps call only `/api/v0` paths present in the pinned repo OpenAPI file (plus the §9 command once registered). They do not fetch `/openapi.json`.
+2. No `/app/*` command from a native client. `POST /app/qrf/deploy` is not treated as case-open.
+3. Unsafe commands replay with the same `Idempotency-Key`. Auth uses raw Bearer; challenges `202`, verify `201`, logout `204` are accepted.
+4. `STAGING` sign-in is released challenge/verify. `/api/v0/dev/*` is not called and `404`s on `https://suasqrf.com`.
 5. Crisis surface still presents `988` and the Veterans Crisis Line when `GET /api/v0/immediate-resources` fails.
 6. Android no longer shows unofficial crisis wording or invented provider/dispatch/payment claims.
 7. iOS is not localhost-only.

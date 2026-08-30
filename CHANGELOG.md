@@ -4,6 +4,16 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive D-036 authentication network-rate-limit decision packet — 2026-08-30 PT
+
+**Decision-preparation only. Not a version bump. Does not release a threshold or authorize implementation, pilot, or production operation.**
+
+- Opened D-036 for the network-signal portion of the released [AUTH.md](AUTH.md) §3 challenge contract.
+- Added [D036_AUTH_NETWORK_RATE_LIMIT.md](D036_AUTH_NETWORK_RATE_LIMIT.md) with threat/usability constraints, explicit options, an `INFERRED` recommendation, trusted-address and privacy proposals, acceptance vectors, and a complete owner decision form.
+- Preserved released destination/account limits and every production, privacy, provider, client, and launch gate until an owner closes and releases D-036.
+
+---
+
 ## 0.6.0 — 2026-08-30 PT — Resend and browser authentication
 
 **Implementation-authoritative; not pilot or production approval.**

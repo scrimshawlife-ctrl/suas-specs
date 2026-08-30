@@ -1,9 +1,9 @@
 # AGENTS.md — Required rules for agents and implementers
 
-**Released stack:** `0.4.0`
+**Released stack:** `0.6.0`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
 **Current stage:** `SPEC-017`
-**Start here:** [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
+**Start here:** [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 
 This file binds human and automated agents working on SUAS specifications or implementation.
 

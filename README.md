@@ -1,12 +1,12 @@
-# Shut Up and Serve (SUAS) — Specification v0.4.0
+# Shut Up and Serve (SUAS) — Specification v0.6.0
 
 **Product:** Shut Up and Serve
 **System:** SUAS
-**Version:** `0.4.0`
+**Version:** `0.6.0`
 **Lifecycle:** `released`
 **Phase:** `IMPLEMENTATION_AUTHORIZED`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
-**Release manifest:** [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
+**Release manifest:** [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 
 `SUAS-specs` is canonical. `scrimshawlife-ctrl/SUAS` implements released contracts and may not redefine them from code, prototype behavior, provider behavior, deployment state, or traction.
 
@@ -14,7 +14,7 @@ The weekend-build document **HACKATHON BUILD SPECIFICATION Rev 3 (2026-08-14)** 
 
 ## Start here for implementation / Fable handoff
 
-1. [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
+1. [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 2. [HANDOFF.md](HANDOFF.md)
 3. [ENVIRONMENT.md](ENVIRONMENT.md)
 4. [STATUS.md](STATUS.md)

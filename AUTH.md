@@ -27,7 +27,7 @@ Veterans use passwordless methods:
 | Email OTP | supported where email provider configured |
 | Phone OTP | supported where phone + SMS provider configured |
 
-At least one usable enrolled channel is required for MVP enrollment under the D-016 `DECIDED` v0.1 default (self-attest + working passwordless contact; no VA/DD-214/in-person proofing). Provider selection remains D-003/D-004.
+At least one usable enrolled channel is required for MVP enrollment under the D-016 `DECIDED` v0.1 default (self-attest + working passwordless contact; no VA/DD-214/in-person proofing). SMS provider selection remains D-003; EMAIL uses Resend under D-004.
 
 No Veteran password or social login unless a later accepted spec adds it.
 
@@ -130,6 +130,20 @@ Audit challenge issuance/verification outcome, login success/fail, MFA changes, 
 External challenge delivery uses capability ports from [APIS.md](APIS.md). Provider delivery acknowledgement does not itself authenticate the user; only SUAS challenge verification settles authentication.
 
 If a delivery provider is unavailable, that channel is unavailable. Do not fake success.
+
+EMAIL delivery uses Resend exclusively under D-004 and [RELEASE_DECISIONS-0.6.0.md](RELEASE_DECISIONS-0.6.0.md). Provider acceptance does not authenticate the user; only successful atomic challenge verification does.
+
+### 9.1 Browser passwordless transport
+
+The HTML `/app` surface may issue an `EMAIL_OTP` challenge for an already-enrolled address and exchange a valid code for the same opaque, server-revocable session used by the API.
+
+- The deployment resolves tenant scope from `SUAS_BROWSER_TENANT_ID`; the browser does not submit or choose tenant authority.
+- Challenge issuance returns the same public confirmation for enrolled and unenrolled destinations. An unenrolled destination receives no message.
+- Verification sets the session credential only in a `Secure`, `HttpOnly`, `SameSite=Strict` cookie scoped to `/app`.
+- `/api/v0` and native clients continue to use `Authorization: Bearer`; they do not use the browser cookie.
+- Cookie-authenticated state-changing `/app` requests reject cross-origin submissions.
+- Browser logout revokes the server session and clears the cookie.
+- This path is sign-in, not enrollment. It creates no User, role, membership, PilotEnrollment, Veteran record, or Consent Grant.
 
 ---
 

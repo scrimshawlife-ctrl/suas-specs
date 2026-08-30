@@ -1,10 +1,10 @@
-# STATUS.md — SUAS specification status (v0.4.0)
+# STATUS.md — SUAS specification status (v0.6.0)
 
 **Specification lifecycle:** `released`
 **Phase:** `IMPLEMENTATION_AUTHORIZED`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
-**Release manifest:** [RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)
-**Decision ledger:** [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md) for limited D-035 evidence authority; inherited ledgers govern other decided and deferred entries.
+**Release manifest:** [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
+**Decision ledger:** [RELEASE_DECISIONS-0.6.0.md](RELEASE_DECISIONS-0.6.0.md) for D-004; inherited ledgers govern other decisions.
 **Pilot readiness:** `NOT_READY`
 **Production readiness:** `NOT_READY`
 

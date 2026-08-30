@@ -16,6 +16,16 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive D-033 native-client integration packet — 2026-08-29 PT
+
+**Implementation-binding specify + plan. Not a version bump. Does not reopen D-033. Does not close D-034 / D-006. Does not advance SPEC-017 / SPEC-018 / readiness gates.**
+
+- Added [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md) (Veteran-facing specify) and [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md) (how the existing iOS and Android forks consume released `/api/v0`).
+- Did not consume a SPEC-0xx stage number ([ROADMAP.md](ROADMAP.md): a D-033-class client binding does not open a new stage). Did not add a D-id. Did not bump the stack.
+- Linked the packet from [MOBILE_SURFACE.md](MOBILE_SURFACE.md) §13, the D-033 row in [DECISIONS.md](DECISIONS.md), [README.md](README.md), and [STATUS.md](STATUS.md).
+- Recorded the observed case-open gap (HTML `/app/qrf/deploy` vs missing implemented `POST /cases`) as a returned implementation gap, not a new endpoint family.
+---
+
 ## 0.4.0 — pending owner merge — D-035 sandbox evidence authority
 
 **Limited implementation evidence authority; D-035 remains DECISION_PENDING; not production-operating approval.**

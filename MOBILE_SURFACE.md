@@ -3,7 +3,7 @@
 **Lifecycle:** `released` via [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
 **Authority:** client-surface contract for a native mobile application
 **Decision:** D-033 ([RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md))
-**Related:** [ARCHITECTURE.md](ARCHITECTURE.md) §4, [MVP_REFERENCE.md](MVP_REFERENCE.md), [API.md](API.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [ENVIRONMENT.md](ENVIRONMENT.md), [TESTING.md](TESTING.md)
+**Related:** [ARCHITECTURE.md](ARCHITECTURE.md) §4, [MVP_REFERENCE.md](MVP_REFERENCE.md), [API.md](API.md), [APIS.md](APIS.md), [AUTH.md](AUTH.md), [CONSENT.md](CONSENT.md), [PRIVACY.md](PRIVACY.md), [SECURITY.md](SECURITY.md), [SAFETY.md](SAFETY.md), [SAFETY_COPY.md](SAFETY_COPY.md), [NOTIFICATIONS.md](NOTIFICATIONS.md), [ENVIRONMENT.md](ENVIRONMENT.md), [TESTING.md](TESTING.md), [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md)
 
 ## 1. Purpose
 
@@ -152,3 +152,7 @@ These extend the suites in [TESTING.md](TESTING.md) §7 and §8. They do not cre
 - Creating a second required-surface inventory or a mobile-specific product identity.
 - Making platform accessibility guidelines a substitute for WCAG 2.2 AA.
 - Specifying application-store presence, review, or metadata, which remain operating concerns gated by SPEC-018.
+
+## 13. Implementation-binding drafts
+
+Veteran-facing specify and fork-binding plan for the existing iOS and Android apps live in [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md) and [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md). Those files do not amend this contract, bump the stack, or authorize production. This file remains the released client-surface authority.

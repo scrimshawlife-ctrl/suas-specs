@@ -4,8 +4,8 @@
 **Decision:** D-033 (already `DECIDED`; [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md))  
 **Contract:** [MOBILE_SURFACE.md](MOBILE_SURFACE.md)  
 **How:** [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md)  
-**Stack:** inherits current released stack `0.5.0`; this file does not bump it  
-**Does not open or close:** D-034, D-006, D-002, device push, application-store distribution, production VA, or any readiness gate
+**Stack:** inherits current released stack `0.6.0`; this file does not bump it  
+**Does not open or close:** D-034, D-006, D-002, D-004, device push, application-store distribution, production VA, or any readiness gate
 
 This file states **what** a Veteran sees and does on the existing native iOS and Android apps when those apps talk to the identified opt-in platform. It does not add a domain concept, state, event, capability, API selector, or configuration variable. It does not define “complete.”
 
@@ -45,7 +45,7 @@ The journeys below are the Veteran-visible meaning of already-released obligatio
 
 ### 3.1 Sign in
 
-The Veteran signs in with a passwordless challenge on a channel the build can actually deliver ([AUTH.md](AUTH.md) §2, §9; [ONBOARDING.md](ONBOARDING.md) §7.1).
+The Veteran signs in with a passwordless challenge on a channel the build can actually deliver ([AUTH.md](AUTH.md) §2, §9; [ONBOARDING.md](ONBOARDING.md) §7.1). EMAIL delivery uses Resend under D-004. Native clients receive the session as `Authorization: Bearer`. They do not use the v0.6.0 HTML `/app` cookie ([AUTH.md](AUTH.md) §9.1).
 
 The Veteran:
 

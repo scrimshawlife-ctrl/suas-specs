@@ -23,7 +23,7 @@ Therefore this packet:
 |---|---|
 | New SPEC-0xx stage (`SPEC-017` / `SPEC-020`) | Rejected. Would invent a stage and contradict [ROADMAP.md](ROADMAP.md). |
 | New D-id | Rejected. D-033 already released the capability. |
-| Stack bump (`0.6.0`) | Rejected. No new contract, no closed decision. |
+| Stack bump | Rejected. Inherits current `0.6.0`. No new contract. Does not reopen D-004. |
 | File names | `D033_NATIVE_CLIENT_INTEGRATION.md` (specify) + this plan, following the `D035_*` / `D-006_*` named-packet pattern. |
 
 ## 2. Observed current state
@@ -36,7 +36,8 @@ Do not treat this section as a product decision. It is the starting inventory.
 
 - Machine-readable contract: `docs/openapi/v0.json` (OpenAPI 3.0.3; `info.version` `0.2.0`). Paths document what the runtime registers today; draft [APIS.md](APIS.md) Plane A paths that are not yet implemented are intentionally absent.
 - The Worker does **not** serve `/openapi.json` (`404`). Clients pin the repo file. There is no generated SDK in SUAS. Drift check only: `npm run openapi:check` (`scripts/check-openapi-drift.ts`).
-- Auth is opaque session bearer only. Header: `Authorization: Bearer <credential>`. No cookies. Client HMAC is server-side storage only; the client sends the raw opaque token.
+- Auth for `/api/v0` and native clients is opaque session bearer only. Header: `Authorization: Bearer <credential>`. Native clients do not use cookies. v0.6.0 added a browser `/app` cookie; that path is HTML only ([AUTH.md](AUTH.md) §9.1). Client HMAC is server-side storage only; the client sends the raw opaque token.
+- EMAIL delivery uses Resend exclusively under D-004. Native sign-in remains released challenge/verify + Bearer, not the HTML EMAIL OTP cookie path.
 - Runtime status codes drift from OpenAPI. OpenAPI documents `200` for these three. Runtime: `POST /api/v0/auth/challenges` → `202`; verify → `201` `{session_credential, expires_at, mfa_elevated}`; logout → `204`.
 - No CORS (`Access-Control-Allow-Origin` absent; `OPTIONS` → `404`). Native HTTP clients are fine. A `WKWebView` or browser cross-origin fetch would be blocked.
 - Smallest Veteran loop from OpenAPI + route files: `GET /api/v0/health`; `POST /api/v0/auth/challenges`; `POST /api/v0/auth/challenges/commands/verify`; `POST /api/v0/auth/sessions/commands/logout`; `GET /api/v0/veterans/me`; `POST`/`GET` `/api/v0/check-ins`; `POST /api/v0/check-ins/{id}/responses`; `POST /api/v0/check-ins/{id}/commands/complete`.
@@ -80,7 +81,7 @@ Public fork of `RuntimeSquad/Suas`. Kotlin Jetpack Compose.
 | Crisis copy | [SAFETY_COPY.md](SAFETY_COPY.md) |
 | Shared HTTP contract | Repo file `docs/openapi/v0.json` in `scrimshawlife-ctrl/SUAS` (clients pin that file; the Worker does not serve `/openapi.json`), interpreted through [API.md](API.md) / [APIS.md](APIS.md) |
 | Environment | [ENVIRONMENT.md](ENVIRONMENT.md); shared testing is `STAGING` |
-| Auth / session | [AUTH.md](AUTH.md); opaque Bearer only (`Authorization: Bearer <credential>`); no cookies; client sends the raw token; `Idempotency-Key` on unsafe commands ([API.md](API.md) §7) |
+| Auth / session | [AUTH.md](AUTH.md); opaque Bearer only (`Authorization: Bearer <credential>`); native clients do not use the v0.6.0 `/app` cookie; client sends the raw token; `Idempotency-Key` on unsafe commands ([API.md](API.md) §7) |
 
 The OpenAPI file is the machine-readable inventory of **implemented** Plane A paths. [API.md](API.md) remains the product command doctrine. Where they disagree, do not invent a third path. Register the already-specified command on `/api/v0`, or return the gap here. Clients accept the `OBSERVED` auth status-code drift (`202` / `201` / `204`) rather than requiring OpenAPI’s documented `200`. Check-In answer writes use the route-file body `{question_id, answer_option_id}` until OpenAPI gains that `requestBody`; do not invent a different shape.
 
@@ -107,7 +108,7 @@ Rules:
 3. **No generated-client mandate.** `OBSERVED`: SUAS has no generated SDK and no OpenAPI generator; drift check only. Each app keeps a hand-written client pinned to the repo OpenAPI file. A generator is permitted later as mechanism; it is not required by this packet.
 4. **HTML `/app/*` is not a domain command.** The web UI may keep HTML POSTs for browsers. A native client composes released JSON commands. `POST /app/qrf/deploy` is HTML UI, not `/api/v0`. Do not treat it as the mobile case-open.
 5. **Native HTTP, not in-app browser fetch.** `OBSERVED`: no CORS. Use the platform HTTP client. Do not load `/api/v0` through `WKWebView` or a browser cross-origin fetch.
-6. **Opaque bearer only.** Send `Authorization: Bearer <credential>`. Do not send cookies. Do not HMAC the token on the device; HMAC is server-side storage only.
+6. **Opaque bearer only.** Send `Authorization: Bearer <credential>`. Do not send or read the v0.6.0 HTML `/app` cookie. Do not HMAC the token on the device; HMAC is server-side storage only.
 7. **Plane A only.** The device never holds a provider credential and never calls a Plane B capability ([SECURITY.md](SECURITY.md) §4 rule 7).
 8. **Worker/product API changes** are allowed only to expose an already-specified `/api/v0` command that native clients need and that OpenAPI does not yet register. They are not allowed to add mobile-only semantics. Auth status-code drift and the missing Check-In `requestBody` are recorded; this packet does not invent replacements.
 
@@ -120,7 +121,7 @@ Required on every build, stated explicitly, never inferred from hostname, debug/
 | Slot | Rule |
 |---|---|
 | Environment class | `LOCAL` \| `TEST` \| `STAGING`. `PRODUCTION` is invalid until SPEC-018. |
-| Spec pin | Released stack version the build claims (`0.5.0` or the pin SUAS currently implements). Mismatch fails closed. |
+| Spec pin | Released stack version the build claims (`0.6.0` or the pin SUAS currently implements). Mismatch fails closed. |
 | Manifest pin | Release manifest identifier. Mismatch fails closed. |
 | API base URL | Configurable. Not hardcoded to `http://localhost:3000` on a shared-testing build. Non-loopback traffic is TLS. |
 | Tenant scope | Pinned configuration until tenant-before-auth is decided. Not a Veteran-facing picker. |
@@ -157,7 +158,7 @@ Keep the existing Swift client. Change it so it is a configurable `/api/v0` clie
 Keep the existing Kotlin Compose app. Give it the **same** Veteran client surface as iOS.
 
 1. Add a hand-written `/api/v0` client pinned to the SUAS repo OpenAPI file. Smallest Veteran loop first: health, challenges, verify, logout, `GET /api/v0/veterans/me`, Check-In start/read/respond/complete. Check-In answers use `{question_id, answer_option_id}`. Then add `GET /api/v0/immediate-resources` and the other Veteran JSON paths iOS already calls.
-2. Apply the same §5 configuration, TLS, fail-closed, tenant-pin, opaque Bearer, native-HTTP, and build-info rules. No cookies. No CORS assumption. No generated SDK.
+2. Apply the same §5 configuration, TLS, fail-closed, tenant-pin, opaque Bearer, native-HTTP, and build-info rules. No `/app` cookie. No CORS assumption. No generated SDK.
 3. Replace scaffold copy that invents providers, dispatch, payment, or unofficial crisis instructions with [MVP_REFERENCE.md](MVP_REFERENCE.md) hierarchy and [SAFETY_COPY.md](SAFETY_COPY.md) wording.
 4. Wire `I NEED SUPPORT` / QRF / released categories to JSON commands and truthful states. Non-operational cards stay visibly non-operational.
 5. Same session, idempotency, pagination, error, and consent-at-use-time rules as iOS. Do not persist Veteran domain data. Do not close D-034.
@@ -168,7 +169,7 @@ Keep the existing Kotlin Compose app. Give it the **same** Veteran client surfac
 | Topic | Rule |
 |---|---|
 | Version selector | `/api/v0` only |
-| Auth | Passwordless challenge → opaque Bearer (`Authorization: Bearer <credential>`) → logout. Accept `202`/`201`/`204`. No cookies. No device HMAC. No `/dev/*` on STAGING. |
+| Auth | Passwordless challenge → opaque Bearer (`Authorization: Bearer <credential>`) → logout. Accept `202`/`201`/`204`. No `/app` cookie. No device HMAC. No `/dev/*` on STAGING. |
 | Contract pin | Repo `docs/openapi/v0.json`; Worker `/openapi.json` is `404` |
 | Transport | Native HTTP client. Not `WKWebView` / browser cross-origin fetch (no CORS). |
 | Unsafe writes | `Idempotency-Key`; stable across retry |
@@ -203,7 +204,7 @@ This packet does not authorize any other Worker change.
 - Treating `POST /app/qrf/deploy` as the mobile case-open.
 - Fetching `/openapi.json` from the Worker, or requiring a generated SDK.
 - Calling `/api/v0` through `WKWebView` or a browser CORS fetch.
-- HMAC-ing the session token on the device, or sending cookies instead of the raw Bearer.
+- HMAC-ing the session token on the device, or sending the v0.6.0 HTML `/app` cookie instead of the raw Bearer.
 - Closing D-034 by moving `UserDefaults` to Keychain/Keystore “because that is what platforms do.” Record the iOS `UserDefaults` gap; leave D-034 open.
 - HIPAA or live-ops claims. D-006 stays `DECISION_PENDING`.
 - Treating `https://suasqrf.com` as production. It is `OBSERVED` synthetic STAGING.

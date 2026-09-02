@@ -46,6 +46,8 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 | D-035 | Optional VA-backed Veteran-status verification during onboarding | `DECIDED` (v0.5.0); optional status-only VA sandbox capability. D-016 remains the permitted fallback; production remains blocked. |
 | D-036 | Authentication network-signal rate-limit threshold, trusted-address policy, and privacy semantics | `DECISION_PENDING`; owner decision packet: [D036_AUTH_NETWORK_RATE_LIMIT.md](D036_AUTH_NETWORK_RATE_LIMIT.md). No proposed threshold is implementation-authoritative. |
 
+**D-017 expansion review:** owner-reported Lyft Business approval opened [D017_LYFT_EXPANSION_PACKET.md](D017_LYFT_EXPANSION_PACKET.md). The packet is `DECISION_PENDING`; it does not alter the released Uber-only adapter authority or enable Lyft credentials/effects.
+
 D-006 remains `DECISION_PENDING`. [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) is a counsel register packet of product facts. It is not a legal opinion and does not close D-006 or set `HIPAA_APPLICABILITY`.
 
 D-035 is settled by v0.5.0 as an optional status-only VA sandbox capability. D-016 remains the permitted fallback. The settlement adds no production, reporting, deletion, export, purge, or real-world-effects authority. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) remains proposed reconciliation outside the released boundary. D-036 remains open; its packet prepares a coherent owner choice and releases no implementation default.

@@ -59,6 +59,17 @@ Use `OBSERVED`, `INFERRED`, `SPECULATIVE`, `NOT_COMPUTABLE`, `DECISION_PENDING`,
 
 `SUAS-specs` contains specification/governance/handoff material, not application code or credentials. Implementation lives in three repositories listed in [REPOS.md](REPOS.md). Fable and other implementers should follow [HANDOFF.md](HANDOFF.md) before the first change.
 
+## SDLC
+
+Non-trivial changes start here:
+
+1. `intent.md` — copy [intent/_TEMPLATE.md](intent/_TEMPLATE.md); see [intent/README.md](intent/README.md).
+2. `spec.md` — include `## Workflows`.
+3. plan
+4. implement
+
+Clarifications that do not change behavior may skip this sequence. The [HANDOFF.md](HANDOFF.md) hold still applies: do not define complete. Do not add an SDLC `HANDOFF.md` in this repository.
+
 ## Escalation
 
 If CI or tests look wrong, open a labeled defect (`bug`). Do not edit tests to force green.

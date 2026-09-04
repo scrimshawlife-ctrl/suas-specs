@@ -58,3 +58,7 @@ Use `OBSERVED`, `INFERRED`, `SPECULATIVE`, `NOT_COMPUTABLE`, `DECISION_PENDING`,
 ## Repository boundary
 
 `SUAS-specs` contains specification/governance/handoff material, not application code or credentials. Implementation lives in three repositories listed in [REPOS.md](REPOS.md). Fable and other implementers should follow [HANDOFF.md](HANDOFF.md) before the first change.
+
+## Escalation
+
+If CI or tests look wrong, open a labeled defect (`bug`). Do not edit tests to force green.

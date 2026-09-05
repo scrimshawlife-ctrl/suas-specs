@@ -1,5 +1,6 @@
 ---
 name: evidence-gate
+description: Evaluate evidence gates without granting production authority.
 version: 1.0.0
 kind: specification
 status: active

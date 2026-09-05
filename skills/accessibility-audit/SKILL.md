@@ -1,5 +1,6 @@
 ---
 name: accessibility-audit
+description: Audit accessibility evidence against the released SUAS contract.
 version: 1.0.0
 kind: specification
 status: active

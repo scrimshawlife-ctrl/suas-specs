@@ -1,5 +1,6 @@
 ---
 name: synthetic-data
+description: Prepare synthetic SUAS data without real-person information.
 version: 1.0.0
 kind: specification
 status: active

@@ -1,5 +1,6 @@
 ---
 name: contract-validation
+description: Validate SUAS artifacts against released contracts.
 version: 1.0.0
 kind: specification
 status: active

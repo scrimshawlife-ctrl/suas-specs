@@ -1,5 +1,6 @@
 ---
 name: recovery-test
+description: Check recovery evidence using approved synthetic fixtures.
 version: 1.0.0
 kind: specification
 status: active

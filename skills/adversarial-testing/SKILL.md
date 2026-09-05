@@ -1,5 +1,6 @@
 ---
 name: adversarial-testing
+description: Test adversarial cases within approved synthetic boundaries.
 version: 1.0.0
 kind: specification
 status: active

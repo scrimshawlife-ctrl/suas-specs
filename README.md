@@ -124,3 +124,5 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 ## Next work
 
 Proceed with SPEC-017 in `scrimshawlife-ctrl/SUAS`, using [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts.
+
+Skill source selection, migration and safe checks: [SKILL_PROVENANCE.md](SKILL_PROVENANCE.md).

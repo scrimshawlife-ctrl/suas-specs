@@ -35,6 +35,7 @@ Each skill MUST include YAML frontmatter with:
 ```yaml
 ---
 name: <skill-name>
+description: "Use when <trigger>. <What this skill does; non-empty, at most 1024 characters>."
 version: 1.0.0
 kind: specification|runtime
 status: active

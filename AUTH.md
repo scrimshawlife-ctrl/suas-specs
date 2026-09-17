@@ -1,11 +1,11 @@
 # AUTH.md — Authentication and session authorization (SUAS v0.1)
 
-**Related:** [SECURITY.md](SECURITY.md), [ADMIN.md](ADMIN.md), [PRODUCT.md](PRODUCT.md), [API.md](API.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md)
+**Related:** [SECURITY.md](SECURITY.md), [ADMIN.md](ADMIN.md), [PRODUCT.md](PRODUCT.md), [API.md](API.md), [DOMAIN_MODEL.md](DOMAIN_MODEL.md), [ONBOARDING.md](ONBOARDING.md), [APIS.md](APIS.md), [SCALING.md](SCALING.md), [RESILIENCE.md](RESILIENCE.md), [MOBILE_SURFACE.md](MOBILE_SURFACE.md), [D033_SIGN_IN_PARITY.md](D033_SIGN_IN_PARITY.md)
 
 **Actors:** Veteran, Responder, Organization Administrator, SUAS System Administrator, Trusted Contact (if enrolled), Service Provider user.
 
 **Status:** `draft` / `0.1.0`. SPEC-007 is dependency-blocked; this is preflight reconciliation.  
-**Authority:** released via [RELEASE_MANIFEST-0.1.6.md](RELEASE_MANIFEST-0.1.6.md). The inline `draft` marker is stale and is not authority ([VERSIONING.md](VERSIONING.md) §1).
+**Authority:** released via [RELEASE_MANIFEST-0.1.6.md](RELEASE_MANIFEST-0.1.6.md). The inline `draft` marker is stale and is not authority ([VERSIONING.md](VERSIONING.md) §1). v0.6.0 adds §9.1 and the parity note in §9.2 without changing passwordless doctrine.
 
 ---
 
@@ -144,6 +144,12 @@ The HTML `/app` surface may issue an `EMAIL_OTP` challenge for an already-enroll
 - Cookie-authenticated state-changing `/app` requests reject cross-origin submissions.
 - Browser logout revokes the server session and clears the cookie.
 - This path is sign-in, not enrollment. It creates no User, role, membership, PilotEnrollment, Veteran record, or Consent Grant.
+
+### 9.2 Client-surface parity
+
+HTML `/app`, iOS, and Android perform the §9 / §9.1 sign-in act. They do not perform three different product acts. Transport and command path differ; meaning does not. The binding table is [D033_SIGN_IN_PARITY.md](D033_SIGN_IN_PARITY.md).
+
+A native client must not wrap `/app/join` in a WebView to “reuse the web form.” That would smuggle the cookie scheme onto a device and skip `/api/v0`.
 
 ---
 

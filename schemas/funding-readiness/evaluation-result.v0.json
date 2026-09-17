@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suas.local/schemas/funding-readiness/evaluation-result.v0.json",
+  "title": "EvaluationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evaluation_id", "run_id", "artifact_id", "evaluator_ref", "independence", "evaluated_at_utc", "metrics"],
+  "properties": {
+    "schema_version": { "const": "evaluation-result.v0" },
+    "evaluation_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "artifact_id": { "type": "string", "minLength": 1 },
+    "evaluator_ref": { "type": "string", "minLength": 1 },
+    "independence": { "enum": ["INDEPENDENT", "OPERATOR_SELF", "NOT_COMPUTABLE"] },
+    "evaluated_at_utc": { "type": "string", "minLength": 1 },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metric_id", "status"],
+        "properties": {
+          "metric_id": { "type": "string" },
+          "value": {},
+          "status": { "enum": ["COMPUTED", "NOT_COMPUTED", "NOT_COMPUTABLE"] },
+          "reason": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "lineage": { "type": "array", "items": { "type": "string" } }
+  }
+}

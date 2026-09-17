@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suas.local/schemas/funding-readiness/experiment-cost-record.v0.json",
+  "title": "ExperimentCostRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_id", "experiment_id", "resource", "recorded_at_utc"],
+  "properties": {
+    "schema_version": { "const": "experiment-cost-record.v0" },
+    "record_id": { "type": "string", "minLength": 1 },
+    "experiment_id": { "type": "string", "minLength": 1 },
+    "resource": { "type": "string", "minLength": 1 },
+    "usage_qty": { "type": ["number", "null"] },
+    "usage_unit": { "type": ["string", "null"] },
+    "nominal_cost_usd": { "type": ["number", "null"] },
+    "credit_applied_usd": { "type": ["number", "null"] },
+    "cash_cost_usd": { "type": ["number", "null"] },
+    "provider": { "type": ["string", "null"] },
+    "evidence_artifact_ids": { "type": "array", "items": { "type": "string" } },
+    "recorded_at_utc": { "type": "string", "minLength": 1 }
+  }
+}

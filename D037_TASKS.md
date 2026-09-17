@@ -57,17 +57,17 @@ FR-T-OBS-001 is a specs-repo inventory against public contracts. It is not a `su
 
 ## FUNDING
 
-Documentation only. Owner-supplied artifacts may be attached in this repository without runtime work.
+Documentation only. Owner-supplied artifacts may be attached in this repository without runtime work. Slots live in [D037_FUND_INTAKE.md](D037_FUND_INTAKE.md). The intake file is not evidence.
 
-| ID | Task | Parent | Acceptance |
-|---|---|---|---|
-| FR-T-FUND-001 | Attach SAM / UEI artifacts when the owner provides them | FR-R-001 | rows promote from OPERATOR_ASSERTED / NOT_COMPUTABLE to OBSERVED |
-| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | provider no longer NOT_COMPUTABLE |
-| FR-T-FUND-003 | Assess a named opportunity only from a source URL | FR-R-009 | WF-FR-003 record |
+| ID | Task | Parent | Acceptance | State |
+|---|---|---|---|---|
+| FR-T-FUND-001 | Attach SAM / UEI artifacts when the owner provides them | FR-R-001 | rows promote from OPERATOR_ASSERTED / NOT_COMPUTABLE to OBSERVED | `OPEN` / waiting on owner files |
+| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | provider no longer NOT_COMPUTABLE | `OPEN` / waiting on owner files |
+| FR-T-FUND-003 | Assess a named opportunity only from a source URL | FR-R-009 | WF-FR-003 record | `OPEN` / no source URL |
 
 ## Runtime repositories
 
-`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet. A later released limited-authority qualifier may create them. Coding agents must not open product PRs to "support grants."
+`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet. A later released limited-authority qualifier may create them. Coding agents must not open product PRs to "support grants." SPEC-017 continues in those repos under existing release authority, not under D-037.
 
 ## Gate application
 

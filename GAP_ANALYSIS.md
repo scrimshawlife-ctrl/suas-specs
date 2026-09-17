@@ -11,14 +11,13 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 - Specs through SPEC-016 are accepted or released. Work now is SPEC-017: build what the pin says, send leftovers back here.
 - Web sign-in for already-enrolled people works with an email code and a cookie.
 - Phones sign in with the same email code and a Bearer token. They do not use the cookie.
-- Opening a Support Case on phones and JSON is `POST /api/v0/cases`. One open Case per Veteran.
+- Opening a Support Case is `POST /api/v0/cases`. One open Case per Veteran.
+- Android installed launcher can submit transportation, food, and shelter requests after sign-in. Tests still use the dummy home.
 - Chat pages say chat is unavailable. Responder number tiles say there is no released formula.
 - Uber and Amadeus adapters exist as code only. They do not book or charge.
 - Funding overlay (SAM plus cloud credits) is specified. It does not move a readiness gate.
 
 ## Product holes that stay closed until someone writes a rule
-
-These are filled as “do not invent it.” They are not filled as features.
 
 | What you might expect | What happens today | Why |
 |---|---|---|
@@ -30,8 +29,6 @@ These are filled as “do not invent it.” They are not filled as features.
 | Failed provider work auto-closes the request | It does not | Owner has not chosen the map (G-I-8). |
 
 ## Owner decisions that still need real values
-
-Do not pick numbers or vendors in code.
 
 | Decision | In plain English |
 |---|---|
@@ -54,9 +51,9 @@ JSON sign-in still asks the app to send `tenant_id`. The person must not pick an
 | Surface | Left |
 |---|---|
 | Web | Chat and number tiles stay honest-unavailable. |
-| Android | Food and shelter cards still do nothing. Ride submit works only on the installed launcher after sign-in. Tests still use the dummy form. |
-| iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. Older draft PRs that duplicated this work are closed. |
+| Android | Peer support is not on the home cards. Dummy `MainActivity` form remains for tests. |
+| iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. |
 
 ## What this is not
 
-Not a grant product. Not production. Not a live pilot. Not store distribution. Not a claim that Google Cloud should host the product. Evidence files may use a separate Google Cloud project later; that project is not the app.
+Not a grant product. Not production. Not a live pilot. Not store distribution. Not a claim that Google Cloud should host the product.

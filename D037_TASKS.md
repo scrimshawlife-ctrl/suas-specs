@@ -17,12 +17,13 @@ Lane codes: `SPEC`, `INFRA`, `OBSERVABILITY`, `SECURITY`, `EXPERIMENT`, `EVALUAT
 
 ## INFRA
 
-Blocked on owner limited-implementation authority and on D-001 remaining open, except the written inventory itself.
+Blocked on owner limited-implementation authority and on D-001 remaining open, except written inventories and placement doctrine.
 
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
 | FR-T-INFRA-001 | Inventory whether existing `suas` STAGING can host Run 001 without a new vendor | FR-R-002, FR-R-003 | written inventory; no silent vendor pick | `DONE` 2026-09-17 as [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md); instance still unproven |
-| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy | `OPEN` / `BLOCKED` on destination + limited authority |
+| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy | `OPEN` / `BLOCKED`; when declared, prefer isolated GCP object storage per [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md) |
+| FR-T-INFRA-003 | Specify which architecture parts belong on Google Cloud | FR-R-016, FR-R-017, FR-R-018 | placement map; D-001 stays open | `DONE` 2026-09-17 as [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md) |
 
 ## OBSERVABILITY
 
@@ -62,19 +63,19 @@ Documentation only. Owner-supplied artifacts may be attached in this repository 
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
 | FR-T-FUND-001 | Attach SAM / UEI artifacts when the owner provides them | FR-R-001 | rows promote from OPERATOR_ASSERTED / NOT_COMPUTABLE to OBSERVED | `OPEN` / waiting on owner files |
-| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | provider no longer NOT_COMPUTABLE | `OPEN` / waiting on owner files |
+| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | SKUs / expiration / balance no longer NOT_COMPUTABLE | `OPEN` / provider name `OPERATOR_ASSERTED` as Google Cloud; terms still missing |
 | FR-T-FUND-003 | Assess a named opportunity only from a source URL | FR-R-009 | WF-FR-003 record | `OPEN` / no source URL |
 
 ## Runtime repositories
 
-`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet. A later released limited-authority qualifier may create them. Coding agents must not open product PRs to "support grants." SPEC-017 continues in those repos under existing release authority, not under D-037.
+`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet. A later released limited-authority qualifier may create them. Coding agents must not open product PRs to "support grants" or to move the monolith onto GCP. SPEC-017 continues in those repos under existing release authority, not under D-037.
 
 ## Gate application
 
 | Gate | Tasks that can move it | Current |
 |---|---|---|
 | FR-1 | this packet + owner review | `PASS` 2026-09-17 (`ACCEPT_AS_SPECIFIED`) |
-| FR-2 | FR-T-INFRA-001 (inventory done; host unproven), FR-T-OBS-001 (inventory done; emit `NOT_COMPUTABLE`), FR-T-EXP-001 (still open), FR-T-INFRA-002 | `NOT_READY` |
+| FR-2 | FR-T-INFRA-001 (done), FR-T-OBS-001 (done), FR-T-INFRA-003 (done as doctrine), FR-T-EXP-001 (open), FR-T-INFRA-002 (open) | `NOT_READY` |
 | FR-3 | FR-T-EXP-002 | `NOT_READY` |
 | FR-4 | FR-T-EVAL-001, FR-T-EVAL-002 | `NOT_READY` |
 | FR-5 | FR-3 + FR-4 + FR-T-FUND-001 at OBSERVED | `NOT_READY` |

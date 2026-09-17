@@ -7,7 +7,7 @@
 **Does not move:** FR-2, FR-3, FR-4, FR-5  
 **Does not claim:** `GRANT_READY`, `GRANT_ELIGIBLE`, `FUNDING_SECURED`
 
-This file is the drop point for owner-supplied organizational artifacts. Empty slots stay `NOT_COMPUTABLE`. An agent must not invent UEI, CAGE, SAM legal name, credit provider, expiration, or eligibility.
+This file is the drop point for owner-supplied organizational artifacts. Empty slots stay `NOT_COMPUTABLE`. An agent must not invent UEI, CAGE, SAM legal name, expiration, or eligibility.
 
 Place files under `evidence/organizational/` in a later commit that cites this table. Do not commit secrets, bank account numbers, tax IDs beyond what SAM already publishes, or live API keys.
 
@@ -30,13 +30,13 @@ Promotion rule: a slot becomes `OBSERVED` only when a file exists at a named pat
 | Slot | Current label | Artifact path | Notes |
 |---|---|---|---|
 | `$300` credits available | `OPERATOR_ASSERTED` 2026-09-17 | _none_ | |
-| Provider name | `NOT_COMPUTABLE` | _none_ | not D-001 |
+| Provider name | `OPERATOR_ASSERTED` 2026-09-17 as Google Cloud | _none_ | owner instruction; not D-001; not OBSERVED until terms/file attached |
 | Eligible services | `NOT_COMPUTABLE` | _none_ | |
 | Expiration | `NOT_COMPUTABLE` | _none_ | |
 | Remaining balance | `NOT_COMPUTABLE` | _none_ | |
 | Terms / restrictions PDF or URL | `NOT_COMPUTABLE` | _none_ | |
 
-Credits remain unspent. This intake does not allocate the advisory envelope in D037_EVIDENCE.md §6.
+Credits remain unspent. Placement of workloads against these credits is [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md). This intake does not allocate the advisory envelope in D037_EVIDENCE.md §6.
 
 ## FR-T-FUND-003 opportunities
 

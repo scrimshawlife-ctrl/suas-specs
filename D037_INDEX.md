@@ -21,7 +21,8 @@ Recorded on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25) b
 - FR-1 is `PASS` as specification
 - FR-2 through FR-5 remain `NOT_READY`
 - SAM positioning and the `$300` envelope remain `OPERATOR_ASSERTED`
-- UEI, credit provider, expiration, and eligibility remain `NOT_COMPUTABLE`
+- Credit provider is `OPERATOR_ASSERTED` as Google Cloud (2026-09-17 owner instruction); eligible SKUs, expiration, and balance remain `NOT_COMPUTABLE`
+- UEI and eligibility remain `NOT_COMPUTABLE`
 - `suas` / `suas-ios` / `suas-android` receive no tasks from this packet
 
 ## Packet files
@@ -37,7 +38,8 @@ Recorded on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25) b
 | [D037_DRIFT_AUDIT.md](D037_DRIFT_AUDIT.md) | cross-artifact consistency audit for this packet |
 | [D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md) | FR-T-OBS-001 public-contract field inventory |
 | [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md) | FR-T-INFRA-001 STAGING host inventory |
-| [D037_FUND_INTAKE.md](D037_FUND_INTAKE.md) | FR-T-FUND-001/002 owner artifact slots; empty |
+| [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md) | Google Cloud evidence-plane placement; does not close D-001 |
+| [D037_FUND_INTAKE.md](D037_FUND_INTAKE.md) | FR-T-FUND-001/002 owner artifact slots |
 | [evidence/organizational/README.md](evidence/organizational/README.md) | drop directory for owner SAM/credit files |
 
 ## Related released canon (unchanged authority)
@@ -48,13 +50,13 @@ Recorded on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25) b
 - [SKILLS.md](SKILLS.md) / [skills/evidence-gate/SKILL.md](skills/evidence-gate/SKILL.md)
 - [D035_SANDBOX_EVIDENCE_AUTHORITY.md](D035_SANDBOX_EVIDENCE_AUTHORITY.md) limited evidence-generation pattern
 - [ANALYTICS.md](ANALYTICS.md) operational metrics; not funding claims
-- [DECISIONS.md](DECISIONS.md) D-010 remains service billing
+- [DECISIONS.md](DECISIONS.md) D-010 remains service billing; D-001 remains production hosting
 
 ## Explicit non-effects
 
 - No change to `/api/v0`, event schema `0.1.0`, Veteran journeys, or client surfaces.
 - No fifth `SUAS_ENV` value.
 - No grant opportunity is named as eligible.
-- No cloud provider is selected (D-001 remains open).
+- D-001 production hosting remains open. Google Cloud is the asserted *evidence-plane* credit provider only.
 - No credit may be spent from this packet.
 - Acceptance as specified is not `GRANT_READY`, `GRANT_ELIGIBLE`, `EXPERIMENT_VALIDATED`, or `FUNDING_SECURED`.

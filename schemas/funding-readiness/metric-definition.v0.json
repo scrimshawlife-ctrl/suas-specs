@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suas.local/schemas/funding-readiness/metric-definition.v0.json",
+  "title": "MetricDefinition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "metric_id",
+    "name",
+    "definition",
+    "klass"
+  ],
+  "properties": {
+    "schema_version": { "const": "metric-definition.v0" },
+    "metric_id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "definition": { "type": "string", "minLength": 1 },
+    "numerator": { "type": ["string", "null"] },
+    "denominator": { "type": ["string", "null"] },
+    "klass": { "enum": ["REQUIRED", "OPTIONAL", "FUTURE", "NOT_COMPUTABLE"] }
+  }
+}

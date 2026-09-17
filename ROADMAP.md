@@ -1,82 +1,50 @@
-# ROADMAP.md — Specification-driven path to production
+# ROADMAP.md — Path to production
 
-**Stack:** `0.3.0` / `released`
+**Stack:** `0.6.0` / `released`  
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`  
-**Release manifest:** [RELEASE_MANIFEST-0.3.0.md](RELEASE_MANIFEST-0.3.0.md)
+**Release manifest:** [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 
-The owner completed the specification acceptance chain on 2026-08-18 PT.
+Plain list of holes: [GAP_ANALYSIS.md](GAP_ANALYSIS.md).  
+Plain list of next work: [REMAINING.md](REMAINING.md).
 
-## Completed specification stages
+The owner completed the specification acceptance chain on 2026-08-18 PT. Later releases (native clients, email sign-in, funding overlay) did not start a new SPEC-0xx stage.
 
-| Stage | Status | Scope |
-|---|---|---|
-| SPEC-001 | `accepted` | product/authority/governing principles |
-| SPEC-002 | `accepted` | consent/privacy/safety/security |
-| SPEC-003 | `accepted` | Check-In/Support Signal/events |
-| SPEC-004 | `accepted` | Cases/Service Requests/responder workflow |
-| SPEC-005 | `accepted` | Resources/Referral/Fulfillment/Follow-Up/Settlement |
-| SPEC-006 | `accepted` | domain/data/event/architecture reconciliation |
-| SPEC-007 | `accepted` | architecture/API/auth/notifications/admin |
-| SPEC-008 | `accepted` | referenced MVP visual/interaction conformance |
-| SPEC-009 | `accepted` | provider-neutral fulfillment |
-| SPEC-010 | `accepted` | scaling contract |
-| SPEC-011 | `accepted` | resilience/degradation |
-| SPEC-012 | `accepted` | testing/readiness evidence contract |
-| SPEC-013 | `accepted` | deployment/operations/incident/recovery |
-| SPEC-014 | `accepted` | controlled pilot/analytics |
-| SPEC-015 | `accepted` | v0.1.0 decision ledger/safe deferrals |
-| SPEC-016 | `released` | first implementation-authoritative cut |
+## Finished specification stages
+
+SPEC-001 through SPEC-015 are accepted. SPEC-016 is the first released cut. Later manifests (0.2.0 scoring, 0.3.0 phones, 0.6.0 email sign-in) add contracts inside that chain. They do not skip SPEC-017 or SPEC-018.
 
 ## Current stage — SPEC-017
 
-**Status:** `ACTIVE`
+**Status:** active.
 
-Objective: implement `scrimshawlife-ctrl/SUAS` against the current released manifest and continuously compare the implementation with the released contracts. The pinned release is `0.3.0`; see [STATUS.md](STATUS.md).
+Build `suas`, `suas-ios`, and `suas-android` against pin `0.6.0`. Compare the build with the released files. Send leftovers back here. Code does not invent product rules.
 
-Rules:
-
-1. Implementation PRs cite released artifact/section/version and the current release manifest.
-2. Gaps return to `SUAS-specs`; code does not redefine canon.
-3. Production-unavailable surfaces in the release manifest remain unavailable in implementation except for explicit fake/sink/manual/test scaffolding.
-4. Conformance evidence covers domain states, auth, consent, provider neutrality, MVP visuals, idempotency, durability, scale/resilience semantics, and tests.
-5. SPEC-017 completion does not authorize production operation.
+Finishing this stage does not allow production use or a live pilot.
 
 ## SPEC-018 — Pilot / production readiness
 
-**Status:** blocked by SPEC-017 implementation/conformance plus operating evidence and required production decision closure.
+**Status:** blocked.
 
-Before any real pilot or production use:
+Needs closed launch decisions, measured evidence, and gates that actually move. See [REMAINING.md](REMAINING.md).
 
-- applicable readiness gates must be `READY` from reproducible evidence;
-- production hosting/auth/delivery/DB/job decisions must close;
-- legal/retention/partner/staffing/counsel/safety-copy/signal-rule decisions required for the launch must close;
-- enabled real provider adapters must be selected and pass conformance;
-- production workload/SLO/RTO/RPO targets must close and pass evidence;
-- affected aggregate reporting requires D-025 policy;
-- load, failure, restore, incident, and operations evidence must be attached.
-
-## SPEC-019 — Post-launch revision
+## SPEC-019 — After launch
 
 **Status:** future.
 
-Measured pilot/launch feedback and scale data become a new version through the same specify → accept → release → conform → readiness process.
+Measured pilot changes. Not grant paperwork. D-037 funding readiness is a separate overlay.
 
-## Ordering
+## Order
 
 ```text
-SPEC-001 ... SPEC-015  ACCEPTED
+SPEC-001 ... SPEC-015  accepted
               |
-          SPEC-016  RELEASED
+          SPEC-016  released
               |
-          SPEC-017  IMPLEMENT / CONFORM   ← CURRENT
+          SPEC-017  build and compare   ← current
               |
-          SPEC-018  LAUNCH READINESS
+          SPEC-018  launch readiness
               |
-          SPEC-019  MEASURED REVISION
+          SPEC-019  measured revision
 ```
 
-Release authorizes implementation. It does not equal readiness or launch approval.
-
-SPEC-0xx numbers are stage records in this chain. A released contract addition inside the current stage — a new domain artifact, a decision closure, or a client surface such as D-033 — is versioned through the release manifest and does not consume a stage number.
-
-D-037 (`SUAS-FUNDING-READINESS-001`) is an accepted specification overlay (`ACCEPT_AS_SPECIFIED`, 2026-09-17), not SPEC-019. SPEC-019 remains post-launch revision. Funding opportunity assessments sit outside this chain. The overlay grants no runtime, spend, or experiment authority.
+A release lets you implement. It is not permission to serve veterans.

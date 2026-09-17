@@ -35,6 +35,8 @@ Recorded on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25) b
 | [D037_WORKFLOWS.md](D037_WORKFLOWS.md) | workflows, state machines, contracts |
 | [D037_TASKS.md](D037_TASKS.md) | derived tasks and readiness-gate application |
 | [D037_DRIFT_AUDIT.md](D037_DRIFT_AUDIT.md) | cross-artifact consistency audit for this packet |
+| [D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md) | FR-T-OBS-001 public-contract field inventory |
+| [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md) | FR-T-INFRA-001 STAGING host inventory |
 
 ## Related released canon (unchanged authority)
 

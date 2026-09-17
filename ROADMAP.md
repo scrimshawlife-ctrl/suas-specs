@@ -79,4 +79,4 @@ Release authorizes implementation. It does not equal readiness or launch approva
 
 SPEC-0xx numbers are stage records in this chain. A released contract addition inside the current stage — a new domain artifact, a decision closure, or a client surface such as D-033 — is versioned through the release manifest and does not consume a stage number.
 
-D-037 (`SUAS-FUNDING-READINESS-001`) is a proposed overlay packet, not SPEC-019. SPEC-019 remains post-launch revision. Funding opportunity assessments sit outside this chain.
+D-037 (`SUAS-FUNDING-READINESS-001`) is an accepted specification overlay (`ACCEPT_AS_SPECIFIED`, 2026-09-17), not SPEC-019. SPEC-019 remains post-launch revision. Funding opportunity assessments sit outside this chain. The overlay grants no runtime, spend, or experiment authority.

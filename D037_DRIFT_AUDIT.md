@@ -29,13 +29,19 @@ Re-audited after owner settlement so packet status no longer reads `DECISION_PEN
 | Requirements without acceptance | FR-R-* map to §10 acceptance and workflows |
 | Merged packet still labeled pending | Settlement commit records `ACCEPT_AS_SPECIFIED` without granting runtime authority |
 
+## FR-2 inventory follow-up (2026-09-17)
+
+[D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md) and [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md) complete the written inventories named by FR-2. They do not promote FR-2. Runtime emission, evidence-store URI, frozen configuration, and limited implementation authority remain absent. No vendor was selected. No EVENT_MODEL names were added.
+
 ## Residual items requiring operator judgment
 
 | Item | State |
 |---|---|
 | Promote SAM / `$300` from OPERATOR_ASSERTED to OBSERVED | needs owner artifacts |
 | UEI, legal entity, credit provider, expiration | `NOT_COMPUTABLE` |
-| Whether current `suas` can emit Run 001 fields | `NOT_COMPUTABLE` until FR-T-OBS-001 |
+| Whether current `suas` can emit Run 001 fields | `NOT_COMPUTABLE` after FR-T-OBS-001 (specs inventory done; runtime not inspected) |
+| Evidence destination URI | `NOT_COMPUTABLE` / FR-T-INFRA-002 open |
+| Existing STAGING instance ready for Run 001 | `NOT_COMPUTABLE` after FR-T-INFRA-001 (class-compatible, instance unproven) |
 | Named evaluator roster | `NOT_COMPUTABLE` |
 | Owner choice among ACCEPT_AS_SPECIFIED / limited authority / return / reject | `OBSERVED`: `ACCEPT_AS_SPECIFIED` 2026-09-17; limited-implementation authority not granted |
 | Any production readiness gate | remains `NOT_READY` |

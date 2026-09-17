@@ -17,21 +17,21 @@ Lane codes: `SPEC`, `INFRA`, `OBSERVABILITY`, `SECURITY`, `EXPERIMENT`, `EVALUAT
 
 ## INFRA
 
-Blocked on owner limited-implementation authority and on D-001 remaining open.
+Blocked on owner limited-implementation authority and on D-001 remaining open, except the written inventory itself.
 
-| ID | Task | Parent | Acceptance |
-|---|---|---|---|
-| FR-T-INFRA-001 | Inventory whether existing `suas` STAGING can host Run 001 without a new vendor | FR-R-002, FR-R-003 | written inventory; no silent vendor pick |
-| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy |
+| ID | Task | Parent | Acceptance | State |
+|---|---|---|---|---|
+| FR-T-INFRA-001 | Inventory whether existing `suas` STAGING can host Run 001 without a new vendor | FR-R-002, FR-R-003 | written inventory; no silent vendor pick | `DONE` 2026-09-17 as [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md); instance still unproven |
+| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy | `OPEN` / `BLOCKED` on destination + limited authority |
 
 ## OBSERVABILITY
 
-| ID | Task | Parent | Acceptance |
-|---|---|---|---|
-| FR-T-OBS-001 | Inventory which EvidenceArtifact fields current logs/audit events already emit | FR-R-004, FR-R-005 | field-by-field table labeled OBSERVED/NOT_COMPUTABLE |
-| FR-T-OBS-002 | Specify only the missing fields that Run 001 requires | FR-R-013 | spec patch, then later runtime |
+| ID | Task | Parent | Acceptance | State |
+|---|---|---|---|---|
+| FR-T-OBS-001 | Inventory which EvidenceArtifact fields current logs/audit events already emit | FR-R-004, FR-R-005 | field-by-field table labeled OBSERVED/NOT_COMPUTABLE | `DONE` 2026-09-17 as [D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md); runtime emit remains `NOT_COMPUTABLE` |
+| FR-T-OBS-002 | Specify only the missing fields that Run 001 requires | FR-R-013 | spec patch, then later runtime | `OPEN`; candidate gap list is in the OBS inventory; EVENT_MODEL patch stays with FR-T-SPEC-003 |
 
-FR-T-OBS-001 may be written as a specs-repo inventory against public contracts. It must not become a `suas` implementation PR.
+FR-T-OBS-001 is a specs-repo inventory against public contracts. It is not a `suas` implementation PR. Runtime logs were not inspected.
 
 ## SECURITY
 
@@ -74,7 +74,7 @@ Documentation only. Owner-supplied artifacts may be attached in this repository 
 | Gate | Tasks that can move it | Current |
 |---|---|---|
 | FR-1 | this packet + owner review | `PASS` 2026-09-17 (`ACCEPT_AS_SPECIFIED`) |
-| FR-2 | FR-T-INFRA-001, FR-T-OBS-001, FR-T-EXP-001 | `NOT_READY` |
+| FR-2 | FR-T-INFRA-001 (inventory done; host unproven), FR-T-OBS-001 (inventory done; emit `NOT_COMPUTABLE`), FR-T-EXP-001 (still open), FR-T-INFRA-002 | `NOT_READY` |
 | FR-3 | FR-T-EXP-002 | `NOT_READY` |
 | FR-4 | FR-T-EVAL-001, FR-T-EVAL-002 | `NOT_READY` |
 | FR-5 | FR-3 + FR-4 + FR-T-FUND-001 at OBSERVED | `NOT_READY` |

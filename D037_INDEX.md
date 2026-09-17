@@ -37,6 +37,8 @@ Recorded on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25) b
 | [D037_DRIFT_AUDIT.md](D037_DRIFT_AUDIT.md) | cross-artifact consistency audit for this packet |
 | [D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md) | FR-T-OBS-001 public-contract field inventory |
 | [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md) | FR-T-INFRA-001 STAGING host inventory |
+| [D037_FUND_INTAKE.md](D037_FUND_INTAKE.md) | FR-T-FUND-001/002 owner artifact slots; empty |
+| [evidence/organizational/README.md](evidence/organizational/README.md) | drop directory for owner SAM/credit files |
 
 ## Related released canon (unchanged authority)
 

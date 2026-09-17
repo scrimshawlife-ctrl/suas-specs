@@ -2,11 +2,14 @@
 
 **Decision:** D-037  
 **Date:** `2026-09-17`  
-**Scope:** this packet versus released `0.6.0` canon
+**Scope:** this packet versus released `0.6.0` canon  
+**Settlement:** owner `ACCEPT_AS_SPECIFIED` on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25)
 
 ## Method
 
 Inspected repository canon listed in [D037_INDEX.md](D037_INDEX.md) before writing. Compared new IDs, environment semantics, decision boundaries, and evidence vocabulary against AGENTS.md, ENVIRONMENT.md, DECISIONS.md, TESTING.md, SKILLS.md, ROADMAP.md, ANALYTICS.md, and the D-035 evidence pattern.
+
+Re-audited after owner settlement so packet status no longer reads `DECISION_PENDING` while the owner comment already chose option 1.
 
 ## Findings repaired in-packet
 
@@ -24,6 +27,7 @@ Inspected repository canon listed in [D037_INDEX.md](D037_INDEX.md) before writi
 | Assumed grant eligibility | Empty opportunity register |
 | Implementation tasks without parents | Every FR-T-* cites an FR-R-* |
 | Requirements without acceptance | FR-R-* map to §10 acceptance and workflows |
+| Merged packet still labeled pending | Settlement commit records `ACCEPT_AS_SPECIFIED` without granting runtime authority |
 
 ## Residual items requiring operator judgment
 
@@ -33,8 +37,9 @@ Inspected repository canon listed in [D037_INDEX.md](D037_INDEX.md) before writi
 | UEI, legal entity, credit provider, expiration | `NOT_COMPUTABLE` |
 | Whether current `suas` can emit Run 001 fields | `NOT_COMPUTABLE` until FR-T-OBS-001 |
 | Named evaluator roster | `NOT_COMPUTABLE` |
-| Owner choice among ACCEPT_AS_SPECIFIED / limited authority / return / reject | `DECISION_PENDING` |
+| Owner choice among ACCEPT_AS_SPECIFIED / limited authority / return / reject | `OBSERVED`: `ACCEPT_AS_SPECIFIED` 2026-09-17; limited-implementation authority not granted |
 | Any production readiness gate | remains `NOT_READY` |
+| Future release-ledger row (FR-T-SPEC-002) | `FUTURE`; not a stack bump in this commit |
 
 ## Undefined terminology check
 
@@ -54,4 +59,4 @@ None claimed as AVAILABLE in the evidence matrix.
 
 ## Audit result
 
-Packet is internally consistent as specification text. Terminal condition `SUAS_FUNDING_READINESS_SPECIFIED` is reachable after owner review of FR-1. FR-2–FR-5 remain `NOT_READY`.
+Packet is internally consistent as specification text. Terminal condition `SUAS_FUNDING_READINESS_SPECIFIED` is reached. FR-2–FR-5 remain `NOT_READY`. Coding agents still must not change runtime repositories from this overlay.

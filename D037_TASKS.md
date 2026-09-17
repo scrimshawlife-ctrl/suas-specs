@@ -1,18 +1,19 @@
 # D037_TASKS.md — Derived implementation tasks
 
 **Decision:** D-037  
-**Status:** `proposed`  
-**Rule:** no task without a specification parent. No runtime work until owner option 2 in [D037_FUNDING_READINESS.md](D037_FUNDING_READINESS.md) §12.
+**Status:** `accepted specification` / no runtime authority  
+**Owner settlement:** `ACCEPT_AS_SPECIFIED` 2026-09-17 on [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25)  
+**Rule:** no task without a specification parent. No runtime work until owner option 2 in [D037_FUNDING_READINESS.md](D037_FUNDING_READINESS.md) §12 is recorded in a later qualifier.
 
 Lane codes: `SPEC`, `INFRA`, `OBSERVABILITY`, `SECURITY`, `EXPERIMENT`, `EVALUATION`, `FUNDING`.
 
 ## SPEC
 
-| ID | Task | Parent | Acceptance |
-|---|---|---|---|
-| FR-T-SPEC-001 | Keep this packet consistent after owner comments | FR-R-014 | drift audit updated |
-| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only |
-| FR-T-SPEC-003 | If EVENT_MODEL needs new audit names for run state changes, specify them here first | FR-R-013 | spec change before code |
+| ID | Task | Parent | Acceptance | State |
+|---|---|---|---|---|
+| FR-T-SPEC-001 | Keep this packet consistent after owner comments | FR-R-014 | drift audit updated | `DONE` 2026-09-17 |
+| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only | `OPEN` / `FUTURE` — not this packet; no stack bump |
+| FR-T-SPEC-003 | If EVENT_MODEL needs new audit names for run state changes, specify them here first | FR-R-013 | spec change before code | `BLOCKED` until limited-implementation authority |
 
 ## INFRA
 
@@ -29,6 +30,8 @@ Blocked on owner limited-implementation authority and on D-001 remaining open.
 |---|---|---|---|
 | FR-T-OBS-001 | Inventory which EvidenceArtifact fields current logs/audit events already emit | FR-R-004, FR-R-005 | field-by-field table labeled OBSERVED/NOT_COMPUTABLE |
 | FR-T-OBS-002 | Specify only the missing fields that Run 001 requires | FR-R-013 | spec patch, then later runtime |
+
+FR-T-OBS-001 may be written as a specs-repo inventory against public contracts. It must not become a `suas` implementation PR.
 
 ## SECURITY
 
@@ -54,7 +57,7 @@ Blocked on owner limited-implementation authority and on D-001 remaining open.
 
 ## FUNDING
 
-Documentation only.
+Documentation only. Owner-supplied artifacts may be attached in this repository without runtime work.
 
 | ID | Task | Parent | Acceptance |
 |---|---|---|---|
@@ -70,7 +73,7 @@ Documentation only.
 
 | Gate | Tasks that can move it | Current |
 |---|---|---|
-| FR-1 | this packet + owner review | specification text present; owner state `NOT_COMPUTABLE` |
+| FR-1 | this packet + owner review | `PASS` 2026-09-17 (`ACCEPT_AS_SPECIFIED`) |
 | FR-2 | FR-T-INFRA-001, FR-T-OBS-001, FR-T-EXP-001 | `NOT_READY` |
 | FR-3 | FR-T-EXP-002 | `NOT_READY` |
 | FR-4 | FR-T-EVAL-001, FR-T-EVAL-002 | `NOT_READY` |

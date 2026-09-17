@@ -2,11 +2,12 @@
 
 **Decision:** D-037  
 **Stable identifier:** `SUAS-FUNDING-READINESS-001`  
-**Status:** `proposed` / `DECISION_PENDING`  
-**Epistemic state:** specification packet for owner review; not released for implementation  
+**Status:** `accepted` / `ACCEPT_AS_SPECIFIED`  
+**Epistemic state:** specified overlay; not released for implementation; not a stack bump  
 **Does not close:** D-001, D-006, D-010, D-013, D-021–D-025, D-031, SPEC-018  
 **Does not consume:** SPEC-019  
 **Production authority:** none  
+**Runtime authority:** none  
 **Related:** [D037_INDEX.md](D037_INDEX.md), [D037_EVIDENCE.md](D037_EVIDENCE.md), [D037_OPPORTUNITY_MODEL.md](D037_OPPORTUNITY_MODEL.md), [D037_WORKFLOWS.md](D037_WORKFLOWS.md)
 
 ## Workflows
@@ -189,13 +190,15 @@ Funding-readiness *specification* work is complete (`SUAS_FUNDING_READINESS_SPEC
 6. No runtime repository is modified from this packet.
 7. Owner review may accept the packet as specified without treating acceptance as GRANT_READY.
 
+Those criteria were met on 2026-09-17. The terminal condition is reached. FR-2 through FR-5 remain `NOT_READY`.
+
 ## 11. Readiness gates for this overlay
 
 These gates are **not** the twelve product gates in [TESTING.md](TESTING.md) §11.
 
 | Gate | Meaning | Current state |
 |---|---|---|
-| `FR-1` Specification Ready | Packet internally consistent and owner-reviewable | `NOT_COMPUTABLE` until owner review; packet author state is `IMPLEMENTED` as text only |
+| `FR-1` Specification Ready | Packet internally consistent and owner-reviewable | `PASS` 2026-09-17 — owner `ACCEPT_AS_SPECIFIED`; specification only |
 | `FR-2` Experiment Ready | Evidence Run 001 preconditions satisfied | `NOT_READY` |
 | `FR-3` Evidence Ready | A controlled run completed and produced valid evidence | `NOT_READY` |
 | `FR-4` Evaluation Ready | Independent evaluation against declared metrics | `NOT_READY` |
@@ -207,11 +210,13 @@ Do not mark a gate `PASS` without evidence. Green CI, merged code, and the exist
 
 ## 12. Authority after owner review
 
-Owner options, none of which are taken by publishing this packet:
+Owner options:
 
 1. `ACCEPT_AS_SPECIFIED` — packet becomes accepted specification; still not a stack bump and still not runtime authority.
 2. `ACCEPT_LIMITED_IMPLEMENTATION_AUTHORITY` — later release qualifier, D-035 style, naming exactly which INFRA/OBSERVABILITY tasks may proceed and in which `SUAS_ENV`.
 3. `RETURN_FOR_REVISION`.
 4. `REJECT`.
 
-Until one of those is recorded in a release decision ledger, coding agents must not change `suas`, `suas-ios`, or `suas-android` because of D-037.
+**Recorded choice:** option 1, `ACCEPT_AS_SPECIFIED`, by `scrimshawlife-ctrl` on 2026-09-17 in [PR #25](https://github.com/scrimshawlife-ctrl/suas-specs/pull/25). Option 2 was explicitly not granted. Options 3 and 4 were not taken.
+
+Until option 2 is recorded in a later release qualifier, coding agents must not change `suas`, `suas-ios`, or `suas-android` because of D-037. A future release decision ledger may cite this overlay without granting runtime authority (FR-T-SPEC-002).

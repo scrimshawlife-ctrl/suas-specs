@@ -53,7 +53,9 @@ D-035 remains `DECISION_PENDING`. Only the evidence-generation work named in [D0
 
 ## Epistemic discipline
 
-Use `OBSERVED`, `INFERRED`, `SPECULATIVE`, `NOT_COMPUTABLE`, `DECISION_PENDING`, and `FUTURE` accurately. Prototype behavior, a vendor API, or code behavior is not evidence of a product decision.
+Use `OBSERVED`, `INFERRED`, `SPECULATIVE`, `NOT_COMPUTABLE`, `DECISION_PENDING`, and `FUTURE` accurately. Prototype behavior, a vendor API, or code behavior is not evidence of a product decision. Operator-stated administrative facts without repository artifacts are `OPERATOR_ASSERTED` and must not be promoted to `OBSERVED` by repetition.
+
+D-037 funding-readiness material is an overlay. It must not mutate product doctrine, close D-010, consume SPEC-019, add environment classes, or drive `suas` / `suas-ios` / `suas-android` changes until a released limited-implementation qualifier says otherwise.
 
 ## Repository boundary
 

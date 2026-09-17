@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suas.local/schemas/funding-readiness/evidence-run.v0.json",
+  "title": "EvidenceRun",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "experiment_id",
+    "scenario_id",
+    "state",
+    "suas_env",
+    "purpose_class",
+    "software_revision",
+    "spec_version",
+    "release_manifest",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": { "const": "evidence-run.v0" },
+    "run_id": { "type": "string", "minLength": 1 },
+    "experiment_id": { "type": "string", "minLength": 1 },
+    "scenario_id": { "type": "string", "minLength": 1 },
+    "state": {
+      "enum": [
+        "PLANNED",
+        "CONFIGURED",
+        "READY",
+        "RUNNING",
+        "COMPLETED",
+        "FAILED",
+        "ABORTED",
+        "PARTIAL",
+        "EVALUATED",
+        "SEALED"
+      ]
+    },
+    "suas_env": { "enum": ["LOCAL", "TEST", "STAGING", "PRODUCTION"] },
+    "purpose_class": {
+      "enum": ["ENGINEERING", "CONTROLLED_EXPERIMENT", "DEMO", "FIELD"]
+    },
+    "software_revision": { "type": "string", "minLength": 1 },
+    "spec_version": { "type": "string", "minLength": 1 },
+    "release_manifest": { "type": "string", "minLength": 1 },
+    "configuration_revision": { "type": ["string", "null"] },
+    "operator_ref": { "type": ["string", "null"] },
+    "created_at_utc": { "type": "string", "minLength": 1 },
+    "sealed_at_utc": { "type": ["string", "null"] },
+    "lineage": { "type": "array", "items": { "type": "string" } }
+  }
+}

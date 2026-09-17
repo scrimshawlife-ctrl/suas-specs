@@ -47,7 +47,7 @@ Inherited from v0.1.5: [SAFETY_COPY.md](SAFETY_COPY.md) and the D-012 copy/desti
 
 ## Release meaning
 
-v0.3.0 authorizes implementation of the released native mobile client surface in `scrimshawlife-ctrl/SUAS`, alongside the inherited D-011 scoring contract. It does not authorize production deployment, real veteran data, live pilot operation, application-store distribution, device push, payment-card handling, real external provider bookings/reservations, compliance claims, production SLO/RTO/RPO claims, or sensitive aggregate reporting.
+v0.6.0 authorizes implementation of the released Resend EMAIL adapter and browser passwordless session transport for already-enrolled accounts, alongside inherited native-client and scoring contracts. It does not authorize production deployment, real veteran data, live pilot operation, application-store distribution, device push, payment-card handling, real external provider bookings/reservations, compliance claims, production SLO/RTO/RPO claims, or sensitive aggregate reporting.
 
 ## Readiness gates
 
@@ -59,12 +59,12 @@ A gate changes only with reproducible evidence under [TESTING.md](TESTING.md).
 
 ## Decision boundary
 
-D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md). D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md). D-015 and D-016 remain the v0.1 defaults decided in [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md). D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-033 is closed by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), which opens D-034. D-019–D-025 and D-026–D-032 remain open unless later releases supersede them.
+D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md). D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md). D-015 and D-016 remain the v0.1 defaults decided in [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md). D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-033 is closed by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), which opens D-034. D-004 is closed by [RELEASE_DECISIONS-0.6.0.md](RELEASE_DECISIONS-0.6.0.md). D-019–D-025 and D-026–D-032 remain open unless later releases supersede them.
 
 ## Next stage
 
-Proceed with SPEC-017 implementation conformance against owner-merged release `0.4.0` ([RELEASE_MANIFEST-0.4.0.md](RELEASE_MANIFEST-0.4.0.md)). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack and re-pin `SUAS_SPEC_VERSION` / `SUAS_RELEASE_MANIFEST` accordingly; a stale pin fails closed. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs, and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) before any client-surface work.
+Proceed with SPEC-017 implementation conformance against owner-merged release `0.6.0` ([RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack and re-pin `SUAS_SPEC_VERSION` / `SUAS_RELEASE_MANIFEST` accordingly; a stale pin fails closed. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs, and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) before any client-surface work.
 
-Native client implementation is authorized by this release and remains subject to SPEC-018 for any real operation or distribution. Nothing in this release advances a readiness gate or reduces the SPEC-018 residual set.
+Native client implementation is authorized by inherited v0.3.0 and remains subject to SPEC-018 for any real operation or distribution. Nothing in this release advances a readiness gate or reduces the SPEC-018 residual set.
 
 Draft implementation-binding specify/plan for integrating the existing iOS and Android forks with `/api/v0`: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md). Those drafts do not consume a SPEC-0xx stage number, do not bump the stack, and do not reopen D-033 or close D-034.

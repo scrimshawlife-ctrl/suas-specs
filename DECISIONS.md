@@ -8,7 +8,7 @@ Global decisions remain open until explicitly decided. A release-specific `DEFER
 ## Decision register
 
 | ID | Decision | Global status |
-|---|---|---|
+|---|---|
 | D-001 | Production hosting/cloud | `DECISION_PENDING` |
 | D-002 | Production auth provider/in-house implementation | `DECISION_PENDING` |
 | D-003 | SMS provider | `DECISION_PENDING` |
@@ -53,7 +53,7 @@ D-006 remains `DECISION_PENDING`. [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) is 
 
 D-035 is settled by v0.5.0 as an optional status-only VA sandbox capability. D-016 remains the permitted fallback. The settlement adds no production, reporting, deletion, export, purge, or real-world-effects authority. [D035_ASSIMILATION.md](D035_ASSIMILATION.md) remains proposed reconciliation outside the released boundary. D-036 remains open; its packet prepares a coherent owner choice and releases no implementation default.
 
-D-037 overlay specification is `DECIDED` as `ACCEPT_AS_SPECIFIED`. [D037_INDEX.md](D037_INDEX.md) is accepted evidence-reuse doctrine for operator-asserted SAM positioning and an advisory `$300` credit envelope. It does not close D-010, select a cloud provider, claim grant eligibility, authorize credit spend, or change Veteran journeys. Funding opportunity assessments sit outside the product requirement chain. FR-2–FR-5 remain `NOT_READY`.
+D-037 overlay specification is `DECIDED` as `ACCEPT_AS_SPECIFIED`. [D037_INDEX.md](D037_INDEX.md) is accepted evidence-reuse doctrine for operator-asserted SAM positioning and an advisory `$300` Google Cloud credit envelope. It does not close D-001, D-005, or D-010. Google Cloud is the asserted *evidence-plane* credit provider only ([D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md)). It does not claim grant eligibility, authorize credit spend, or change Veteran journeys. Funding opportunity assessments sit outside the product requirement chain. FR-2–FR-5 remain `NOT_READY`.
 
 D-011 is closed by [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md). D-033 is closed by [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), which also opens D-034; D-033 releases a client surface only and authorizes no production operation. D-026–D-032 are additive draft questions from Rev 3 fence-post work. They do not replace D-017–D-025 in the released ledger. D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), D-017 is closed by [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), D-018 is closed by [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), and D-019–D-025 remain open unless later released decisions close them.
 

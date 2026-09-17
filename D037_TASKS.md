@@ -12,34 +12,30 @@ Lane codes: `SPEC`, `INFRA`, `OBSERVABILITY`, `SECURITY`, `EXPERIMENT`, `EVALUAT
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
 | FR-T-SPEC-001 | Keep this packet consistent after owner comments | FR-R-014 | drift audit updated | `DONE` 2026-09-17 |
-| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only | `OPEN` / `FUTURE` — not this packet; no stack bump |
+| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only | `OPEN` / `FUTURE` |
 | FR-T-SPEC-003 | If EVENT_MODEL needs new audit names for run state changes, specify them here first | FR-R-013 | spec change before code | `BLOCKED` until limited-implementation authority |
 
 ## INFRA
 
-Blocked on owner limited-implementation authority and on D-001 remaining open, except written inventories and placement doctrine.
-
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
-| FR-T-INFRA-001 | Inventory whether existing `suas` STAGING can host Run 001 without a new vendor | FR-R-002, FR-R-003 | written inventory; no silent vendor pick | `DONE` 2026-09-17 as [D037_INFRA_INVENTORY.md](D037_INFRA_INVENTORY.md); instance still unproven |
-| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy | `OPEN` / `BLOCKED`; when declared, prefer isolated GCP object storage per [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md) |
-| FR-T-INFRA-003 | Specify which architecture parts belong on Google Cloud | FR-R-016, FR-R-017, FR-R-018 | placement map; D-001 stays open | `DONE` 2026-09-17 as [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md) |
+| FR-T-INFRA-001 | Inventory whether existing `suas` STAGING can host Run 001 without a new vendor | FR-R-002, FR-R-003 | written inventory | `DONE` |
+| FR-T-INFRA-002 | Declare evidence destination URI once a store exists | FR-R-004 | URI + access policy | `PARTIAL` — convention + interim repo path in [D037_EVIDENCE_DESTINATION.md](D037_EVIDENCE_DESTINATION.md); live `gs://` `NOT_COMPUTABLE` |
+| FR-T-INFRA-003 | Specify which architecture parts belong on Google Cloud | FR-R-016–FR-R-018 | placement map; D-001 stays open | `DONE` |
 
 ## OBSERVABILITY
 
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
-| FR-T-OBS-001 | Inventory which EvidenceArtifact fields current logs/audit events already emit | FR-R-004, FR-R-005 | field-by-field table labeled OBSERVED/NOT_COMPUTABLE | `DONE` 2026-09-17 as [D037_OBS_INVENTORY.md](D037_OBS_INVENTORY.md); runtime emit remains `NOT_COMPUTABLE` |
-| FR-T-OBS-002 | Specify only the missing fields that Run 001 requires | FR-R-013 | spec patch, then later runtime | `OPEN`; candidate gap list is in the OBS inventory; EVENT_MODEL patch stays with FR-T-SPEC-003 |
-
-FR-T-OBS-001 is a specs-repo inventory against public contracts. It is not a `suas` implementation PR. Runtime logs were not inspected.
+| FR-T-OBS-001 | Inventory EvidenceArtifact fields vs public contracts | FR-R-004, FR-R-005 | field table | `DONE` |
+| FR-T-OBS-002 | Specify only the missing fields that Run 001 requires | FR-R-013 | spec patch, then later runtime | `OPEN` |
 
 ## SECURITY
 
-| ID | Task | Parent | Acceptance |
-|---|---|---|---|
-| FR-T-SEC-001 | Threat-model evidence artifacts and grant exports | FR-R-011 | written review; no extra collection |
-| FR-T-SEC-002 | IAM / integrity scheme for seal and successor lineage | FR-R-004 | digest + access control described |
+| ID | Task | Parent | Acceptance | State |
+|---|---|---|---|---|
+| FR-T-SEC-001 | Threat-model evidence artifacts and grant exports | FR-R-011 | written review; no extra collection | `DONE` as [D037_SEC_THREAT_MODEL.md](D037_SEC_THREAT_MODEL.md) |
+| FR-T-SEC-002 | IAM / integrity scheme for seal and successor lineage | FR-R-004 | digest + access control described | `OPEN` |
 
 ## EXPERIMENT
 
@@ -58,24 +54,22 @@ FR-T-OBS-001 is a specs-repo inventory against public contracts. It is not a `su
 
 ## FUNDING
 
-Documentation only. Owner-supplied artifacts may be attached in this repository without runtime work. Slots live in [D037_FUND_INTAKE.md](D037_FUND_INTAKE.md). The intake file is not evidence.
-
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
-| FR-T-FUND-001 | Attach SAM / UEI artifacts when the owner provides them | FR-R-001 | rows promote from OPERATOR_ASSERTED / NOT_COMPUTABLE to OBSERVED | `OPEN` / waiting on owner files |
-| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | SKUs / expiration / balance no longer NOT_COMPUTABLE | `OPEN` / provider name `OPERATOR_ASSERTED` as Google Cloud; terms still missing |
-| FR-T-FUND-003 | Assess a named opportunity only from a source URL | FR-R-009 | WF-FR-003 record | `OPEN` / no source URL |
+| FR-T-FUND-001 | Attach SAM / UEI artifacts when the owner provides them | FR-R-001 | rows promote to OBSERVED | `OPEN` |
+| FR-T-FUND-002 | Attach credit-provider rules when the owner provides them | FR-R-002 | SKUs / expiration / balance no longer NOT_COMPUTABLE | `OPEN`; provider name `OPERATOR_ASSERTED` Google Cloud |
+| FR-T-FUND-003 | Assess a named opportunity only from a source URL | FR-R-009 | WF-FR-003 record | `OPEN` |
 
 ## Runtime repositories
 
-`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet. A later released limited-authority qualifier may create them. Coding agents must not open product PRs to "support grants" or to move the monolith onto GCP. SPEC-017 continues in those repos under existing release authority, not under D-037.
+`suas`, `suas-ios`, and `suas-android` receive **no** tasks from this packet.
 
 ## Gate application
 
-| Gate | Tasks that can move it | Current |
-|---|---|---|
-| FR-1 | this packet + owner review | `PASS` 2026-09-17 (`ACCEPT_AS_SPECIFIED`) |
-| FR-2 | FR-T-INFRA-001 (done), FR-T-OBS-001 (done), FR-T-INFRA-003 (done as doctrine), FR-T-EXP-001 (open), FR-T-INFRA-002 (open) | `NOT_READY` |
-| FR-3 | FR-T-EXP-002 | `NOT_READY` |
-| FR-4 | FR-T-EVAL-001, FR-T-EVAL-002 | `NOT_READY` |
-| FR-5 | FR-3 + FR-4 + FR-T-FUND-001 at OBSERVED | `NOT_READY` |
+| Gate | Current |
+|---|---|
+| FR-1 | `PASS` 2026-09-17 |
+| FR-2 | `NOT_READY` |
+| FR-3 | `NOT_READY` |
+| FR-4 | `NOT_READY` |
+| FR-5 | `NOT_READY` |

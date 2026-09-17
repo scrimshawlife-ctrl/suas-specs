@@ -8,7 +8,7 @@
 **Does not consume:** SPEC-019  
 **Production authority:** none  
 **Runtime authority:** none  
-**Related:** [D037_INDEX.md](D037_INDEX.md), [D037_EVIDENCE.md](D037_EVIDENCE.md), [D037_OPPORTUNITY_MODEL.md](D037_OPPORTUNITY_MODEL.md), [D037_WORKFLOWS.md](D037_WORKFLOWS.md)
+**Related:** [D037_INDEX.md](D037_INDEX.md), [D037_EVIDENCE.md](D037_EVIDENCE.md), [D037_OPPORTUNITY_MODEL.md](D037_OPPORTUNITY_MODEL.md), [D037_WORKFLOWS.md](D037_WORKFLOWS.md), [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md), [D037_EVIDENCE_DESTINATION.md](D037_EVIDENCE_DESTINATION.md)
 
 ## Workflows
 
@@ -38,10 +38,10 @@ Record only what this packet is allowed to record.
 |---|---|---|
 | SUAS / its operating entity is positioned to pursue applicable U.S. federal opportunities through SAM registration | `OPERATOR_ASSERTED` | operator statement dated 2026-09-17; no SAM screenshot, UEI, CAGE, or SAM.gov artifact is in this repository |
 | Eligibility remains opportunity-specific | `OBSERVED` as doctrine | no opportunity assessment in this repo may conclude universal eligibility |
-| `$300` in cloud credits is available for SUAS-related work | `OPERATOR_ASSERTED` | provider, eligible services, expiration, and remaining balance are `NOT_COMPUTABLE` |
+| `$300` in cloud credits is available for SUAS-related work | `OPERATOR_ASSERTED` | eligible services, expiration, and remaining balance are `NOT_COMPUTABLE` |
 | UEI | `NOT_COMPUTABLE` | absent |
 | SAM legal entity name / entity type | `NOT_COMPUTABLE` | absent; do not infer from GitHub profile or D-031 |
-| Credit provider | `NOT_COMPUTABLE` | D-001 production hosting remains open and is not the answer |
+| Credit provider | `OPERATOR_ASSERTED` as Google Cloud | owner instruction 2026-09-17; D-001 production hosting remains open and is not the answer |
 | Credit expiration / restrictions | `NOT_COMPUTABLE` | absent |
 | Named agency interest | `NOT_COMPUTABLE` | absent |
 
@@ -54,14 +54,15 @@ Missing evidence stays missing.
 | Existing ID | Relationship |
 |---|---|
 | D-010 Service funding/billing sources | **Distinct.** D-010 is product billing (Medi-Cal and similar). D-037 is organizational application readiness. Closing or exercising D-037 does not close D-010. |
-| D-001 Production hosting/cloud | Unchanged. Credit use does not select a production host. |
+| D-001 Production hosting/cloud | Unchanged. Credit use and the GCP evidence plane do not select a production host. |
+| D-005 Production database hosting | Unchanged. Cloud SQL is not selected. |
 | D-006 / D-013 legal and counsel | Unchanged. A funding application is not a HIPAA claim. |
 | D-021–D-025 capacity/SLO/RTO/reporting | Unchanged. Evidence Run metrics are not production SLO claims. |
 | D-035 sandbox evidence authority | Pattern reuse only. D-037 does not widen VA scope. |
 | SPEC-018 | Unchanged. Funding-reuse evidence is not pilot/production readiness. |
 | SPEC-019 | Reserved for post-launch revision. D-037 does not consume that stage number. |
 
-Funding considerations are advisory constraints unless a later released decision grants them greater authority.
+Funding considerations are advisory constraints unless a later released decision grants them greater authority. Placement detail lives in [D037_GCP_PLACEMENT.md](D037_GCP_PLACEMENT.md).
 
 ## 4. Funding-readiness principles
 
@@ -131,7 +132,7 @@ Rules:
 
 Funding readiness does not override [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md), [CONSENT.md](CONSENT.md), or [COMPLIANCE.md](COMPLIANCE.md).
 
-Minimum-necessary evidence. Do not expand collection to look fundable.
+Minimum-necessary evidence. Do not expand collection to look fundable. Written review: [D037_SEC_THREAT_MODEL.md](D037_SEC_THREAT_MODEL.md).
 
 | Topic | Rule |
 |---|---|
@@ -176,13 +177,16 @@ D-037 requirements are labeled `FR-R-*` and live in this packet. They become rel
 | FR-R-012 | Cost evidence can later support compute-budget estimation | contract |
 | FR-R-013 | Every new D-037 requirement traces to a workflow, contract, acceptance test, or explicit non-executable doctrine | traceability |
 | FR-R-014 | Existing specifications remain internally consistent | audit |
-| FR-R-015 | No speculative grant, provider, eligibility, performance, or research claim is introduced | integrity |
+| FR-R-015 | No speculative grant, eligibility, performance, or research claim is introduced | integrity |
+| FR-R-016 | Product plane and evidence plane stay separately hosted until D-001 closes | doctrine |
+| FR-R-017 | If credits are consumed, they are consumed only on evidence-plane GCP workloads | advisory |
+| FR-R-018 | Google Cloud placement does not close D-001 or D-005 | integrity |
 
 ## 10. Acceptance criteria
 
 Funding-readiness *specification* work is complete (`SUAS_FUNDING_READINESS_SPECIFIED`) when all of the following hold. None of these mark a product readiness gate `READY`.
 
-1. FR-R-001 through FR-R-015 are present in this packet.
+1. FR-R-001 through FR-R-018 are present in this packet.
 2. Evidence Run 001 specifies preconditions, happy path, alternate paths, and failure paths.
 3. Metric classes and denominators exist for every REQUIRED metric.
 4. Opportunity schema forbids eligibility conclusions without a source URL/reference.

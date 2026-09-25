@@ -6,10 +6,10 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 
 1. Keep phones and web on `/api/v0` only.
 2. ~~Worker: stop requiring a person-chosen tenant on JSON sign-in.~~ **Done on `suas` (`5d7d58b`).** `tenant_id` is optional; enrolled email resolves the tenant. Clients may still send a build-pinned synthetic tenant as a filter. The person must not pick an organization.
-3. Confirm or correct the fail-closed Wave C defaults using [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md). Do not invent a settlement.
-4. Record SPEC-017 completion in [STATUS.md](STATUS.md) only after the owner accepts the evidence.
-5. Living-doc hygiene: keep `suas/SPEC017_NEXT.md`, Android README, and iOS README aligned with HEAD (Android `/api/v0` and iOS staging case-open are already shipped).
-6. Android leftover from [GAP_ANALYSIS.md](GAP_ANALYSIS.md): keep dummy `MainActivity` truthful for tests (peer-support launcher card shipped).
+3. ~~Confirm or correct Wave C fail-closed defaults.~~ **Settled `ACCEPT_AS_SPECIFIED` on `2026-09-25`** — [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md).
+4. Record SPEC-017 completion in [STATUS.md](STATUS.md) only after the owner accepts evidence in [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md) (`YES`). Currently `PENDING`.
+5. Living-doc hygiene: keep `suas/SPEC017_NEXT.md`, Android README, and iOS README aligned with HEAD.
+6. Android leftover: keep dummy `MainActivity` truthful for tests (test-harness banner shipped; peer-support launcher shipped).
 
 ## Not now
 

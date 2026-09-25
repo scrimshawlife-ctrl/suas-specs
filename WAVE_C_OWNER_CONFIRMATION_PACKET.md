@@ -1,12 +1,12 @@
 # WAVE_C_OWNER_CONFIRMATION_PACKET.md — Owner settlement for fail-closed Wave C
 
-**Status:** awaiting owner settlement  
-**Lifecycle:** draft packet / not a stack bump  
+**Status:** settled `ACCEPT_AS_SPECIFIED`  
+**Lifecycle:** owner settlement recorded / not a stack bump  
 **Stack:** inherits `0.6.0`  
 **Canon defaults:** [WAVE_C_CONSERVATIVE_DEFAULTS.md](WAVE_C_CONSERVATIVE_DEFAULTS.md)  
 **Plain English:** [GAP_ANALYSIS.md](GAP_ANALYSIS.md) · [REMAINING.md](REMAINING.md)  
 
-This packet does **not** close SPEC-017. It does **not** authorize pilot, production, `REPORTING=READY`, chat, on-duty matching, or store distribution.
+This packet does **not** close SPEC-017 by itself. It does **not** authorize pilot, production, `REPORTING=READY`, chat, on-duty matching, or store distribution.
 
 ## 1. Decision to make
 
@@ -53,25 +53,21 @@ These are inventory facts for owner review. They are not SPEC-017 completion.
 
 ## 5. Owner response block
 
-Record the settlement here (or on a dated receipt that links to this packet):
-
 ```text
-Settlement: A | B | C
-Date:
-Owner:
-Corrections (required if B or C):
--
--
-Evidence accepted for SPEC-017 STATUS claim: YES | NO
+Settlement: A
+Date: 2026-09-25
+Owner: Daniel Meyer (scrimshawlife-ctrl) — recorded from operator “ok continue” on agent recommendation ACCEPT_AS_SPECIFIED
+Corrections: none
+Evidence accepted for SPEC-017 STATUS claim: PENDING
 ```
 
-If `Evidence accepted for SPEC-017 STATUS claim` is `NO`, coding agents must not edit [STATUS.md](STATUS.md) to claim SPEC-017 complete.
+`PENDING` means coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete until a later owner mark of `YES`. See [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md).
 
 ## 6. After settlement
 
 | If | Then |
 |---|---|
-| A | Keep [WAVE_C_CONSERVATIVE_DEFAULTS.md](WAVE_C_CONSERVATIVE_DEFAULTS.md) as implementation-binding. Owner may later promote lifecycle wording in a separate docs PR. |
+| A (this settlement) | Keep [WAVE_C_CONSERVATIVE_DEFAULTS.md](WAVE_C_CONSERVATIVE_DEFAULTS.md) as implementation-binding. Lifecycle header updated to owner-accepted fail-closed. |
 | B | Patch Wave C rows named in corrections, then treat the patched file as binding. |
 | C | Named rows revert to open gaps in [GAP_ANALYSIS.md](GAP_ANALYSIS.md). No invented product behavior. |
 

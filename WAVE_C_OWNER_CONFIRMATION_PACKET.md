@@ -58,10 +58,10 @@ Settlement: A
 Date: 2026-09-25
 Owner: Daniel Meyer (scrimshawlife-ctrl) — recorded from operator “ok continue” on agent recommendation ACCEPT_AS_SPECIFIED
 Corrections: none
-Evidence accepted for SPEC-017 STATUS claim: PENDING
+Evidence accepted for SPEC-017 STATUS claim: NO
 ```
 
-`PENDING` means coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete until a later owner mark of `YES`. See [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md).
+Evidence `NO` (2026-09-25 review): inventory rows above stay OBSERVED; STATUS completion refused until a `0.6.0`-scoped completion audit replaces the stale `0.2.0` audit header on `suas`. See [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md). Coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete.
 
 ## 6. After settlement
 

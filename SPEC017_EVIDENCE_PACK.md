@@ -2,7 +2,7 @@
 
 **Pin:** `0.6.0` / `RELEASE_MANIFEST-0.6.0.md`  
 **Date:** `2026-09-25`  
-**Owner STATUS claim:** `PENDING` (do not edit [STATUS.md](STATUS.md) SPEC-017 completion language until owner marks `YES`)  
+**Owner STATUS claim:** `NO`  
 **Wave C:** settled `ACCEPT_AS_SPECIFIED` — [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md)  
 **Does not authorize:** pilot, production, store distribution, readiness-gate READY flips  
 
@@ -43,10 +43,10 @@ All twelve readiness gates remain `NOT_READY` per [STATUS.md](STATUS.md). SPEC-0
 ## 5. Owner accept block
 
 ```text
-Evidence accepted for SPEC-017 STATUS claim: YES | NO
-Date:
-Owner:
-Notes:
+Evidence accepted for SPEC-017 STATUS claim: NO
+Date: 2026-09-25
+Owner: Daniel Meyer (scrimshawlife-ctrl) — review-and-decide on agent inventory
+Notes: Pack row pointers for Wave C fail-closed, native MVP category parity, chat/metrics/on-duty honesty, tenant-from-email, and harness labeling are OBSERVED and accepted as inventory. STATUS completion is refused because SPEC017_PLAN requires audit against the current released cut, and suas docs/SPEC017_COMPLETION_AUDIT.md is still headed/stacked at 0.2.0 while the pin is 0.6.0. Refresh that audit (or an equivalent 0.6.0 cross-cut) before any YES. Do not invent product for open D-ids. Do not start SPEC-018.
 ```
 
-If `YES`, a follow-on docs PR may update [STATUS.md](STATUS.md) / [REMAINING.md](REMAINING.md) SPEC-017 wording without advancing readiness gates or SPEC-018.
+`NO` means coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete. Wave C remains binding fail-closed. Next SPEC-017 work is a `0.6.0`-scoped completion audit on `suas`, then a new evidence mark.

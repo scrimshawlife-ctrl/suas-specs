@@ -1,12 +1,13 @@
 # Wave C conservative defaults
 
-**Lifecycle:** `draft` / implementation-binding / not a stack bump  
+**Lifecycle:** `owner-accepted fail-closed` / implementation-binding / not a stack bump  
 **Stack:** inherits `0.6.0`  
+**Owner settlement:** [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md) — `ACCEPT_AS_SPECIFIED` on `2026-09-25`  
 **Source catalog:** implementation `docs/SPEC_GAP_PLAN.md` Wave C, `docs/SPEC_DESIGN_GAPS.md`  
 **Does not close:** D-009, D-019–D-025, D-034  
 **Does not authorize:** production, pilot, `REPORTING=READY`, chat, on-duty matching
 
-P-1…P-23 already ratify the Bucket I items that had a tested rule. Wave C was left open because those rows need a product choice. Until the owner writes that choice, the runtime must not invent one. This file records the fail-closed default so SPEC-017 can stop treating silence as a missing feature.
+P-1…P-23 already ratify the Bucket I items that had a tested rule. Wave C was left open because those rows need a product choice. The owner accepted these fail-closed defaults as the rule until a later D-id replaces a row (`ACCEPT_AS_SPECIFIED`). Runtime must not invent product behavior for these ids.
 
 A later D-id may replace any row. Until then the default is the rule.
 

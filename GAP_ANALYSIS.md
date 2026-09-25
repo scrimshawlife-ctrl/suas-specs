@@ -13,7 +13,7 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 - Phones sign in with the same email code and a Bearer token. They do not use the cookie.
 - JSON sign-in resolves tenant from the enrolled email on the Worker; `tenant_id` is optional on the wire.
 - Opening a Support Case is `POST /api/v0/cases`. One open Case per Veteran.
-- Android installed launcher can submit transportation, food, and shelter requests after sign-in. Tests still use the dummy home.
+- Android installed launcher can submit transportation, food, shelter, and peer-support requests after sign-in. Tests still use the dummy home.
 - Chat pages say chat is unavailable. Responder number tiles say there is no released formula.
 - Uber and Amadeus adapters exist as code only. They do not book or charge.
 - Funding overlay (SAM plus cloud credits) is specified. It does not move a readiness gate.
@@ -52,7 +52,7 @@ JSON `tenant_id` is optional on the Worker (resolved from the enrolled email as 
 | Surface | Left |
 |---|---|
 | Web | Chat and number tiles stay honest-unavailable. |
-| Android | Peer support is not on the home cards. Dummy `MainActivity` form remains for tests. |
+| Android | Dummy `MainActivity` form remains for tests. Peer support is on the launcher. |
 | iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. |
 
 ## What this is not

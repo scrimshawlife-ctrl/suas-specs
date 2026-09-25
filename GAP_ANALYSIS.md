@@ -53,7 +53,7 @@ JSON `tenant_id` is optional on the Worker (resolved from the enrolled email as 
 |---|---|
 | Web | Chat and number tiles stay honest-unavailable. |
 | Android | Dummy `MainActivity` form remains for tests. Peer support is on the launcher. |
-| iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. |
+| iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. Peer support is on the home cards. |
 
 ## What this is not
 

@@ -15,7 +15,7 @@ SPEC-001 through SPEC-015 are accepted. SPEC-016 is the first released cut. Late
 
 ## Current stage — SPEC-017
 
-**Status:** active.
+**Status:** recorded (implementation evidence against 0.6.0; not production).
 
 Build `suas`, `suas-ios`, and `suas-android` against pin `0.6.0`. Compare the build with the released files. Send leftovers back here. Code does not invent product rules.
 
@@ -40,9 +40,9 @@ SPEC-001 ... SPEC-015  accepted
               |
           SPEC-016  released
               |
-          SPEC-017  build and compare   ← current
+          SPEC-017  done
               |
-          SPEC-018  launch readiness
+          SPEC-018  launch readiness   ← current (blocked)
               |
           SPEC-019  measured revision
 ```

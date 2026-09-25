@@ -58,10 +58,10 @@ Settlement: A
 Date: 2026-09-25
 Owner: Daniel Meyer (scrimshawlife-ctrl) — recorded from operator “ok continue” on agent recommendation ACCEPT_AS_SPECIFIED
 Corrections: none
-Evidence accepted for SPEC-017 STATUS claim: NO
+Evidence accepted for SPEC-017 STATUS claim: YES
 ```
 
-Evidence `NO` (2026-09-25 review): inventory rows above stay OBSERVED; STATUS completion refused until a `0.6.0`-scoped completion audit replaces the stale `0.2.0` audit header on `suas`. See [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md). Coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete.
+Evidence `YES` (2026-09-25): after `0.6.0` completion audit landed on `suas` (`c5016fc`). See [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md). All twelve readiness gates remain `NOT_READY`. SPEC-018 remains blocked. Coding agents must **not** flip readiness gates or start SPEC-018.
 
 ## 6. After settlement
 

@@ -2,7 +2,7 @@
 
 **Pin:** `0.6.0` / `RELEASE_MANIFEST-0.6.0.md`  
 **Date:** `2026-09-25`  
-**Owner STATUS claim:** `NO`  
+**Owner STATUS claim:** `YES`  
 **Wave C:** settled `ACCEPT_AS_SPECIFIED` — [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md)  
 **Does not authorize:** pilot, production, store distribution, readiness-gate READY flips  
 
@@ -26,6 +26,7 @@ This pack lists OBSERVED pointers so the owner can accept or reject a SPEC-017 S
 | On-duty unavailable | G-I-30 / Wave C C3 | OBSERVED |
 | Case open JSON | `POST /api/v0/cases`; [D033_CASE_OPEN.md](D033_CASE_OPEN.md) | OBSERVED |
 | Tenant from enrolled email | `suas` sign-in tenant resolve (`5d7d58b` lineage) | OBSERVED |
+| current-cut completion audit | `suas` [docs/SPEC017_COMPLETION_AUDIT.md](https://github.com/scrimshawlife-ctrl/suas/blob/main/docs/SPEC017_COMPLETION_AUDIT.md) (`0.6.0`) | OBSERVED |
 
 ## 3. Native clients
 
@@ -43,10 +44,10 @@ All twelve readiness gates remain `NOT_READY` per [STATUS.md](STATUS.md). SPEC-0
 ## 5. Owner accept block
 
 ```text
-Evidence accepted for SPEC-017 STATUS claim: NO
+Evidence accepted for SPEC-017 STATUS claim: YES
 Date: 2026-09-25
-Owner: Daniel Meyer (scrimshawlife-ctrl) — review-and-decide on agent inventory
-Notes: Pack row pointers for Wave C fail-closed, native MVP category parity, chat/metrics/on-duty honesty, tenant-from-email, and harness labeling are OBSERVED and accepted as inventory. STATUS completion is refused because SPEC017_PLAN requires audit against the current released cut, and suas docs/SPEC017_COMPLETION_AUDIT.md is still headed/stacked at 0.2.0 while the pin is 0.6.0. Refresh that audit (or an equivalent 0.6.0 cross-cut) before any YES. Do not invent product for open D-ids. Do not start SPEC-018.
+Owner: Daniel Meyer (scrimshawlife-ctrl) — after 0.6.0 completion audit landed (suas c5016fc)
+Notes: Prior NO was only for stale 0.2.0 audit header. Audit now supersedes against pin 0.6.0 with Wave C fail-closed, D-004/D-033 bounds, native MVP parity, and unit/lint/typecheck evidence. All twelve readiness gates remain NOT_READY. SPEC-018 remains blocked. Do not invent product for open D-ids.
 ```
 
-`NO` means coding agents must **not** edit [STATUS.md](STATUS.md) to claim SPEC-017 complete. Wave C remains binding fail-closed. Next SPEC-017 work is a `0.6.0`-scoped completion audit on `suas`, then a new evidence mark.
+`YES` allows STATUS/REMAINING/ROADMAP SPEC-017 wording updates without gate READY flips or SPEC-018 start.

@@ -23,7 +23,7 @@ A change to the product API, Veteran journey, auth, or environment class must be
 
 ## Governance frontier
 
-SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.3.0 supersedes v0.2.0 and closes D-033 by releasing the native mobile client surface while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, notification channel availability, and all readiness boundaries. v0.2.0 (inherited) closed D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors. SPEC-017 implementation conformance is active. SPEC-018 remains the go/no-go stage for any real pilot or production operation.
+SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.3.0 supersedes v0.2.0 and closes D-033 by releasing the native mobile client surface while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, notification channel availability, and all readiness boundaries. v0.2.0 (inherited) closed D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors. SPEC-017 implementation conformance against pin `0.6.0` is recorded ([SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md) YES; runtime audit on suas docs/SPEC017_COMPLETION_AUDIT.md). SPEC-018 remains the go/no-go stage for any real pilot or production operation.
 
 ## Current release additions
 
@@ -63,8 +63,4 @@ D-012 is closed by [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md). D-0
 
 ## Next stage
 
-Proceed with SPEC-017 implementation conformance against owner-merged release `0.6.0` ([RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)). Implementers pin `scrimshawlife-ctrl/SUAS` to this released stack and re-pin `SUAS_SPEC_VERSION` / `SUAS_RELEASE_MANIFEST` accordingly; a stale pin fails closed. Use [HANDOFF.md](HANDOFF.md) and [ENVIRONMENT.md](ENVIRONMENT.md) as mandatory implementation inputs, and [MOBILE_SURFACE.md](MOBILE_SURFACE.md) before any client-surface work.
-
-Native client implementation is authorized by inherited v0.3.0 and remains subject to SPEC-018 for any real operation or distribution. Nothing in this release advances a readiness gate or reduces the SPEC-018 residual set.
-
-Draft implementation-binding specify/plan for integrating the existing iOS and Android forks with `/api/v0`: [D033_NATIVE_CLIENT_INTEGRATION.md](D033_NATIVE_CLIENT_INTEGRATION.md), [D033_NATIVE_CLIENT_PLAN.md](D033_NATIVE_CLIENT_PLAN.md). Those drafts do not consume a SPEC-0xx stage number, do not bump the stack, and do not reopen D-033 or close D-034.
+SPEC-017 implementation evidence is recorded for `0.6.0`. Next stage is SPEC-018 (blocked). Implementers still pin `0.6.0`. Native clients authorized for implementation not production/store. Nothing advances a readiness gate.

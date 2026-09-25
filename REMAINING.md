@@ -2,14 +2,18 @@
 
 Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Current pin is `0.6.0`.
 
-## Now (SPEC-017)
+## Done (SPEC-017)
 
 1. Keep phones and web on `/api/v0` only.
-2. ~~Worker: stop requiring a person-chosen tenant on JSON sign-in.~~ **Done on `suas` (`5d7d58b`).** `tenant_id` is optional; enrolled email resolves the tenant. Clients may still send a build-pinned synthetic tenant as a filter. The person must not pick an organization.
-3. ~~Confirm or correct Wave C fail-closed defaults.~~ **Settled `ACCEPT_AS_SPECIFIED` on `2026-09-25`** — [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md).
-4. ~~Owner mark SPEC-017 evidence for STATUS claim.~~ **Marked `YES` on `2026-09-25`** — [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md). [STATUS.md](STATUS.md) records conformance against pin `0.6.0`; all twelve readiness gates remain `NOT_READY`.
-5. Living-doc hygiene: keep `suas/SPEC017_NEXT.md`, Android README, and iOS README aligned with HEAD.
-6. Android leftover: keep dummy `MainActivity` truthful for tests (test-harness banner shipped; peer-support launcher shipped).
+2. ~~Worker: stop requiring a person-chosen tenant on JSON sign-in.~~ **Done on `suas` (`5d7d58b`).**
+3. ~~Wave C fail-closed defaults.~~ **Settled `ACCEPT_AS_SPECIFIED` on `2026-09-25`**.
+4. ~~SPEC-017 evidence STATUS claim.~~ **Marked `YES` on `2026-09-25`** — [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md). Gates remain `NOT_READY`.
+
+## Hygiene (still SPEC-017 residual, not SPEC-018)
+
+1. Keep living docs (`suas/SPEC017_NEXT.md`, Android README, iOS README, this file) aligned with HEAD.
+2. Keep Android dummy `MainActivity` labeled test harness only.
+3. Do not invent chat, duty matching, dashboard formulas, or PARTIAL commands.
 
 ## Not now
 

@@ -29,7 +29,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 ## 2. Current lifecycle
 
 - Released implementation contract: `0.4.0`
-- Current implementation stage: `SPEC-017`
+- Current implementation stage: `SPEC-018` (blocked). SPEC-017 evidence recorded against pin `0.6.0`.
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
 - Production deployment: prohibited
@@ -161,4 +161,4 @@ When Fable encounters an ambiguity:
 
 Fable can begin implementation without asking what product is being built, what is canonical, what environments exist, what can contact real systems, how versions are identified, which workflows are enabled, or what evidence constitutes conformance.
 
-The next active stage is SPEC-017; SPEC-018 remains the only path to pilot/production go-live.
+SPEC-017 implementation evidence is recorded against pin `0.6.0`. SPEC-018 remains blocked and is the only path to pilot/production go-live.

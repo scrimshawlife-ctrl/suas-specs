@@ -48,7 +48,7 @@ Wave C remains binding: [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFI
 ### 2.C Keep pending (do not invent)
 
 | Id | Why agents must not close |
-|---|---|---|
+|---|---|
 | D-001 | Production compute/hosting cloud — SPEC-018 launch choice (Worker topology for synthetic STAGING is separate) |
 | D-002 | Production auth provider — SPEC-018 |
 | D-006 | Legal/HIPAA **classification** — counsel only; no claim either way. Neon HIPAA-eligible DB controls are a **partial infrastructure mitigation** only (see [D-006_FACT_SHEET.md](D-006_FACT_SHEET.md) §3.A). They do **not** set `HIPAA_APPLICABILITY` or make SUAS “HIPAA compliant.” |

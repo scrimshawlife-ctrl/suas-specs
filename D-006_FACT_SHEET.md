@@ -50,7 +50,7 @@ Label each item `OBSERVED` unless a different label is stated.
 **Release and readiness** (`OBSERVED`)
 
 - Released spec stack: `0.3.0` (D-033 native mobile contract released). The implementation kernel pin in `SUAS` remains `0.2.0` until a separate re-pin.
-- SPEC-017 implementation conformance is active and **NOT READY**. All 12 readiness gates remain `NOT_READY`. SPEC-018 is the go/no-go for any real pilot or production.
+- SPEC-017 implementation evidence is recorded against pin `0.6.0` and remains **NOT READY** for veterans. All 12 readiness gates remain `NOT_READY`. SPEC-018 is the go/no-go for any real pilot or production.
 
 **Intended later use** (`OBSERVED` as specified intent; not authorized today)
 

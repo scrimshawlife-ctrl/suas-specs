@@ -93,13 +93,43 @@ These are product rules. They are not a HIPAA conclusion.
 - No secrets in git, logs, or client bundles
 - UI string-forbid "HIPAA compliant" / "CCPA compliant" / "TCPA compliant"
 
+### 3.A Neon Postgres HIPAA-eligible controls (partial infrastructure mitigation)
+
+**Labels:** Neon product facts = `OBSERVED` (public Neon docs). Operator direction = `OPERATOR_ASSERTED` 2026-09-25 (“HIPAA issues are partially solved by using Neon postgres, they have hipaa compliance setting”).
+
+**What Neon offers** (`OBSERVED` from https://neon.com/docs/security/hipaa and https://neon.com/docs/security/compliance):
+
+- HIPAA support is available on Neon’s **Scale** plan as a self-serve path.
+- Customer enables HIPAA at the **organization** level and accepts Neon’s **Business Associate Agreement (BAA)**.
+- Customer then enables HIPAA per **project** (Console / API / CLI). Project enablement is **irreversible** and restarts computes.
+- Neon documents audit logging (including pgAudit) for HIPAA-enabled projects and breach-notification commitments in its HIPAA materials.
+
+**What SUAS already uses** (`OBSERVED`):
+
+- Synthetic STAGING topology is GitHub + Cloudflare Worker + **Neon** (pooled URL → Hyperdrive; unpooled → migrate). See `suas` `docs/decision-packets/D-001-005-staging-hosting.md`.
+- Operator call D-005 = `ACCEPT_NEON_PREFERRED` in [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md).
+
+**What this does *not* mean** (binding honesty):
+
+- Does **not** close D-006 or set `HIPAA_APPLICABILITY`.
+- Does **not** make SUAS a covered entity, a business associate, or “HIPAA compliant.”
+- Does **not** replace counsel classification, D-013 register review, Security Rule risk analysis, workforce training, or BAAs for **other** vendors (auth, SMS, email, compute) if counsel later says HIPAA applies.
+- Does **not** authorize production Veteran / PHI data or SPEC-018.
+- Enabling Neon org/project HIPAA settings is an **operator/console action**, not something agents invent in git. Do not store Neon passwords or BAA execution proof in the repository.
+
 **Deletion** (`OBSERVED` / `DECISION_PENDING`)
 
 A synthetic deletion drill exists in implementation. D-007 retention/deletion durations remain `DECISION_PENDING`. The PRIVACY gate is `NOT_READY`.
 
-**Vendors** (`DECISION_PENDING`)
+**Vendors** (`DECISION_PENDING` / partial calls)
 
-D-001 hosting, D-002 auth/MFA factor, D-003 SMS, D-004 email, and D-005 production DB are all `DECISION_PENDING`. Production SMS/email/DB hosting is deferred in the 0.1.0 ledger.
+| Id | Status |
+|---|---|
+| D-001 production compute host | `DECISION_PENDING` (synthetic Worker topology separate) |
+| D-002 auth/MFA factor | `DECISION_PENDING` |
+| D-003 SMS | `ACCEPT_SMS_UNAVAILABLE` (operator calls) — still no provider |
+| D-004 email | `DECIDED` Resend |
+| D-005 production DB | `ACCEPT_NEON_PREFERRED` (operator calls) — Neon preferred; production data still SPEC-018-gated |
 
 **Native mobile** (`OBSERVED`)
 
@@ -148,6 +178,7 @@ These items are **not** in force today.
 | D-006 | Legal / HIPAA classification | `DECISION_PENDING` |
 | D-013 | Counsel review of the compliance register | `DECISION_PENDING` |
 | D-007 | Retention / deletion durations | `DECISION_PENDING` |
-| D-001–D-005 | Hosting, auth/MFA, SMS, email, production DB | `DECISION_PENDING` |
+| D-001 / D-002 | Production compute host / auth provider | `DECISION_PENDING` |
+| D-005 | Production DB | `ACCEPT_NEON_PREFERRED` (not production-authorized) |
 | D-008 | Operating pilot partners | `DECISION_PENDING` |
 | D-034 | On-device protection of locally retained veteran data | `DECISION_PENDING` |

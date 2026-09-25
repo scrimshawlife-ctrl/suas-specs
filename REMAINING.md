@@ -9,7 +9,7 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 3. Confirm or correct the fail-closed Wave C defaults if the owner wants a different rule.
 4. Record SPEC-017 completion in [STATUS.md](STATUS.md) only after the owner accepts the evidence.
 5. Living-doc hygiene: keep `suas/SPEC017_NEXT.md`, Android README, and iOS README aligned with HEAD (Android `/api/v0` and iOS staging case-open are already shipped).
-6. Android leftovers from [GAP_ANALYSIS.md](GAP_ANALYSIS.md): peer-support home card; keep dummy `MainActivity` truthful for tests.
+6. Android leftover from [GAP_ANALYSIS.md](GAP_ANALYSIS.md): keep dummy `MainActivity` truthful for tests (peer-support launcher card shipped).
 
 ## Not now
 

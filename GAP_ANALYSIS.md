@@ -8,7 +8,7 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 
 ## Already true on the current pin
 
-- Specs through SPEC-016 are accepted or released. Work now is SPEC-017: build what the pin says, send leftovers back here.
+- Specs through SPEC-016 are accepted or released. SPEC-017 implementation evidence is recorded against pin `0.6.0`. Leftovers stay fail-closed or on open D-ids; SPEC-018 is blocked.
 - Web sign-in for already-enrolled people works with an email code and a cookie.
 - Phones sign in with the same email code and a Bearer token. They do not use the cookie.
 - JSON sign-in resolves tenant from the enrolled email on the Worker; `tenant_id` is optional on the wire.

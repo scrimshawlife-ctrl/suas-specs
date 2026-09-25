@@ -14,6 +14,7 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 1. Keep living docs (`suas/SPEC017_NEXT.md`, Android README, iOS README, this file) aligned with HEAD.
 2. Keep Android dummy `MainActivity` labeled test harness only.
 3. Do not invent chat, duty matching, dashboard formulas, or PARTIAL commands.
+4. Follow [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) fail-closed defaults (Neon preferred for D-005; D-006 still counsel-owned).
 
 ## Not now
 
@@ -21,6 +22,7 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 - Spending the $300 cloud credits without a named evidence run.
 - Inventing chat, duty matching, or dashboard math.
 - Inventing SMS, food vendors, payment, or restore-time numbers.
+- Claiming “HIPAA compliant” (Neon BAA/HIPAA project toggle ≠ D-006 closed).
 
 ## Then (SPEC-018)
 

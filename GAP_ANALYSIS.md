@@ -34,7 +34,7 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 | Decision | In plain English |
 |---|---|
 | D-003 | How official text messages get sent. |
-| D-006 | Whether health information is in scope. |
+| D-006 | Whether health information is in scope. Neon Scale HIPAA/BAA settings are a **partial DB-plane mitigation** only — classification still counsel-owned; no “HIPAA compliant” claim. |
 | D-007 | How long events and keys are kept. |
 | D-009 | When coverage is considered open. |
 | D-010 | How money moves for a paid booking. |

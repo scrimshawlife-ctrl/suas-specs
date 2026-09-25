@@ -11,6 +11,7 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 - Specs through SPEC-016 are accepted or released. Work now is SPEC-017: build what the pin says, send leftovers back here.
 - Web sign-in for already-enrolled people works with an email code and a cookie.
 - Phones sign in with the same email code and a Bearer token. They do not use the cookie.
+- JSON sign-in resolves tenant from the enrolled email on the Worker; `tenant_id` is optional on the wire.
 - Opening a Support Case is `POST /api/v0/cases`. One open Case per Veteran.
 - Android installed launcher can submit transportation, food, and shelter requests after sign-in. Tests still use the dummy home.
 - Chat pages say chat is unavailable. Responder number tiles say there is no released formula.
@@ -44,7 +45,7 @@ This page is the living gap list in ordinary language. Decision IDs stay here so
 | D-025 | When a small group’s numbers may be shown. |
 | D-034 | How a phone may store a session or Veteran fields. Today: memory only. |
 
-JSON sign-in still asks the app to send `tenant_id`. The person must not pick an organization. The build pins the seed tenant. Making the field optional is Worker work, not a phone invention.
+JSON `tenant_id` is optional on the Worker (resolved from the enrolled email as of `suas` `5d7d58b`). Clients may still send a build-pinned synthetic tenant as a filter. The person must not pick an organization.
 
 ## Client leftovers
 

@@ -54,7 +54,7 @@ SUAS is not an EHR, diagnosis system, suicide-prediction product, automated emer
 
 - SPEC-001 through SPEC-015: `accepted`
 - SPEC-016: released implementation authority
-- SPEC-017: active implementation conformance
+- SPEC-017: recorded against pin `0.6.0` (implementation evidence; not production)
 - SPEC-018: pilot/production go/no-go, still blocked
 - Pilot readiness: `NOT_READY`
 - Production readiness: `NOT_READY`
@@ -123,6 +123,6 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 ## Next work
 
-Proceed with SPEC-017 in `scrimshawlife-ctrl/SUAS`, using [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts.
+SPEC-017 implementation evidence is recorded for pin `0.6.0`. Next stage is SPEC-018 (blocked) until launch decisions and measured evidence exist. Use [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts. Do not invent chat, duty matching, dashboard formulas, or PARTIAL commands.
 
 Skill source selection, migration and safe checks: [SKILL_PROVENANCE.md](SKILL_PROVENANCE.md).

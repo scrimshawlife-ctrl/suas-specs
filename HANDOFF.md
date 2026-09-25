@@ -30,6 +30,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 
 - Released implementation contract: `0.4.0`
 - Current implementation stage: `SPEC-018` (blocked). SPEC-017 evidence recorded against pin `0.6.0`.
+- Operator calls (fail-closed): [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) — Neon preferred for D-005; D-006 counsel-owned; D-036 Option C; Lyft deferred.
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
 - Production deployment: prohibited

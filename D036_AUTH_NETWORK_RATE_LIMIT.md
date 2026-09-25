@@ -1,7 +1,7 @@
 # D036_AUTH_NETWORK_RATE_LIMIT.md — Authentication network-signal throttling decision packet
 
-**Status:** `DECISION_PENDING`  
-**Epistemic state:** proposal for owner review; not released for implementation  
+**Status:** `DECIDED` 2026-09-25 — Option **C** (destination/account limits only; no network budget)  
+**Epistemic state:** owner call recorded in [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md); Option A/B remain available for a later superseding decision  
 **Affected contract:** [AUTH.md](AUTH.md) §3  
 **Affected clients:** `suas` web/API, `suas-ios`, and `suas-android` through the shared `/api/v0` challenge boundary  
 **Production authority:** none
@@ -164,10 +164,11 @@ CONSEQUENCES=<short statement>
 
 ## 10. Status and non-goals
 
-Until the owner completes §9 and releases the coherent cross-artifact change:
+Owner recorded Option **C** on 2026-09-25 ([OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) §4):
 
-- `D-036 = DECISION_PENDING`;
-- no threshold in this packet is implementation-authoritative;
+- `D-036 = DECIDED` with `NETWORK_OPTION=C`;
+- no network-subject threshold is implementation-authoritative;
 - the runtime must retain its released destination/account limits;
+- do not claim network throttling is implemented;
 - no production, pilot, provider-cost, SLO, privacy-compliance, or abuse-prevention claim is authorized;
 - this packet does not modify D-002, D-007, D-021, D-023, D-024, D-025, D-034, or any launch gate.

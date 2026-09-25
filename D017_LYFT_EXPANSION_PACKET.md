@@ -1,6 +1,7 @@
 # D017_LYFT_EXPANSION_PACKET.md — Lyft Concierge transportation adapter expansion
 
-**Status:** `DECISION_PENDING` / draft / not implementation authority  
+**Status:** `DEFER` (2026-09-25 owner call) / draft / not implementation authority  
+**Settlement:** [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) — keep Uber-only released family; no Lyft credentials/effects  
 **Owner:** `@scrimshawlife-ctrl`  
 **Related:** [DECISIONS.md](DECISIONS.md), [RIDES.md](RIDES.md), [PROVIDER_INTEGRATIONS.md](PROVIDER_INTEGRATIONS.md), [ENVIRONMENT.md](ENVIRONMENT.md), [SECURITY.md](SECURITY.md), [RESILIENCE.md](RESILIENCE.md), [PRIVACY.md](PRIVACY.md), [CONSENT.md](CONSENT.md)
 
@@ -109,7 +110,7 @@ A later implementation release must add explicit secret names, configuration val
 - `DEFER`: retain Lyft as a manual Concierge path only.
 - `REJECT`: do not integrate Lyft.
 
-**Current recommendation:** `EVIDENCE_REQUIRED`. Business-account approval materially advances feasibility, but public evidence does not establish the API client/program connection, technical contract, safe test boundary, or operational authority required for implementation.
+**Owner call (2026-09-25):** `DEFER`. Business-account approval remains noted; missing API/program/test/ops evidence still blocks `ACCEPT_FOR_SPEC_RELEASE`. Collect evidence before any later reopen.
 
 ## 9. Public sources observed
 

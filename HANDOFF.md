@@ -30,7 +30,7 @@ If any implementation requirement conflicts, the release manifest and later rele
 
 - Released implementation contract: `0.4.0`
 - Current implementation stage: `SPEC-018` (blocked). SPEC-017 evidence recorded against pin `0.6.0`.
-- SPEC-018 owner packet (awaiting): [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) — do not invent launch product until settled.
+- SPEC-018 owner packet: [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) — settled `KEEP_BLOCKED` (`2026-09-26`); do not invent launch product.
 - Operator calls (fail-closed): [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) — Neon preferred for D-005; D-006 counsel-owned; D-036 Option C; Lyft deferred.
 - Production/pilot readiness: `NOT_READY`
 - Real veteran data: prohibited
@@ -163,4 +163,4 @@ When Fable encounters an ambiguity:
 
 Fable can begin implementation without asking what product is being built, what is canonical, what environments exist, what can contact real systems, how versions are identified, which workflows are enabled, or what evidence constitutes conformance.
 
-SPEC-017 implementation evidence is recorded against pin `0.6.0`. SPEC-018 remains blocked ([SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) awaiting owner) and is the only path to pilot/production go-live.
+SPEC-017 implementation evidence is recorded against pin `0.6.0`. SPEC-018 remains blocked ([SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) settled `KEEP_BLOCKED`) and is the only path to pilot/production go-live.

@@ -123,6 +123,6 @@ See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS
 
 ## Next work
 
-SPEC-017 implementation evidence is recorded for pin `0.6.0`. Operator fail-closed calls: [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md). Next stage is SPEC-018 (blocked) until launch decisions and measured evidence exist — owner packet: [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). Use [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts. Do not invent chat, duty matching, dashboard formulas, or PARTIAL commands.
+SPEC-017 implementation evidence is recorded for pin `0.6.0`. Operator fail-closed calls: [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md). Next stage is SPEC-018 (blocked — owner `KEEP_BLOCKED` on [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md)). Use [HANDOFF.md](HANDOFF.md) as the entrypoint. A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients in [REPOS.md](REPOS.md). Semantic gaps return here; they are not resolved by implementation defaults. Draft Rev 3 files are not released contracts. Do not invent chat, duty matching, dashboard formulas, or PARTIAL commands.
 
 Skill source selection, migration and safe checks: [SKILL_PROVENANCE.md](SKILL_PROVENANCE.md).

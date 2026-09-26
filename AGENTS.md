@@ -3,6 +3,7 @@
 **Released stack:** `0.6.0`
 **Implementation authority:** `RELEASED_FOR_IMPLEMENTATION`
 **Current stage:** `SPEC-018` (blocked). SPEC-017 implementation evidence is recorded against pin `0.6.0`.
+**SPEC-018 owner packet:** [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) (awaiting owner; silence ≠ open).
 **Operator calls:** [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) / [OPERATOR_CALLS_CONSERVATIVE_DEFAULTS.md](OPERATOR_CALLS_CONSERVATIVE_DEFAULTS.md). Do not invent product for `KEEP_PENDING` rows. Do not claim HIPAA compliant.
 **Start here:** [REPOS.md](REPOS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
 

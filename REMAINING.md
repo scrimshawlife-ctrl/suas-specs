@@ -26,7 +26,7 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 
 ## Then (SPEC-018)
 
-Blocked until the owner closes the launch decisions and attaches test evidence.
+Blocked. Owner launch packet (awaiting settlement): [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). Do not invent product or start launch evidence until the owner chooses `OPEN_LAUNCH_DECISIONS` and fills/waives the named rows.
 
 ## After launch (SPEC-019)
 

@@ -25,7 +25,7 @@ Finishing this stage does not allow production use or a live pilot. Evidence: [S
 
 **Status:** blocked.
 
-Needs closed launch decisions, measured evidence, and gates that actually move. See [REMAINING.md](REMAINING.md).
+Needs closed launch decisions, measured evidence, and gates that actually move. Owner packet (awaiting settlement): [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). See [REMAINING.md](REMAINING.md).
 
 ## SPEC-019 — After launch
 

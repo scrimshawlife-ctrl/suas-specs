@@ -26,7 +26,7 @@ Read with [ROADMAP.md](ROADMAP.md) and [GAP_ANALYSIS.md](GAP_ANALYSIS.md). Curre
 
 ## Then (SPEC-018)
 
-Blocked. Owner launch packet (awaiting settlement): [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). Do not invent product or start launch evidence until the owner chooses `OPEN_LAUNCH_DECISIONS` and fills/waives the named rows.
+Blocked — owner settled `KEEP_BLOCKED` on `2026-09-26` ([SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md)). No launch evidence work until a later `OPEN_LAUNCH_DECISIONS` fills/waives D-001/002/006/008/010/013. Do not invent those values.
 
 ## After launch (SPEC-019)
 

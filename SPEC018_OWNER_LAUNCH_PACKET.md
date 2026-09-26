@@ -1,14 +1,14 @@
 # SPEC018_OWNER_LAUNCH_PACKET.md — Owner go/no-go for SPEC-018
 
-**Status:** awaiting owner  
-**Lifecycle:** packet only / not a stack bump / does **not** open SPEC-018  
+**Status:** settled `KEEP_BLOCKED`  
+**Lifecycle:** owner settlement recorded / not a stack bump / does **not** open SPEC-018  
 **Stack:** inherits `0.6.0`  
 **Prior settlements:** [WAVE_C_OWNER_CONFIRMATION_PACKET.md](WAVE_C_OWNER_CONFIRMATION_PACKET.md) `ACCEPT_AS_SPECIFIED`; [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md); [SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md) YES  
 **Plain English:** [REMAINING.md](REMAINING.md) · [GAP_ANALYSIS.md](GAP_ANALYSIS.md) · [PILOT.md](PILOT.md) · [STATUS.md](STATUS.md)  
 
 This packet lists what the owner must decide before SPEC-018 may collect launch evidence. It does **not** authorize pilot, production, store distribution, readiness-gate READY flips, HIPAA classification, credit spend, real external effects, or inventing chat / duty / dashboard formulas / PARTIAL commands.
 
-Coding agents must **not** treat silence as permission to start SPEC-018 product work.
+Coding agents must **not** treat silence as permission to start SPEC-018 product work. Settlement `KEEP_BLOCKED` keeps that rule explicit.
 
 ## 1. Decision to make
 
@@ -78,26 +78,26 @@ This packet does **not** create that evidence pack. Do not mark gates READY from
 ## 5. Owner response block
 
 ```text
-Settlement: KEEP_BLOCKED | OPEN_LAUNCH_DECISIONS | REJECT_AND_REWRITE
-Date:
-Owner:
-D-001:
-D-002:
-D-006: (counsel)
-D-008:
-D-010:
-D-013: (counsel)
-Waivers (id + exact scope, or none):
-Evidence authority: none until Settlement = OPEN_LAUNCH_DECISIONS and named rows are filled or waived
+Settlement: KEEP_BLOCKED
+Date: 2026-09-26
+Owner: Daniel Meyer (scrimshawlife-ctrl) — recorded from operator “recommend and continue” on agent recommendation KEEP_BLOCKED
+D-001: KEEP_PENDING
+D-002: KEEP_PENDING
+D-006: KEEP_PENDING (counsel)
+D-008: KEEP_PENDING
+D-010: KEEP_PENDING
+D-013: KEEP_PENDING (counsel)
+Waivers: none
+Evidence authority: none
 ```
 
-Until §5 is filled with `OPEN_LAUNCH_DECISIONS` (or a later owner document supersedes this packet), SPEC-018 remains **blocked**.
+Rationale (agent recommendation accepted): launch-required rows still lack real owner/counsel values. Opening SPEC-018 or inventing those values would violate fail-closed doctrine. A later owner document may supersede with `OPEN_LAUNCH_DECISIONS` once §2.A is filled or waived.
 
 ## 6. After settlement
 
 | If | Then |
 |---|---|
-| A `KEEP_BLOCKED` | No SPEC-018 evidence work. Hygiene + fail-closed operator calls only. |
+| A `KEEP_BLOCKED` (this settlement) | No SPEC-018 evidence work. Hygiene + fail-closed operator calls only. |
 | B `OPEN_LAUNCH_DECISIONS` | Owner fills §5. Agents may draft `SPEC018_EVIDENCE_PACK.md` checklist only against filled/waived rows. Still no gate READY without evidence. |
 | C `REJECT_AND_REWRITE` | Treat this packet as non-binding. Wait for owner replacement. |
 

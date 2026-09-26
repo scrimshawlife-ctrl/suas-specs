@@ -23,9 +23,9 @@ Finishing this stage does not allow production use or a live pilot. Evidence: [S
 
 ## Current stage — SPEC-018
 
-**Status:** blocked.
+**Status:** blocked — owner settled `KEEP_BLOCKED` (`2026-09-26`).
 
-Needs closed launch decisions, measured evidence, and gates that actually move. Owner packet (awaiting settlement): [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). See [REMAINING.md](REMAINING.md).
+Needs closed launch decisions, measured evidence, and gates that actually move. Packet: [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md). See [REMAINING.md](REMAINING.md).
 
 ## SPEC-019 — After launch
 

@@ -120,7 +120,7 @@ Recorded here rather than resolved, per [AGENTS.md](AGENTS.md) rule 3 and the ep
 
 | Gap | Status | Note |
 |---|---|---|
-| On-device protection of any locally retained veteran data, including the session credential | D-034 `DECISION_PENDING` | [SECURITY.md](SECURITY.md) §2 specifies encryption at rest for database and backups. It does not specify a client-device at-rest contract. Until D-034 closes, a native client retains the minimum required to hold an authenticated session and does not persist veteran domain data locally. |
+| On-device protection of any locally retained veteran data, including the session credential | D-034 `ACCEPT_MEMORY_ONLY_DEFAULT` | [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md). Native clients hold the session in memory only, clear stale disk keys, and do not persist veteran domain fields. Full on-device cryptography remains open. This row does not change a readiness gate. |
 | Challenge and session TTL constants | `DECISION_PENDING` | Already open in [AUTH.md](AUTH.md) §3 and §5. Not set by this release. A client must not hardcode or display a lifetime. |
 | Tenant selection before authentication | `DECISION_PENDING` | The released challenge contract authenticates within a tenant scope, and no released discovery mechanism assigns a client to a tenant before a session exists. Until this closes, a build carries its tenant scope as pinned configuration under §8 and does not offer tenant selection as a user-facing choice. |
 | Self-service enrollment from a client surface | `FUTURE` | [ONBOARDING.md](ONBOARDING.md) governs enrollment. No released client-initiated account-creation contract exists; a native client must not present one. |

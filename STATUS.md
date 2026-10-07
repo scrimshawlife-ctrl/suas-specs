@@ -21,6 +21,20 @@ Named inventory: [REPOS.md](REPOS.md). Specs are canonical. Native clients consu
 
 A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients.
 
+## Implementation status (`OBSERVED` 2026-10-07 PT; not a gate change)
+
+This section records implementation facts so readers do not have to dig through three repositories. It moves no readiness gate and closes no D-id.
+
+| Fact | Detail |
+|---|---|
+| Synthetic STAGING build | `https://suasqrf.com` runs `suas` `0f7aeae` (suas PR #187), deployed by the manual `worker-deploy` workflow (run `37685578663`). Deploys happen only when an owner runs that workflow by hand. |
+| Path-parameter fix | Path-parameter routes such as `GET /api/v0/cases/{id}/service-requests` no longer answer `400` on Workers (suas #187). The `staging-path-param-check` workflow (suas #188) runs after each successful `worker-deploy`; its first run passed with `200` on both checked routes (run `37686583961`). |
+| LOCAL demo mode | `npm run dev:demo` in `suas` starts a LOCAL Worker with migrations and a synthetic seed. Sign in as `demo@example.invalid` with code `123456`; `newvet@example.invalid` is enrolled with no case. The fixed code exists only with `SUAS_ENV=LOCAL`, an explicit opt-in, and a local database (suas #189). |
+| Native demo modes | Android debug launchers "SUAS Demo (no server)" and "SUAS Local Worker" (suas-android PR #13, draft). iOS shared schemes `Demo` (`-SUASDemoMode`) and `Local` (`-SUASLocal`), DEBUG only (suas-ios PR #10, draft). Release builds carry no demo fixture. |
+| Demo fixtures | `suas` owns `contract/demo-fixtures.json` and regenerates it with `npm run demo:fixtures`. The apps hold copies that are not hand-edited. All demo data is synthetic. |
+| Application versions | `suas` `0.2.0` (proposed in suas PR #190), `suas-android` `0.1.0` and `suas-ios` `0.1.0` (proposed in PRs #13 and #10). All implement stack `0.6.0`. Scheme: [VERSIONING.md](VERSIONING.md) §8. |
+| Work tracking | [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6). Owner-blocked items stay `Blocked`. |
+
 ## Governance frontier
 
 SPEC-001 through SPEC-015 are accepted. SPEC-016 established the first released cut. v0.3.0 supersedes v0.2.0 and closes D-033 by releasing the native mobile client surface while preserving `/api/v0`, event schema `0.1.0`, canonical state machines, notification channel availability, and all readiness boundaries. v0.2.0 (inherited) closed D-011 by releasing `qv-001`, `sv-001`, incomplete-input behavior, basis requirements, and golden vectors. SPEC-017 implementation conformance against pin `0.6.0` is recorded ([SPEC017_EVIDENCE_PACK.md](SPEC017_EVIDENCE_PACK.md) YES; runtime audit on suas docs/SPEC017_COMPLETION_AUDIT.md). SPEC-018 remains the go/no-go stage for any real pilot or production operation.

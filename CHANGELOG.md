@@ -4,6 +4,15 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive living-docs alignment, 2026-10-07 PT
+
+**Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**
+
+- [STATUS.md](STATUS.md) "Implementation status" records the iOS Release bundle check and `DemoLocation.gpx` exclusion (suas-ios #13), the Android test-harness guard (suas-android #16), the CI pins and `CONTEXT.md` files, and the CI verification gap while GitHub Actions jobs could not start.
+- [REMAINING.md](REMAINING.md) hygiene item 2 and [GAP_ANALYSIS.md](GAP_ANALYSIS.md) "Client leftovers" cite the Android harness test.
+
+---
+
 ## Additive CONTEXT.md, 2026-10-07 PT
 
 **Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**

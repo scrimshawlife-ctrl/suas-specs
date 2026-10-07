@@ -35,14 +35,14 @@ Machine-readable API inventory for the Worker lives in that repo at `docs/openap
 
 This file does not name a stack version. Use [VERSIONING.md](VERSIONING.md) and [STATUS.md](STATUS.md). Do not invent a pin from this inventory.
 
-## Versions, demo mode, and tracking (`OBSERVED` 2026-10-07 PT)
+## Versions, demo mode, and tracking (`OBSERVED` 2026-10-07 PT, after merges)
 
 | Repository | Application version | Implements stack | Release tags |
 |---|---|---|---|
 | `SUAS-specs` | n/a (this is the stack) | `0.6.0` current | `v0.1.0` to `v0.6.0` with GitHub Releases |
-| `suas` | `0.2.0` proposed in PR #190 (was `0.1.0`) | `0.6.0` | none yet; tagged after an approved merge |
-| `suas-android` | `0.1.0` proposed in PR #13 (was `1.0`) | `0.6.0` | none yet; tagged after an approved merge |
-| `suas-ios` | `0.1.0` proposed in PR #10 (was `1.0`) | `0.6.0` | none yet; tagged after an approved merge |
+| `suas` | `0.2.0` (PR #190, merge `a68eb12`) | `0.6.0` | `v0.1.0` baseline (`e3a9a16`), `v0.2.0`, with GitHub Releases |
+| `suas-android` | `0.1.0` (PR #13, merge `ece7bef`; was `1.0`) | `0.6.0` | `v0.1.0` with GitHub Release |
+| `suas-ios` | `0.1.0` (PR #10, merge `89e37ae`; was `1.0`) | `0.6.0` | `v0.1.0` with GitHub Release |
 
 How the identities relate: [VERSIONING.md](VERSIONING.md) §8. Pre-1.0 client versions mean no launch; SPEC-018 stays blocked.
 

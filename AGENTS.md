@@ -6,6 +6,7 @@
 **SPEC-018 owner packet:** [SPEC018_OWNER_LAUNCH_PACKET.md](SPEC018_OWNER_LAUNCH_PACKET.md) — settled `KEEP_BLOCKED` (`2026-09-26`); silence ≠ open.
 **Operator calls:** [OPERATOR_CALLS_2026-09-25.md](OPERATOR_CALLS_2026-09-25.md) / [OPERATOR_CALLS_CONSERVATIVE_DEFAULTS.md](OPERATOR_CALLS_CONSERVATIVE_DEFAULTS.md). Do not invent product for `KEEP_PENDING` rows. Do not claim HIPAA compliant.
 **Start here:** [REPOS.md](REPOS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md), [RELEASE_MANIFEST-0.6.0.md](RELEASE_MANIFEST-0.6.0.md)
+**Context:** [CONTEXT.md](CONTEXT.md) (what SUAS is and is not, the four repositories, versioning)
 
 This file binds human and automated agents working on SUAS specifications or implementation.
 

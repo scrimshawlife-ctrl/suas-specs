@@ -4,6 +4,14 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive CONTEXT.md, 2026-10-07 PT
+
+**Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**
+
+- [CONTEXT.md](CONTEXT.md) explains what SUAS is and is not, the four repositories, where canonical truth lives (manifests, [VERSIONING.md](VERSIONING.md), [STATUS.md](STATUS.md), [DECISIONS.md](DECISIONS.md)), and the hard walls. [AGENTS.md](AGENTS.md) links it.
+
+---
+
 ## Additive implementation-status and versioning notes, 2026-10-07 PT
 
 **Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**

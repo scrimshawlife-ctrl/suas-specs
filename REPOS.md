@@ -35,6 +35,21 @@ Machine-readable API inventory for the Worker lives in that repo at `docs/openap
 
 This file does not name a stack version. Use [VERSIONING.md](VERSIONING.md) and [STATUS.md](STATUS.md). Do not invent a pin from this inventory.
 
+## Versions, demo mode, and tracking (`OBSERVED` 2026-10-07 PT)
+
+| Repository | Application version | Implements stack | Release tags |
+|---|---|---|---|
+| `SUAS-specs` | n/a (this is the stack) | `0.6.0` current | `v0.1.0` to `v0.6.0` with GitHub Releases |
+| `suas` | `0.2.0` proposed in PR #190 (was `0.1.0`) | `0.6.0` | none yet; tagged after an approved merge |
+| `suas-android` | `0.1.0` proposed in PR #13 (was `1.0`) | `0.6.0` | none yet; tagged after an approved merge |
+| `suas-ios` | `0.1.0` proposed in PR #10 (was `1.0`) | `0.6.0` | none yet; tagged after an approved merge |
+
+How the identities relate: [VERSIONING.md](VERSIONING.md) §8. Pre-1.0 client versions mean no launch; SPEC-018 stays blocked.
+
+Demo mode across the three clients: `suas` `npm run dev:demo` (LOCAL Worker, `demo@example.invalid` / `123456`, `newvet@example.invalid`), Android debug launchers, iOS `Demo` and `Local` schemes. `suas` owns the demo fixture export; the apps hold copies. Synthetic STAGING runs `suas` `0f7aeae` and is deployed only by the manual `worker-deploy` workflow. See [STATUS.md](STATUS.md) "Implementation status".
+
+Work across all four repositories is tracked on the [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6). Issues are disabled on `suas-ios` and `suas-android`, so their items are board drafts.
+
 ## Blocked
 
 Do not enable these from configuration, a client default, or this inventory:

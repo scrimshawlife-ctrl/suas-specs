@@ -4,6 +4,17 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Additive implementation-status and versioning notes, 2026-10-07 PT
+
+**Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**
+
+- Created annotated tags `v0.1.0` through `v0.6.0` (including `v0.1.1` to `v0.1.6`), each on the commit that added its release manifest, with a GitHub Release per tag.
+- [VERSIONING.md](VERSIONING.md) §8 records how client application versions (`suas`, `suas-android`, `suas-ios`) relate to the stack version, and the tag rules.
+- [STATUS.md](STATUS.md) "Implementation status" and [REPOS.md](REPOS.md) record the LOCAL demo mode in all three clients, demo fixture ownership, the path-parameter fix, synthetic STAGING on `suas` `0f7aeae`, the `staging-path-param-check` workflow, the manual `worker-deploy`, and the [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6).
+- [TESTING.md](TESTING.md) §12 notes that the demo fixture is synthetic and is not readiness evidence.
+
+---
+
 ## Additive admin-surface design packet — 2026-08-30 PT
 
 **Design and gap inventory only. Not a version bump. Does not authorize undocumented APIs, pilot/production operation, break-glass access, or sensitive reporting.**

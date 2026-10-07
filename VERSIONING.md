@@ -69,3 +69,24 @@ Implementation PRs cite released spec file/section, stack version, lifecycle, ma
 ## 7. Release vs readiness
 
 `released` means implementation-authoritative, not production-ready. SPEC-017 verifies implementation conformance; SPEC-018 verifies launch readiness. All readiness gates remain `NOT_READY` until evidence says otherwise.
+
+## 8. Client application versions and release tags
+
+Process note added 2026-10-07 PT. It applies §3 to the three implementation repositories. It is not a stack change and changes no rule in §2.
+
+| Identity | Where it lives | Scheme | Tag |
+|---|---|---|---|
+| Specification stack | this repository, `RELEASE_MANIFEST-x.y.z.md` | §2 rules | `vX.Y.Z` on the commit that added the manifest, with a GitHub Release linking it |
+| `suas` application | `package.json` `version` (reported as `app_version` in build-info) | SemVer, pre-1.0 | `vX.Y.Z` on `main` after an approved merge |
+| `suas-android` application | `app/build.gradle.kts` `versionName` (SemVer) and `versionCode` (integer build) | SemVer, pre-1.0 | `vX.Y.Z` on `main` after an approved merge |
+| `suas-ios` application | `MARKETING_VERSION` (SemVer) and `CURRENT_PROJECT_VERSION` (integer build) | SemVer, pre-1.0 | `vX.Y.Z` on `main` after an approved merge |
+
+Rules:
+
+1. A client version and the stack version move independently. A client release never bumps the stack, and a stack release does not by itself bump a client.
+2. Every client `CHANGELOG.md` entry and README states the stack it implements, for example "Implements SUAS-specs 0.6.0".
+3. Client versions stay below `1.0.0` while SPEC-018 is blocked. `1.0.0` is reserved for a launch decision and is not implied by any tag.
+4. Client MINOR covers new behavior or a client-visible change; PATCH covers fixes and docs. Each repository's `RELEASING.md` has the steps.
+5. A tag or GitHub Release is not deployment, pilot, or store authority. Synthetic STAGING deploys stay manual (`suas` `worker-deploy`).
+6. Planned client versions are tracked as GitHub milestones on `suas` and `SUAS-specs` and as the "Target release" field on the [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6). Owner-blocked work carries target "Blocked", never a version.
+

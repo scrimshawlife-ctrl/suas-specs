@@ -76,7 +76,7 @@ npm run smoke:demo          # end-to-end smoke over /api/v0 (LOCAL only)
 - `npm run dev:demo -- --reset` drops and recreates the `suas_demo` database first.
 - Base URL `http://127.0.0.1:3000`. The iOS Simulator uses `http://localhost:3000`. The Android emulator uses `http://10.0.2.2:3000`.
 - Demo sign-in: `demo@example.invalid`, code `123456`. `newvet@example.invalid` is enrolled with no case; its code comes from `curl "http://127.0.0.1:3000/api/v0/dev/last-challenge?destination=newvet@example.invalid"`.
-- The fixed code `123456` is LOCAL only. It needs `SUAS_ENV=LOCAL`, `SUAS_DEMO_FIXED_CODE=enabled` (set only by `npm run dev:demo`), and a local database. Do not set it anywhere else. `/api/v0/dev/*` exists only on LOCAL and returns 404 on staging.
+- The fixed code `123456` for `demo@example.invalid` needs `SUAS_DEMO_FIXED_CODE=enabled`. LOCAL also needs `SUAS_ENV=LOCAL` and a local database (`npm run dev:demo` sets the flag). The synthetic STAGING Worker at `https://suasqrf.com` may use the same account when its deploy sets the flag. TEST and PRODUCTION reject the flag. A Node process pointed at the staging database cannot mint the code. `/api/v0/dev/*` exists only on LOCAL and returns 404 on staging.
 - Pass: `smoke:demo` exits 0.
 
 ## 5. iOS tasks (`suas-ios`)
@@ -295,4 +295,4 @@ This workflow only triggers on skill paths, so docs-only merges never ran it; ru
 - Run the release checker on an archive. A plain unstripped `xcodebuild build` keeps object names such as `DemoService.o` in the symbol table and gives a false `DemoService` failure.
 - GitHub Actions is blocked by billing until Danny fixes it under "Billing & plans". Jobs show "The job was not started ...". Do not re-run them in a loop.
 - Branch protection blocks the normal merge on several repos. When Danny approves a merge, the fallback is `gh api -X PUT repos/scrimshawlife-ctrl/<repo>/pulls/<n>/merge -f merge_method=squash -f sha=<head sha>`. Never change protection or rulesets.
-- The demo fixed code `123456` stays LOCAL only (`SUAS_ENV=LOCAL`, `SUAS_DEMO_FIXED_CODE=enabled`, local database). Never set it for staging or any shared environment.
+- The demo fixed code `123456` is opt-in. LOCAL needs `SUAS_ENV=LOCAL`, `SUAS_DEMO_FIXED_CODE=enabled`, and a local database. The synthetic STAGING Worker may set the flag. TEST and PRODUCTION reject it. Do not mint the code from a Node process pointed at the staging database.

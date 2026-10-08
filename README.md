@@ -101,6 +101,8 @@ Until later decisions/evidence close, do not make operational:
 
 See [RELEASE_DECISIONS-0.4.0.md](RELEASE_DECISIONS-0.4.0.md), [RELEASE_DECISIONS-0.3.0.md](RELEASE_DECISIONS-0.3.0.md), [RELEASE_DECISIONS-0.2.0.md](RELEASE_DECISIONS-0.2.0.md), [RELEASE_DECISIONS-0.1.5.md](RELEASE_DECISIONS-0.1.5.md), [RELEASE_DECISIONS-0.1.3.md](RELEASE_DECISIONS-0.1.3.md), [RELEASE_DECISIONS-0.1.2.md](RELEASE_DECISIONS-0.1.2.md), and [RELEASE_DECISIONS-0.1.0.md](RELEASE_DECISIONS-0.1.0.md).
 
+Draft, not released: [RELEASE_DECISIONS-0.7.0.md](RELEASE_DECISIONS-0.7.0.md) (D-037 ledger row for a future `0.7.0`; no stack bump).
+
 ## Core index
 
 **Authority/product:** [REPOS.md](REPOS.md), [PRODUCT.md](PRODUCT.md), [GLOSSARY.md](GLOSSARY.md), [STATUS.md](STATUS.md), [VERSIONING.md](VERSIONING.md), [ROADMAP.md](ROADMAP.md), [DECISIONS.md](DECISIONS.md), [AGENTS.md](AGENTS.md), [HANDOFF.md](HANDOFF.md), [ENVIRONMENT.md](ENVIRONMENT.md).

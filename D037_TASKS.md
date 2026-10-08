@@ -12,7 +12,7 @@ Lane codes: `SPEC`, `INFRA`, `OBSERVABILITY`, `SECURITY`, `EXPERIMENT`, `EVALUAT
 | ID | Task | Parent | Acceptance | State |
 |---|---|---|---|---|
 | FR-T-SPEC-001 | Keep this packet consistent after owner comments | FR-R-014 | drift audit updated | `DONE` 2026-09-17 |
-| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only | `OPEN` / `FUTURE` |
+| FR-T-SPEC-002 | After owner `ACCEPT_AS_SPECIFIED`, add D-037 to a future release decision ledger without claiming runtime authority | FR-R-001 | ledger row only | `DRAFTED` 2026-10-07 in [RELEASE_DECISIONS-0.7.0.md](RELEASE_DECISIONS-0.7.0.md) (DRAFT); final when the owner releases `0.7.0` |
 | FR-T-SPEC-003 | If EVENT_MODEL needs new audit names for run state changes, specify them here first | FR-R-013 | spec change before code | `BLOCKED` until limited-implementation authority |
 
 ## INFRA

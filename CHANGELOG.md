@@ -8,7 +8,7 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 **Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
 
-- [docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md](docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md) records the Mac device pass and fail list. [MAC_DEVICE_WORK.md](docs/handoffs/MAC_DEVICE_WORK.md) section 5.3 now uses `-skip-testing:suasUITests`. `-only-testing:suasTests` can report success after zero Swift Testing tests. [STATUS.md](STATUS.md) records the same checks. SPEC-018 stays `KEEP_BLOCKED`.
+- [docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md](docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md) records the Mac device pass and fail list. [MAC_DEVICE_WORK.md](docs/handoffs/MAC_DEVICE_WORK.md) section 5.3 now uses `-skip-testing:suasUITests`. `-only-testing:suasTests` can report success after zero Swift Testing tests. [STATUS.md](STATUS.md) records the same checks. The note now records that suas-ios #16 is on `main` and that `main` CI passed on the Mac runner. SPEC-018 stays `KEEP_BLOCKED`.
 
 ---
 

@@ -21,7 +21,7 @@ Named inventory: [REPOS.md](REPOS.md). Specs are canonical. Native clients consu
 
 A change to the product API, Veteran journey, auth, or environment class must be considered against all three clients.
 
-## Implementation status (`OBSERVED` 2026-10-07 PT; not a gate change)
+## Implementation status (`OBSERVED` through 2026-10-08 PT; not a gate change)
 
 This section records implementation facts so readers do not have to dig through three repositories. It moves no readiness gate and closes no D-id.
 
@@ -34,7 +34,8 @@ This section records implementation facts so readers do not have to dig through 
 | Demo fixtures | `suas` owns `contract/demo-fixtures.json` and regenerates it with `npm run demo:fixtures`. The apps hold copies that are not hand-edited. All demo data is synthetic. |
 | Application versions | `suas` `0.2.0` (tag `v0.2.0`, merge `a68eb12`, PR #190), `suas-android` `0.1.0` (tag `v0.1.0`, merge `ece7bef`, PR #13) and `suas-ios` `0.1.0` (tag `v0.1.0`, merge `89e37ae`, PR #10), released 2026-10-07 PT. All implement stack `0.6.0`. Scheme: [VERSIONING.md](VERSIONING.md) §8. |
 | CI and repository context | Client workflows use Node 24 action majors and `ubuntu-24.04` runners; `suas` pins wrangler `4.148.0` in `worker-deploy` and `recovery-runtime-acceptance` (suas #191 and #192, suas-android #15, suas-ios #12). Each of the four repositories has a `CONTEXT.md` (SUAS-specs #45). |
-| CI verification gap | From 2026-10-07 4:05 PM PT, GitHub Actions jobs did not start because of an account billing block. suas-ios #13 and suas-android #16 were merged on local checks only, at the owner's direction; re-verification is tracked on the board. |
+| CI verification gap | From 2026-10-07 4:05 PM PT, GitHub Actions jobs on the private `suas-ios` repo did not start because of an account billing block. suas-ios #13 and suas-android #16 were merged on local checks only, at the owner's direction. Public repositories can still run hosted jobs. The board card "Confirm release-bundle CI on suas-ios main after billing fix" stays Ready until that job runs on `main`. |
+| Mac device checks | 2026-10-08 PT: Simulator Demo, Local, and shipped sign-in, the unsigned Release archive, Android emulator screenshots, and the local re-run of the blocked-CI batch passed. Record: [docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md](docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md). suas-ios #16 is on `main` (`f8ead04`). Its `main` CI run 37728469476 passed on the Mac runner `mac-suas`. The release-bundle board card stays Ready: hosted billing is still blocked. Draft suas-android #18 is green and unmerged. This row moves no readiness gate. |
 | Work tracking | [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6). Owner-blocked items stay `Blocked`. |
 
 ## Governance frontier

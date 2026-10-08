@@ -99,7 +99,7 @@ Acceptance (screenshot each):
 - Demo scheme: the home header shows "Demo mode: synthetic data, no server." The first tap on each card opens its seeded synthetic request (`demo-fixtures.json`: Transportation MATCHING, Food FULFILLED, Temporary Shelter CANCELLED, Peer Support CREATED).
 - Sign-in prefill `demo@example.invalid` and the "One-tap demo sign-in" button appear only in the `Demo` and `Local` schemes. The `suas` scheme shows an empty email and no one-tap button.
 - `Local` scheme: typed sign-in with `demo@example.invalid` and `123456` works against the LOCAL Worker.
-- Location in Debug: in a request screen, "Use my current location" resolves to the `DemoLocation.gpx` point (37.3349, -122.0090) without any `simctl location` step.
+- Location in Debug, when the app is started with Xcode Run: "Use my current location" resolves to the `DemoLocation.gpx` point (37.3349, -122.0090). `xcodebuild test` does not apply that scheme location. For an `xcodebuild` check, set it with `xcrun simctl location booted 37.3349,-122.0090`.
 
 ### 5.2 Release archive and bundle check
 
@@ -126,11 +126,11 @@ xcodebuild test \
   -project suas/suas.xcodeproj \
   -scheme suas \
   -destination "platform=iOS Simulator,id=<UDID>" \
-  -only-testing:suasTests \
+  -skip-testing:suasUITests \
   CODE_SIGNING_ALLOWED=NO
 ```
 
-Pass: `** TEST SUCCEEDED **`. Save the summary and the Simulator screenshots from 5.1 to the evidence folder.
+Pass: `** TEST SUCCEEDED **`, and the log lists the Swift Testing tests (26 on 2026-10-08). `-only-testing:suasTests` matches no Swift Testing tests and can report success after zero tests. Do not use it. Save the summary and the Simulator screenshots from 5.1 to the evidence folder.
 
 ## 6. Android tasks (`suas-android`)
 
@@ -283,7 +283,7 @@ This workflow only triggers on skill paths, so docs-only merges never ran it; ru
   - "Confirm release-bundle CI on suas-ios main after billing fix"
   - "Verify batch merges with local runners (billing blocked CI)"
   - "Mac device work (Grok Build): see docs/handoffs/MAC_DEVICE_WORK.md"
-- Screenshots and logs: attach them to one issue on `suas-specs` (for example "Mac device evidence 2026-10-DD") or to a draft PR there. Issues are disabled on `suas-ios` and `suas-android` and must stay disabled.
+- Screenshots and logs: attach them to one issue on `suas-specs` (for example "Mac device evidence 2026-10-DD") or to a draft PR there. The 2026-10-08 report is [MAC_DEVICE_RESULTS-2026-10-08.md](MAC_DEVICE_RESULTS-2026-10-08.md). Issues are disabled on `suas-ios` and `suas-android` and must stay disabled.
 - Report pass or fail per item in sections 4 to 7, with the SHAs tested, the Xcode, Simulator runtime, emulator image, JDK and Node versions used, and where the evidence is.
 - Fixes: open draft PRs only, one per problem, with a CHANGELOG `[Unreleased]` line. Do not merge.
 
@@ -291,6 +291,7 @@ This workflow only triggers on skill paths, so docs-only merges never ran it; ru
 
 - No KVM on Grok Bot's box, so no Android emulator there. That is why this work moved to the Mac.
 - `check_release_bundle.py` scans bytes. Swift keeps strings of 15 bytes or fewer inline in code, so `-SUASDemoMode` and `-SUASLocal` are best-effort markers; `DemoService` and `demo-fixtures` are the reliable ones.
+- `suasTests` uses Swift Testing (`import Testing`, `@Test`). `-only-testing:suasTests` selects no XCTest cases, runs nothing, and can still print `** TEST SUCCEEDED **`. Section 5.3 uses `-skip-testing:suasUITests`.
 - Run the release checker on an archive. A plain unstripped `xcodebuild build` keeps object names such as `DemoService.o` in the symbol table and gives a false `DemoService` failure.
 - GitHub Actions is blocked by billing until Danny fixes it under "Billing & plans". Jobs show "The job was not started ...". Do not re-run them in a loop.
 - Branch protection blocks the normal merge on several repos. When Danny approves a merge, the fallback is `gh api -X PUT repos/scrimshawlife-ctrl/<repo>/pulls/<n>/merge -f merge_method=squash -f sha=<head sha>`. Never change protection or rulesets.

@@ -4,6 +4,14 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased: Mac device handoff, 2026-10-07 PT
+
+**Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
+
+- [docs/handoffs/MAC_DEVICE_WORK.md](docs/handoffs/MAC_DEVICE_WORK.md) hands the iOS Simulator, Release archive, Android emulator, screenshot and local-runner CI work to Grok Build on a Mac, with acceptance criteria and where to report. Linked from [CONTEXT.md](CONTEXT.md) and from each app repo's `CONTEXT.md`.
+
+---
+
 ## Unreleased: draft 0.7.0 decision ledger, 2026-10-07 PT
 
 **Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**

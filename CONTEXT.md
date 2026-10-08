@@ -87,3 +87,4 @@ This repository has nothing to run. The implementation demo lives in the clients
 - [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md), [REPOS.md](REPOS.md), [STATUS.md](STATUS.md), [VERSIONING.md](VERSIONING.md), [DECISIONS.md](DECISIONS.md)
 - Implementation: [`suas`](https://github.com/scrimshawlife-ctrl/suas) `CONTEXT.md`, [`suas-ios`](https://github.com/scrimshawlife-ctrl/suas-ios) `CONTEXT.md`, [`suas-android`](https://github.com/scrimshawlife-ctrl/suas-android) `CONTEXT.md`
 - Board: [SUAS Product Board](https://github.com/users/scrimshawlife-ctrl/projects/6)
+- Mac device work (Simulator, emulator, screenshots, local-runner CI): [docs/handoffs/MAC_DEVICE_WORK.md](docs/handoffs/MAC_DEVICE_WORK.md)

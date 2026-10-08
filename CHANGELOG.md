@@ -4,6 +4,15 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased: staging demo sign-in and later device PRs, 2026-10-08 PT
+
+**Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
+
+- [STATUS.md](STATUS.md) and [REPOS.md](REPOS.md) record synthetic STAGING at `suas` `80c27e7`, including `demo@example.invalid` / `123456` on that Worker. TEST and PRODUCTION still reject the fixed-code flag.
+- [docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md](docs/handoffs/MAC_DEVICE_RESULTS-2026-10-08.md) records that suas-ios #17 and suas-android #18 are on `main`, and that suas-ios #11 and suas-android #14 were closed without merge. suas-ios #15 stays open. The release-bundle board card stays Ready. SPEC-018 stays `KEEP_BLOCKED`.
+
+---
+
 ## Unreleased: Mac device results, 2026-10-08 PT
 
 **Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**

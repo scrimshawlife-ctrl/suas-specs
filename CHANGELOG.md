@@ -4,6 +4,14 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased: draft 0.7.0 decision ledger, 2026-10-07 PT
+
+**Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
+
+- [RELEASE_DECISIONS-0.7.0.md](RELEASE_DECISIONS-0.7.0.md), marked DRAFT, carries a D-037 row (`ACCEPT_AS_SPECIFIED` 2026-09-17, no runtime authority) for a future `0.7.0` ledger. This drafts `FR-T-SPEC-002` ([D037_TASKS.md](D037_TASKS.md)). Linked from [README.md](README.md) and the D-037 row in [DECISIONS.md](DECISIONS.md).
+
+---
+
 ## Additive living-docs alignment, 2026-10-07 PT
 
 **Documentation only. Not a version bump. Moves no readiness gate and closes no D-id.**

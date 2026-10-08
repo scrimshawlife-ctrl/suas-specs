@@ -4,6 +4,15 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased: handoff no longer forbids the staging demo code, 2026-10-08 PT
+
+**Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
+
+- [docs/handoffs/MAC_DEVICE_WORK.md](docs/handoffs/MAC_DEVICE_WORK.md) no longer says the fixed code `123456` is forbidden on staging. LOCAL still needs the local gates. The synthetic STAGING Worker may set `SUAS_DEMO_FIXED_CODE=enabled`. TEST and PRODUCTION reject it.
+- [GAP_ANALYSIS.md](GAP_ANALYSIS.md) records that the iOS STAGING run still starts with an empty email, while the web sign-in page shows `demo@example.invalid` / `123456`. SPEC-018 stays `KEEP_BLOCKED`.
+
+---
+
 ## Unreleased: staging demo sign-in and later device PRs, 2026-10-08 PT
 
 **Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**

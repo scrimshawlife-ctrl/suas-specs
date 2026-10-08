@@ -53,7 +53,7 @@ JSON `tenant_id` is optional on the Worker (resolved from the enrolled email as 
 |---|---|
 | Web | Chat and number tiles stay honest-unavailable. |
 | Android | Dummy `MainActivity` form remains for tests: debug only, not exported, absent from release, label checked by `MainActivityHarnessTest`. Peer support is on the launcher. |
-| iOS | Typed email code works on staging HTTPS. One-tap demo login is LOCAL only. Peer support is on the home cards. |
+| iOS | Typed email code works on staging HTTPS. `demo@example.invalid` / `123456` is accepted by the synthetic STAGING Worker, and the web sign-in page shows it. The iOS STAGING run still starts with an empty email. One-tap demo login is LOCAL only. Peer support is on the home cards. |
 
 ## What this is not
 

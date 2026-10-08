@@ -4,6 +4,14 @@ Dates are America/Los_Angeles (PT). Lifecycle changes are owner-controlled.
 
 ---
 
+## Unreleased: fulfillment outcome sheet, 2026-10-08 PT
+
+**Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**
+
+- [FULFILLMENT_OUTCOME_PACKET.md](FULFILLMENT_OUTCOME_PACKET.md) lists the open questions for G-I-6, G-I-7, and G-I-8 and the Wave C answers that remain in force. The owner block is unfilled. SPEC-018 stays `KEEP_BLOCKED`.
+
+---
+
 ## Unreleased: handoff no longer forbids the staging demo code, 2026-10-08 PT
 
 **Documentation only. Not a version bump. No manifest, no tag. Moves no readiness gate and closes no D-id.**

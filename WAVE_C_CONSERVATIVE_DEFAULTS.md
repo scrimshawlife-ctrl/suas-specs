@@ -33,7 +33,7 @@ G-I-35 is filled by the 0.6.0 auth rule. G-I-34 is filled only as “no publishe
 
 ## C1 — Fulfillment outcomes
 
-Until the owner writes the table:
+Until the owner writes the table. The questions and the answers now in force are listed in [FULFILLMENT_OUTCOME_PACKET.md](FULFILLMENT_OUTCOME_PACKET.md). That file is a draft. It is not a settlement:
 
 | Id | Default |
 |---|---|
